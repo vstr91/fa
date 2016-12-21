@@ -13,6 +13,7 @@ class PageController extends Controller
     private $cursos = null;
     private $destaque = null;
     private $destaqueContato = null;
+    private $videosGaleria = null;
     
     
     private function carregaDadosComuns($em){
@@ -27,6 +28,10 @@ class PageController extends Controller
         
         $this->destaqueContato = $em->getRepository('FaSiteBundle:DestaqueMenu')
                 ->findOneBy(array('menu' => 'contato'));
+        
+        $this->videosGaleria = $em->getRepository('FaSiteBundle:VideoGaleria')
+                ->listarTodos(4);
+        
     }
 
 
@@ -57,7 +62,8 @@ class PageController extends Controller
             'cursos' => $this->cursos,
             'noticiasMenu' => $this->noticiasMenu,
             'destaque' => $this->destaque,
-            'destaqueContato' => $this->destaqueContato
+            'destaqueContato' => $this->destaqueContato,
+            'videosGaleria' => $this->videosGaleria
         ));
     }
     

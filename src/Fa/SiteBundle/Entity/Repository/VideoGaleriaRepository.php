@@ -12,4 +12,19 @@ use Doctrine\ORM\EntityRepository;
  */
 class VideoGaleriaRepository extends EntityRepository
 {
+    
+    public function listarTodos($limite = null){
+        $qb = $this->createQueryBuilder('v')
+                ->select('v')
+                ->distinct()
+                ->addOrderBy('v.dataCadastro', 'DESC');
+        
+        if(false == is_null($limite)){
+            $qb->setMaxResults($limite);
+        }
+        
+        return $qb->getQuery()->getResult();
+        
+    }
+    
 }

@@ -137,11 +137,11 @@ class SubmenuController extends Controller {
         
         $em = $this->getDoctrine()->getManager();
 
-        $videos = $em->getRepository('FaSiteBundle:VideoGaleria')
-                ->findAll();
+        $videosGaleria = $em->getRepository('FaSiteBundle:VideoGaleria')
+                ->listarTodos(4);
         
         return $this->render('FaSiteBundle:SubmenuSecundario:videos.html.twig', array(
-            'videos' => $videos
+            'videosGaleria' => $videosGaleria
         ));
     }
     

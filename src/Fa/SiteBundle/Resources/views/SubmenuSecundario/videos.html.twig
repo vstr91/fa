@@ -1,3 +1,7 @@
-{#{% for video in videos %}
-    {{ video.titulo }}
-{% endfor %}#}
+<div class="container">
+    <div class="row">
+        {% for video in videosGaleria %}
+            <div class="col-md-6">{{ video.titulo }}</div>
+        {% endfor %}
+    </div>
+</div>

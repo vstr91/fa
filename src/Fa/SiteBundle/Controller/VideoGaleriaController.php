@@ -85,7 +85,7 @@ class VideoGaleriaController extends Controller {
         return $this->render('FaSiteBundle:Admin:VideoGaleria/form.html.twig',
                 array(
                     'form' => $form->createView(),
-                    'video' => $videoGaleria
+                    'videoGaleria' => $videoGaleria
                 ));
     }
     
