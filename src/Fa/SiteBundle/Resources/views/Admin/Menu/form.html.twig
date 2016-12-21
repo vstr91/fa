@@ -1,0 +1,72 @@
+<form id="form-menu-edita" 
+      action="{{ path('fa_site_admin_menus_cadastra', {'id_menu': menu.id}) }}" 
+      method="POST" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+    <p>
+        <input type="submit" class="hidden" id="btn-submit" value="Cadastrar" />
+    </p>
+</form>
+<script type="text/javascript">
+    {#$('#form-parada').submit(function(){
+        $(this).ajaxSubmit(function(data){
+            console.log(data);
+            $(".caixaForm").dialog('close');
+            return false;
+        });
+        return false;
+    });#}
+
+        $(document).ready(function(){
+            $('#btn-editar').click(function () {
+                $('#btn-submit').click();
+            });
+
+            $('#form-menu-edita').validate({
+                rules: {
+                    'menu[titulo]': "required",
+                    'menu[link]': {
+                        required:{
+                            depends: function(){
+                                return $('#form-menu-edita #menu_pagina').text() == '';
+                            }
+                        }
+                    },
+                    'menu[pagina]': {
+                        required:{
+                            depends: function(){
+                                return $('#form-menu-edita #menu_link').val() == '';
+                            }
+                        }
+                    },
+                    'menu[tipoMenu]': {
+                        required: true
+                    },
+                    'menu[menuPai]': {
+                        required:{
+                            depends: function(){
+                                return $('#form-menu-edita #tipo_menu').val() == 2;
+                            }
+                        }
+                    },
+                },
+                messages: {
+                    'menu[titulo]': "Por favor digite o texto que será exibido no menu",
+                    'menu[link]': {
+                        required: "Por favor informe página externa que o menu abrirá ou informe na opção abaixo a página interna"
+                    },
+                    'menu[pagina]': {
+                        required: "Por favor informe página interna que o menu abrirá ou informe na opção acima a página externa"
+                    },
+                    'menu[tipoMenu]': {
+                        required: "Por favor informe o tipo do menu"
+                    },
+                    'menu[menuPai]': {
+                        required: "Por favor informe o menu principal relativo a esse item de menu secundário"
+                    },
+                }
+            });
+        });
+
+        
+
+</script>

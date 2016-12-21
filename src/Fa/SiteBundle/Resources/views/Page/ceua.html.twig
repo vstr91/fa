@@ -1,0 +1,70 @@
+{% extends "FaSiteBundle:Page:index.html.twig" %}
+{% block conteudo %}
+{% block menu %}
+{{ parent() }}
+{% endblock menu %}
+<div id="topo-cpa">
+    <img src="{{ asset('imagens/topo-ceua.png') }}" />
+</div>
+<br />
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="titulo-azul-claro">
+                <img class="ret-azul-subtitulo" 
+                     src="{{ asset('imagens/retangulo-azul-escuro.png') }}" /> CEUA</h2>
+            <p>
+                Em cumprimento a Lei nº 11.794, de 8 de outubro de 2008, o CESVA providenciou o registro da 
+                Comissão de Ética no Uso de Animais – CEUA junto à SBCAL/COBEA (Sociedade Brasileira de 
+                Ciências em Animais de Laboratório/Colégio Brasileiro de Experimentação Animal). A Comissão 
+                tem por finalidade promover a revisão ética das atividades científicas que envolvam o uso de 
+                animais, de acordo com as normas nacionais e internacionais para pesquisa e ensino envolvendo 
+                animais. A CEUA deve promover a defesa do bem-estar dos animais em sua integridade, dignidade 
+                e vulnerabilidade, bem como zelar pelo desenvolvimento da pesquisa e do ensino segundo elevado 
+                padrão ético e acadêmico.
+            </p>
+            <p>
+                Conforme registra seu regulamento, a CEUA tem por competência:
+            </p>
+            <ul>
+                <li>
+                    cumprir e fazer cumprir, no âmbito de suas atribuições, o disposto na 
+                    LEI Nº 11.794, DE 8 DE OUTUBRO DE 2008 (Lei Arouca), e nas demais normas aplicáveis à 
+                    utilização de animais para ensino e pesquisa;
+                </li>
+                <li>
+                    examinar previamente os procedimentos de ensino e pesquisa a serem realizados na 
+                    instituição à qual esteja vinculada, para determinar sua compatibilidade com a 
+                    legislação aplicável;
+                </li>
+                <li>
+                    manter cadastro atualizado dos procedimentos de ensino e pesquisa realizados, 
+                    ou em andamento, na instituição, enviando cópia ao CONCEA;
+                </li>
+                <li>
+                    manter cadastro dos pesquisadores que realizem procedimentos de ensino e pesquisa, 
+                    enviando cópia ao CONCEA;
+                </li>
+                <li>
+                    expedir, no âmbito de suas atribuições, certificados que se fizerem necessários 
+                    perante órgãos de financiamento de pesquisa, periódicos científicos ou outros;
+                </li>
+                <li>
+                    notificar imediatamente ao CONCEA e às autoridades sanitárias a ocorrência de 
+                    qualquer acidente com os animais nas instituições credenciadas, fornecendo informações 
+                    que permitam ações saneadoras.
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<br />
+<br />
+<br />
+{% block rodape %}
+{{ parent() }}
+{% endblock rodape %}
+{% block submenus %}
+    {{ parent() }}
+{% endblock %}
+{% endblock conteudo %}

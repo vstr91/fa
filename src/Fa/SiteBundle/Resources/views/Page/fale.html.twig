@@ -1,0 +1,145 @@
+{% extends "FaSiteBundle:Page:index.html.twig" %}
+{% block conteudo %}
+    {% block menu %}
+        {{ parent() }}
+    {% endblock menu %}
+    <div id="topo-cpa">
+        <img src="{{ asset('imagens/topo-cvsja.png') }}" />
+    </div>
+    <br />
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="titulo-azul-claro">
+                    <img class="ret-azul-subtitulo" 
+                         src="{{ asset('imagens/retangulo-azul-escuro.png') }}" /> Fale com o Col&eacute;gio</h2>
+                <form name="form-contato" id="form-contato" method="POST" 
+                      action="{{ path('fa_site_form_contato') }}">
+                             <div class="row linha-form">
+                                 <div class="col-md-6">
+                                     <input type="text" name="nome" id="nome" class="form-control" placeholder="Nome" />
+                                 </div>
+                                 <div class="col-md-6">
+                                     <input type="text" name="email" id="email" class="form-control" placeholder="Email" />
+                                 </div>
+                             </div>
+                             <div class="row linha-form">
+                                 <div class="col-md-6">
+                                     <input type="text" name="telefone" id="telefone" 
+                                            class="form-control input-telefone" placeholder="Telefone" />
+                                 </div>
+                                 <div class="col-md-6">
+                                     <select name="setor" id="setor" class="form-control">
+                                         <option value="0">Selecione o Setor</option>
+                                         <option value="1">Secretaria</option>
+                                     </select>
+                                 </div>
+                             </div>
+                             <div class="row linha-form">
+                                 <div class="col-md-12">
+                                     <textarea name="descricao" id="descricao" class="form-control" rows="15"></textarea>
+                                 </div>
+                             </div>
+                             <div class="row">
+                                 <div class="col-md-2 col-md-offset-10 text-right">
+                                     <input type="submit" value="Enviar" class="btn btn-default" id="btn-submit" 
+                                            data-loading-text="Enviando mensagem..." />
+                                 </div>
+                             </div>
+                         </form>
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+    <br />
+    {% block rodape %}
+        {{ parent() }}
+    {% endblock rodape %}
+    {% block submenus %}
+        {{ parent() }}
+    {% endblock %}
+{% endblock conteudo %}
+{% block js %}
+    {{ parent() }}
+    <script type="text/javascript" src="{{ asset('js/jquery.validate.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/jquery.form.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/jquery.mask.min.js') }}"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            
+            jQuery.validator.addMethod("maiorQueZero", function (value, element) {
+                    return this.optional(element) || (parseFloat(value) > 0);
+                }, "Valor deve ser maior que zero");
+            
+            $.jMaskGlobals.watchDataMask = true;
+
+            var SPMaskBehavior = function (val) {
+                return val.replace(/\D/g, '').length === 11 ? '(00) 00000-0000' : '(00) 0000-00009';
+            },
+            spOptions = {
+                onKeyPress: function (val, e, field, options) {
+                    field.mask(SPMaskBehavior.apply({}, arguments), options);
+                }
+            };
+            
+            $('.input-telefone').mask(SPMaskBehavior, spOptions);
+            
+            $('#form-contato').validate({
+                rules: {
+                    'nome': "required",
+                    'email':{
+                        required: true,
+                        email: true
+                    },
+                    'telefone': {
+                        required: true
+                    },
+                    'setor': {
+                        required: true,
+                        maiorQueZero: true
+                    },
+                    'descricao': {
+                        required: true
+                    }
+                },
+                messages: {
+                    'nome': "Por favor informe seu nome",
+                    'email':{
+                        required: "Por favor informe seu email",
+                        email: "Por favor informe um email válido"
+                    },
+                    'telefone': {
+                        required: "Por favor informe seu telefone"
+                    },
+                    'setor': {
+                        required: "Por favor escolha o setor",
+                        maiorQueZero: "Por favor escolha o setor"
+                    },
+                    'descricao': {
+                        required: "Por favor digite sua mensagem"
+                    }
+                },
+                submitHandler: function(form) {
+                    
+                    $('#btn-submit').button('loading');
+                    
+                    $(form).ajaxSubmit({
+                        success: function(){
+                            alert("Mensagem enviada. Obrigado!");
+                            $(form)[0].reset();
+                            $('#btn-submit').button('reset');
+                        },
+                        error: function(){
+                            alert("Houve erro ao processar sua mensagem. Por favor tente novamente.");
+                            $('#btn-submit').button('reset');
+                        }
+                    });
+                }
+            });
+            
+            $('.input-telefone').mask(SPMaskBehavior, spOptions);
+            
+        });
+    </script>
+{% endblock js %}

@@ -1,0 +1,131 @@
+{% extends "FaSiteBundle:Page:index.html.twig" %}
+{% block conteudo %}
+    {% block menu %}
+        {{ parent() }}
+    {% endblock menu %}
+    <div id="topo-cpa">
+        <img src="{{ asset('imagens/topo-infra.png') }}" />
+    </div>
+    <br />
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 coluna-texto-justificado">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-1">
+                        <h2 class="titulo-azul-claro titulo-infra">
+                        <img class="ret-azul-subtitulo" 
+                             src="{{ asset('imagens/retangulo-azul-escuro.png') }}" /> CESVA</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-1">
+                        <p>
+                            O Centro de Ensino Superior de Valença - CESVA, surge no ano de 1985, com a função de 
+                            reunir e promover a administração acadêmica dos cursos e demais atividades educacionais 
+                            desenvolvidas pela FAA. Assim, além de seus tradicionais cursos de graduação, o CESVA se 
+                            fortalece mediante o desenvolvimento de outras atividades como a pós-graduação lato sensu, 
+                            a assistência, prestação de serviços, caminhando norteado por sua missão institucional.
+                        </p>
+                        <p>
+                            A presença exercida pela interação dos cursos de graduação com a comunidade mantém o fluxo 
+                            permanente de aperfeiçoamento e de integração dos professores com o Centro de Ensino Superior de 
+                            Valença (CESVA) com professores em exercício na Educação Básica. Na área da saúde, as Faculdades 
+                            de Medicina, Odontologia e enfermagem, que juntos atuam há décadas em saúde pública, em parceria 
+                            com órgãos públicos e/ou com o setor privado, especialmente no atendimento à população de baixa 
+                            renda através do Hospital Escola e da Policlínica Odontológica.
+                        </p>
+                        <p>
+                            A integração do Centro de Ensino Superior de Valença - CESVA é constante e intensa, mediante 
+                            uma política de ensino, pesquisa e extensão, de um corpo docente qualificado, de um quadro de 
+                            pessoal técnico-administrativo comprometido e, sobretudo, pela qualidade de seus alunos.
+                        </p>
+                    </div>
+                    <div class="col-md-4">
+                        <img class="fotos-infra" src="{{ asset('imagens/foto-fachada-faa.png') }}" />
+                        <hr class="linha-imagem-infra" />
+                    </div>
+                </div>
+
+                <br />
+                <div class="row linha-escura-infra">
+                    <div class="col-md-4 col-md-offset-1">
+                        <img class="fotos-infra" src="{{ asset('imagens/foto-medicina.png') }}" />
+                        <hr class="linha-imagem-infra" />
+                    </div>
+                    <div class="col-md-6">
+                        <h2 class="titulo-azul-claro titulo-infra">
+                            <img class="ret-azul-subtitulo" 
+                                 src="{{ asset('imagens/retangulo-azul-escuro.png') }}" /> FMV - 
+                            FACULDADE DE MEDICINA VALEN&Ccedil;A</h2>
+                        <p>
+                            Ao longo de 40 anos de história, a Faculdade de Medicina de Valença (FMV) 
+                            graduou 3.353 profissionais que atuam em diversas regiões do país, 
+                            baseando-se em fundamentos da vida acadêmica que sempre correspondem 
+                            às normas vigentes estabelecidas pelo Ministério da Educação. A partir 
+                            de 07 de novembro de 2001, com a publicação da Resolução CNE/CES n˚ 4 
+                            instituindo as Diretrizes Curriculares Nacionais do Curso de Graduação em 
+                            Medicina, a FMV se deparou com uma nova realidade político-pedagógica, 
+                            visando atender as demandas da sociedade brasileira no âmbito da saúde pública 
+                            e educação superior na área de saúde, bem como as mudanças promovidas pelo Ministério 
+                            da Educação no que tange à regulação e avaliação dos cursos superiores no País. 
+                            Uma reforma curricular tornou-se obrigatória para adequar o perfil do Médico 
+                            formado pela instituição.
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-1">
+                        <h2 class="titulo-azul-claro titulo-infra">
+                            <img class="ret-azul-subtitulo" 
+                                 src="{{ asset('imagens/retangulo-azul-escuro.png') }}" /> HMVV - 
+                            HOSPITAL DE MEDICINA VETERIN&Aacute;RIA</h2>
+                        <p>
+                            O Hospital Veterinário Escola, situado no KM 64 da Rodovia RJ 145, com toda a estrutura 
+                            para aulas e atendimentos a grandes animais e animais silvestres. Servindo de 
+                            importante estrutura para o aprendizado dos futuros médicos veterinários.
+                        </p>
+                    </div>
+                    <div class="col-md-4">
+                        <img class="fotos-infra" src="{{ asset('imagens/foto-veterinaria.png') }}" />
+                        <hr class="linha-imagem-infra" />
+                    </div>
+                </div>
+                <br />
+                <div class="row linha-escura-infra">
+                    <div class="col-md-4 col-md-offset-1">
+                        <img class="fotos-infra" src="{{ asset('imagens/foto-he.png') }}" />
+                        <hr class="linha-imagem-infra" />
+                    </div>
+                    <div class="col-md-6">
+                        <h2 class="titulo-azul-claro titulo-infra">
+                            <img class="ret-azul-subtitulo" 
+                                 src="{{ asset('imagens/retangulo-azul-escuro.png') }}" /> HE - HOSPITAL ESCOLA</h2>
+                        <p>
+                            O Hospital Escola Luiz Gioseffi Jannuzzi é a principal estrutura de saúde que atende o 
+                            Município de Valença e região. No Âmbito do ensino, representa um diferencial de qualidade 
+                            do curso de Medicina da Fundação Educacional D. André Arcoverde.
+                        </p>
+                        <p>
+                            Integra a um restrito rol de hospitais credenciados como Hospital de 
+                            Ensino, pelos Ministérios da Saúde e Educação.
+                        </p>
+                        <p>
+                            Todos seus atendimentos são de usuários do Sistema Único de Saúde - SUS, razão pela qual 
+                            integra o Programa 100% SUS do Ministério da Saúde.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+    <br />
+    {% block rodape %}
+        {{ parent() }}
+    {% endblock rodape %}
+    {% block submenus %}
+        {{ parent() }}
+    {% endblock %}
+{% endblock conteudo %}

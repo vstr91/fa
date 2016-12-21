@@ -1,0 +1,80 @@
+{% extends "FaSiteBundle:Page:index.html.twig" %}
+{% block conteudo %}
+{% block menu %}
+{{ parent() }}
+{% endblock menu %}
+<div id="topo-cpa">
+    <img src="{{ asset('imagens/topo-ext.png') }}" />
+</div>
+<br />
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 coluna-texto-justificado">
+            <h2 class="titulo-azul-claro">
+                <img class="ret-azul-subtitulo" 
+                     src="{{ asset('imagens/retangulo-azul-escuro.png') }}" /> PROEX - Projetos de Extensão</h2>
+            <p>
+                A extensão acadêmica é um processo educativo, cultural e científico,que se articula ao ensino e à 
+                pesquisa de forma indissociável, viabilizando a relação transformadora entre a instituição de ensino e 
+                a sociedade em cuja concepção se enquadra o Centro de Ensino Superior de Valença mantido pela 
+                Fundação Educacional D. André Arcoverde. Dessa forma, a atividade de extensão:
+            </p>
+            <ol type="I">
+                <li>representa um trabalho de interação e intercâmbio na relação faculdade-professor-aluno-sociedade.</li>
+                <li>constitui um veículo de comunicação permanente com os setores da sociedade e sua problemática, numa perspectiva contextualizada.</li>
+                <li>é uma alternativa de produção de conhecimento, de aprendizado mútuo e de realização de ações simultaneamente transformadoras entre a faculdade e sociedade.</li>
+                <li>favorece a renovação e a ampliação do conceito de sala de aula, com uma estrutura ágil e dinâmica.</li>
+            </ol>
+            <p>As atividades de extensão do CESVA têm como base a socialização e a partilha com a comunidade de 
+                conhecimentos já sistematizados pelo saber humano e dos produzidos na IES, elas têm caráter educativo, 
+                mas não substitutivo daquelas atividades de educação que deveriam ser feitas por outras agências sociais.</p>
+        </div>
+    </div>
+    <br />
+    <div class="row text-center linha-icones">
+        <div class="col-md-2 col-md-offset-2">
+            <img src="{{ asset('imagens/icone-carroceiro.png') }}" />
+            <p class="titulo-icone-extensao">PROGRAMA CARROCEIRO CIDADÃO</p>
+        </div>
+        <div class="col-md-2">
+            <img src="{{ asset('imagens/icone-acao-rural.png') }}" />
+            <p class="titulo-icone-extensao">PROGRAMA AÇÃO RURAL</p>
+        </div>
+        <div class="col-md-2">
+            <img src="{{ asset('imagens/icone-fazendeiro.png') }}" />
+            <p class="titulo-icone-extensao">PROGRAMA FAZENDEIRO</p>
+        </div>
+        <div class="col-md-2">
+            <img src="{{ asset('imagens/icone-pre-uni.png') }}" />
+            <p class="titulo-icone-extensao">PROGRAMA PRÉ-UNIVERSITÁRIO</p>
+        </div>
+    </div>
+    <div class="row text-center linha-icones">
+        <div class="col-md-2 col-md-offset-2">
+            <img src="{{ asset('imagens/icone-saude-bucal.png') }}" />
+            <p class="titulo-icone-extensao">PROGRAMA SAÚDE BUCAL</p>
+        </div>
+        <div class="col-md-2">
+            <img src="{{ asset('imagens/icone-coral.png') }}" />
+            <p class="titulo-icone-extensao">CORAL UNIVERSITÁRIO DA MELHOR IDADE</p>
+        </div>
+        <div class="col-md-2">
+            <img src="{{ asset('imagens/icone-inclusao.png') }}" />
+            <p class="titulo-icone-extensao">PROJETO INCLUSÃO DIGITAL</p>
+        </div>
+        <div class="col-md-2">
+            <img src="{{ asset('imagens/icone-ingles.png') }}" />
+            <p class="titulo-icone-extensao">PROGRAMA INGLÊS PARA TERCEIRA IDADE</p>
+        </div>
+    </div>
+</div>
+<br />
+<br />
+<br />
+{% block rodape %}
+{{ parent() }}
+{% endblock rodape %}
+{% block submenus %}
+    {{ parent() }}
+{% endblock %}
+{% endblock conteudo %}

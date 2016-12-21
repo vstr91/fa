@@ -1,0 +1,41 @@
+{% extends "FaSiteBundle:Page:index.html.twig" %}
+{% block conteudo %}
+{% block menu %}
+{{ parent() }}
+{% endblock menu %}
+<div class="container" id="container-noticia">
+    <div class="row">
+        <div class="col-md-12">
+            <h3 class="titulo-azul-claro text-center">{{ noticia.titulo }}
+                <br />
+                <small class="subtitulo-noticia">{{ noticia.resumo|raw|default('') }}</small>
+            </h3>
+            <div class="row">
+                <div class="col-md-6 col-xs-6">
+                    <p>Escrito por Assessoria de Comunica&ccedil;&atilde;o</p>
+                </div>
+                <div class="col-md-6 col-xs-6">
+                    <p class="text-right">Postado &agrave;s {{ noticia.ultimaAlteracao|date('d/m/Y H:i:s') }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            {{ noticia.descricao|raw }}
+        </div>
+        <div class="col-md-4">
+            <img src="{{ asset('uploads/noticia/'~noticia.imagem) }}" class="img-noticia" />
+        </div>
+    </div>
+</div>
+<br />
+<br />
+<br />
+{% block rodape %}
+{{ parent() }}
+{% endblock rodape %}
+{% block submenus %}
+    {{ parent() }}
+{% endblock %}
+{% endblock conteudo %}

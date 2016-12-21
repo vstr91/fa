@@ -1,0 +1,32 @@
+<form id="form-destaque-menu" 
+      action="{{ path('fa_site_admin_destaques_menu_cadastra', {'destaque_menu': destaqueMenu.menu}) }}" 
+      method="POST" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+    <p>
+        <input type="submit" class="hidden" id="btn-submit" value="Cadastrar" />
+    </p>
+</form>
+<script type="text/javascript">
+    {#$('#form-parada').submit(function(){
+        $(this).ajaxSubmit(function(data){
+            console.log(data);
+            $(".caixaForm").dialog('close');
+            return false;
+        });
+        return false;
+    });#}
+    
+    $(document).ready(function(){
+        $('#btn-editar').click(function(){
+            $('#btn-submit').click();
+        });
+
+        $('#destaque_menu_menu').attr('disabled', 'disabled');
+
+        $('.editor').trumbowyg();
+        
+        $(".editor").removeAttr('required');
+        
+    });
+    
+</script>

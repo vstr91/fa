@@ -1,0 +1,33 @@
+{% extends "FaSiteBundle:Page:index.html.twig" %}
+{% block conteudo %}
+{% block menu %}
+{{ parent() }}
+{% endblock menu %}
+<div class="container" id="container-noticia">
+    <div class="row">
+        <div class="col-md-12">
+            <h3 class="titulo-azul-claro text-center">{{ evento.titulo }}</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="well well-sm" id="painel-data">
+                Data: {{ evento.data|date('d/m/Y H:i') }}
+            </div>
+            {{ evento.descricao }}
+        </div>
+        <div class="col-md-4">
+            <img src="{{ asset('uploads/evento/'~evento.imagem) }}" />
+        </div>
+    </div>
+</div>
+<br />
+<br />
+<br />
+{% block rodape %}
+{{ parent() }}
+{% endblock rodape %}
+{% block submenus %}
+    {{ parent() }}
+{% endblock %}
+{% endblock conteudo %}

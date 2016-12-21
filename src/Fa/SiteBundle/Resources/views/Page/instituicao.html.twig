@@ -1,0 +1,91 @@
+{% extends "FaSiteBundle:Page:index.html.twig" %}
+{% block conteudo %}
+{% block menu %}
+{{ parent() }}
+{% endblock menu %}
+<div class="container-fluid" id="topo-instituicao">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2 text-center">
+            <p id="texto-instituicao">
+                “Formar cidadãos comprometidos com o desenvolvimento sustentável e a responsabilidade social e 
+                capacitá-los a exercer suas atividades profissionais de maneira plena, direcionando as ações 
+                acadêmicas para a melhoria da qualidade de vida das populações humanas inseridas na sua 
+                área de influência.”
+            </p>
+        </div>
+    </div>
+</div>
+<br />
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 coluna-texto-justificado">
+            <h2 class="titulo-azul-claro">
+                <img class="ret-azul-subtitulo" 
+                     src="{{ asset('imagens/retangulo-azul-escuro.png') }}" id="historia" /> 
+                <a href="#" id="mantenedor">Hist&oacute;ria</a></h2>
+            <p>
+                O Centro de Ensino Superior de Valença - CESVA, surge no ano de 1985, com a 
+                função de reunir e promover a administração acadêmica dos cursos e demais atividades 
+                educacionais desenvolvidas pela FAA. Assim, além de seus tradicionais cursos de graduação, 
+                o CESVA se fortalece mediante o desenvolvimento de outras atividades como a 
+                pós-graduação lato sensu, a assistência, prestação de serviços, caminhando norteado 
+                por sua missão institucional.</p>
+                
+                <p>A presença exercida pela interação dos cursos de graduação com a comunidade mantém 
+                o fluxo permanente de aperfeiçoamento e de integração dos professores com o Centro de 
+                Ensino Superior de Valença (CESVA) com professores em exercício na Educação Básica. Na área 
+                da saúde, as Faculdades de Medicina, Odontologia e enfermagem, que juntos atuam há décadas em 
+                saúde pública, em parceria com órgãos públicos e/ou com o setor privado, especialmente no 
+                atendimento à população de baixa renda através do Hospital Escola e da Policlínica Odontológica.</p>
+
+                <p>A integração do Centro de Ensino Superior de Valença - CESVA é constante e intensa, mediante uma 
+                política de ensino, pesquisa e extensão, de um corpo docente qualificado, de um quadro de pessoal 
+                técnico-administrativo comprometido e, sobretudo, pela qualidade de seus alunos.
+            </p>
+            <br />
+            <h2 class="titulo-azul-claro">
+                <img class="ret-azul-subtitulo" 
+                     src="{{ asset('imagens/retangulo-azul-escuro.png') }}" /> 
+                <a href="#" id="dirigentes">Mantenedor</a></h2>
+            <p>
+                Em 29 de março de 1965, por delibera&ccedil;&atilde;o da C&acirc;mara Municipal de nº 784, o 
+                projeto do vereador Prof. Miguel 
+                Augusto Pellegrini, seu primeiro-secret&aacute;rio, foi criada a Funda&ccedil;&atilde;o Educacional Dom 
+                Andr&eacute; Arcoverde. 
+                Seu nome &eacute; uma homenagem a um dos maiores educadores de Valen&ccedil;a, bispo diocesano de 1925 a 1936. O projeto 
+                foi sancionado pelo Prefeito Luiz Gioseffi Jannuzzi, que se tornaria o seu primeiro Presidente, tendo 
+                ocupado o cargo de 1967 a 1980. Hoje, a FAA &eacute; o pilar de sustenta&ccedil;&atilde;o do desenvolvimento e da 
+                economia do 
+                munic&iacute;pio. Disp&otilde;e de um invej&aacute;vel patrim&ocirc;nio, constru&iacute;do ao longo de sua 
+                trajet&oacute;ria. O &ecirc;xito alcan&ccedil;ado por 
+                grande n&uacte;mero de ex-alunos de suas Faculdades, projetando-se como profissionais de alto n&iacute;vel no cen&aacute;rio 
+                nacional, d&atilde;o testemunho de sua efici&ecirc;ncia e da boa qualidade dos cursos administrados. 
+                A Funda&ccedil;&atilde;o Educacional 
+                Dom Andr&eacute; Arcoverde, cuja sigla &eacute; FAA, foi criada em Assembleia-Geral de 03 de julho de 1966, como pessoa 
+                jur&iacute;dica de direito privado, sendo uma entidade educativa de natureza filantr&oacute;pica, com sede e foro na cidade 
+                de Valen&ccedil;a, Estado do Rio de Janeiro. A FAA &eacute; mantenedora do Centro de Ensino Superior de 
+                Valen&ccedil;a (CESVA) que 
+                re&uacute;ne as Faculdades e Cursos por ela mantidos.
+            </p>
+            <br />
+            <h2 class="titulo-azul-claro">
+                <img class="ret-azul-subtitulo" 
+                     src="{{ asset('imagens/retangulo-azul-escuro.png') }}" /> Dirigentes</h2>
+            <ul id="lista-dirigentes">
+                <li><img class="circulo-lista-dirigentes" src="{{ asset('imagens/circulo-azul.png') }}" /> Dr. Jose Rog&eacute;rio Moura de Almeida Filho - Presidente da FAA</li>
+                <li><img class="circulo-lista-dirigentes" src="{{ asset('imagens/circulo-azul.png') }}" /> Prof. Dr. Antônio Celso Alves Pereira - Diretor Geral do CESVA</li>
+                <li><img class="circulo-lista-dirigentes" src="{{ asset('imagens/circulo-azul.png') }}" /> Dr. Jos&eacute; Rog&eacute;rio Moura de Almeida Neto - Diretor Acad&ecirc;mico</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<br />
+<br />
+<br />
+{% block rodape %}
+{{ parent() }}
+{% endblock rodape %}
+{% block submenus %}
+    {{ parent() }}
+{% endblock %}
+{% endblock conteudo %}

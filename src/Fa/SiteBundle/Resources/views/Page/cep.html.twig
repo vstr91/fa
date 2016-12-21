@@ -1,0 +1,60 @@
+{% extends "FaSiteBundle:Page:index.html.twig" %}
+{% block conteudo %}
+{% block menu %}
+{{ parent() }}
+{% endblock menu %}
+<div id="topo-cpa">
+    <img src="{{ asset('imagens/topo-cep.png') }}" />
+</div>
+<br />
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="titulo-azul-claro">
+                <img class="ret-azul-subtitulo" 
+                     src="{{ asset('imagens/retangulo-azul-escuro.png') }}" /> APRESENTA&Ccedil;&Atilde;O</h2>
+            <p>
+                Comitê de Ética em Pesquisa, aprovado pelo Colegiado do CEP-FMV em 27.03.2014 e atualizado em 
+                cumprimento a Resolução do Conselho Nacional de Saúde nº: 466, de 12 de dezembro de 2012, 
+                publicada em 13 de junho de 2013 no Diário Oficial da União, que revoga as Resoluções do 
+                Conselho Nacional de Saúde nº: 196/96, 303/2000 e 404/2008. 
+            </p>
+            <p>
+                O Comitê de Ética em Pesquisa da Faculdade de Medicina de Valença (CEP-FMV) foi instituído com 
+                base na Resolução CNS nº: 196 de 10 de outubro de 1996, Resolução Complementar CNS 251/97 e 
+                Portaria 001/2000 da Direção da Faculdade de Medicina de Valença, aprovado pela Comissão Nacional 
+                de Ética em Pesquisa (CONEP) - Conselho Nacional de Saúde – MS. 
+            </p>
+            <p>
+                O CEP-FMV é um colegiado interdisciplinar e independente, de relevância pública, de caráter 
+                consultivo, deliberativo e educativo, criado para defender os interesses dos participantes 
+                da pesquisa de todo o Centro de Ensino Superior de Valença (CESVA), em sua integridade e 
+                dignidade, para contribuir no desenvolvimento da pesquisa dentro dos padrões éticos.    
+            </p>
+            <p>
+                Possui finalidade precípua de resguardar os interesses e direitos dos sujeitos da pesquisa, 
+                contribuir para a qualidade mesma, identificando, definindo e analisando as questões éticas 
+                implicadas nas pesquisas científicas que envolvam indivíduos e/ou coletividades humanas, sendo 
+                de sua competência fazer a avaliação ética de tais projetos, cuidando para que estejam em 
+                conformidade com os padrões metodológicos e científicos atualmente regulamentados.
+            </p>
+            <p>
+                No desempenho de suas funções, o CEP-FMV deverá emitir pareceres sobre os aspectos éticos das 
+                atividades de pesquisa, envolvendo seres humanos, prevendo e analisando o impacto de tais 
+                atividades sobre o bem-estar geral e os direitos humanos de indivíduos e populações envolvidas 
+                e/ou interessadas na pesquisa, tornando-se corresponsável por garantir a proteção dos 
+                participantes.
+            </p>
+        </div>
+    </div>
+</div>
+<br />
+<br />
+<br />
+{% block rodape %}
+{{ parent() }}
+{% endblock rodape %}
+{% block submenus %}
+    {{ parent() }}
+{% endblock %}
+{% endblock conteudo %}

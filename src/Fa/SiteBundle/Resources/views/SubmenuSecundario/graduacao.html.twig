@@ -1,0 +1,14 @@
+<ul class="submenu-secundario">
+    {% for curso in cursos %}
+        <li class="links-cursos"><a href="{{ path('fa_site_curso', {'slug': curso.slug}) }}" class="links-submenu-secundario">{{ curso.nome }}</a></li>
+    {% endfor %}
+    {#<li class="links-cursos"><a href="#" class="links-submenu-secundario">Administração</a></li>#}
+    {#<li class="links-cursos"><a href="#" class="links-submenu-secundario">Direito</a></li>
+    <li class="links-cursos"><a href="#" class="links-submenu-secundario">Enfermagem</a></li>
+    <li class="links-cursos"><a href="#" class="links-submenu-secundario">Medicina</a></li>
+    <li class="links-cursos"><a href="#" class="links-submenu-secundario">Medicina Veterinária</a></li>
+    <li class="links-cursos"><a href="#" class="links-submenu-secundario">Odontologia</a></li>
+    <li class="links-cursos"><a href="#" class="links-submenu-secundario">Pedagogia</a></li>
+    <li class="links-cursos"><a href="#" class="links-submenu-secundario">Psicologia</a></li>
+    <li class="links-cursos"><a href="#" class="links-submenu-secundario">Gestão de Recursos Humanos</a></li>#}
+</ul>

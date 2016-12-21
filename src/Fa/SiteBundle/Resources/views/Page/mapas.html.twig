@@ -1,0 +1,31 @@
+{% extends "FaSiteBundle:Page:index.html.twig" %}
+{% block conteudo %}
+{% block menu %}
+{{ parent() }}
+{% endblock menu %}
+<div class="container" id="container-noticia">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="titulo-azul-claro">
+                <img class="ret-azul-subtitulo" 
+                     src="{{ asset('imagens/retangulo-azul-escuro.png') }}" /> Mapa</h2>
+            <div class="section" data-section-name="mapa" id="mapa">
+                MAPA
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+<br />
+<br />
+{% block rodape %}
+{{ parent() }}
+{% endblock rodape %}
+{% block submenus %}
+    {{ parent() }}
+{% endblock %}
+{% endblock conteudo %}
+{% block js %}
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&key=AIzaSyBCwTHtZ8FISJVAcdzOR3mikpXymzAcU2c"></script>
+    <script type="text/javascript" src="{{ asset('js/maps-interno.js') }}"></script>
+{% endblock js %}

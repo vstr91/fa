@@ -1,0 +1,49 @@
+{% extends "FaSiteBundle:Page:index.html.twig" %}
+{% block conteudo %}
+{% block menu %}
+{{ parent() }}
+{% endblock menu %}
+<div id="topo-cpa">
+    <img src="{{ asset('imagens/topo-pronap.png') }}" />
+</div>
+<br />
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="titulo-azul-claro">
+                <img class="ret-azul-subtitulo" 
+                     src="{{ asset('imagens/retangulo-azul-escuro.png') }}" /> PRONAP</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 text-justify">
+            <p>
+                Aos estudantes ingressantes são oferecidas disciplinas de ajustes e nivelamento de conteúdo 
+                básico, relativas às áreas de interesse de seu curso. O PRONAP – Programa de Nivelamento e 
+                Apoio à Aprendizagem tem como objetivo identificar problemas pontuais de aprendizagem nas 
+                disciplinas básicas, principalmente, Português, Matemática, Biologia e Inglês Instrumental.
+            </p>
+            <p>
+                Já o apoio à aprendizagem, após as avaliações do NPC I são levantadas as disciplinas em que 
+                40% da turma apresentou nota abaixo de 4,0 pontos, em seguida são identificados os alunos para 
+                que a estes sejam oferecidas aulas de apoio à aprendizagem. As disciplinas oferecidas tanto no 
+                programa de nivelamento e de apoio a aprendizagem não possuem caráter obrigatório nem contam 
+                como carga horária a ser contabilizada na matriz curricular. Têm apenas o intuito de contribuir 
+                para a aprendizagem dos estudantes no processo de desempenho nas disciplinas regulares.
+            </p>
+        </div>
+        <div class="col-md-6 text-center">
+            <img src="{{ asset('imagens/pronap.png') }}" id="imagem-pronap" />
+        </div>
+    </div>
+</div>
+<br />
+<br />
+<br />
+{% block rodape %}
+{{ parent() }}
+{% endblock rodape %}
+{% block submenus %}
+    {{ parent() }}
+{% endblock %}
+{% endblock conteudo %}

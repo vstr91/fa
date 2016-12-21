@@ -1,0 +1,39 @@
+{% extends "FaSiteBundle:Page:index.html.twig" %}
+{% block conteudo %}
+{% block menu %}
+{{ parent() }}
+{% endblock menu %}
+<div id="topo-cpa">
+    <img src="{{ asset('imagens/topo-nat.png') }}" />
+</div>
+<br />
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="titulo-azul-claro">
+                <img class="ret-azul-subtitulo" 
+                     src="{{ asset('imagens/retangulo-azul-escuro.png') }}" /> NAT</h2>
+            <p>
+                O Núcleo de Atividades (NAT) é uma unidade do Centro de Ensino Superior de Valença, 
+                criado cujo objetivo é centralizar os registros e procedimentos relacionados às atividades 
+                complementares, trabalho de conclusão de curso (TCC), monitoria e estágio supervisionado 
+                curricular (ESC), objetivando a divulgação,a padronização, arquivo e controle de procedimentos 
+                gerais em relação a estas atividades.
+            </p>
+            <br />
+            <br />
+            <br />
+            <br />
+        </div>
+    </div>
+</div>
+<br />
+<br />
+<br />
+{% block rodape %}
+{{ parent() }}
+{% endblock rodape %}
+{% block submenus %}
+    {{ parent() }}
+{% endblock %}
+{% endblock conteudo %}

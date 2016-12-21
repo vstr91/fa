@@ -1,0 +1,87 @@
+{% extends "FaSiteBundle:Page:index.html.twig" %}
+{% block conteudo %}
+{% block menu %}
+{{ parent() }}
+{% endblock menu %}
+<div id="topo-cpa">
+    <img src="{{ asset('imagens/topo-iniciacao.png') }}" />
+</div>
+<br />
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="titulo-azul-claro">
+                <img class="ret-azul-subtitulo" 
+                     src="{{ asset('imagens/retangulo-azul-escuro.png') }}" /> Apresenta&ccedil;&atilde;o</h2>
+            <p>
+                A iniciação científica é um instrumento que permite colocar o aluno em contato com a 
+                atividade científica e engajá-lo desde cedo na pesquisa, atuando como diferencial na formação acadêmica. 
+            </p>
+            <p>
+                As principais atividades de iniciação científica são desenvolvidas por meio dos cursos de graduação e 
+                visam a um maior aprofundamento do aluno nas atividades de pesquisa e de produção de conhecimento. 
+            </p>
+            <p>
+                Com o intuito de dar visibilidade à produção científica dos alunos e estimular a interdisciplinaridade 
+                entre as áreas de conhecimento, a IES realiza anualmente um encontro de iniciação científica 
+                (Semana de Iniciação Científica – SEMIC), premiando os melhores trabalhos e editando os anais em 
+                mídia digital e impresso.  
+            </p>
+            <br />
+            <p>
+                No cumprimento de sua missão institucional, a coordenação de Iniciação Científica definiu 
+                políticas para a iniciação científica:
+            </p>
+            <ul>
+                <li>consolidar a atuação da coordenação de iniciação científica com a finalidade de implementar, 
+                    apoiar e incentivar a realização de projetos de iniciação científica nas suas diversas áreas, 
+                    dando suporte as atividades, para o crescimento da iniciação científica;</li>
+                <li>estudar mecanismos relativos à captação de recursos financeiros para suporte dos 
+                    projetos de iniciação científica;</li>
+                <li>continuar estimulando a participação de professores e alunos em eventos nacionais e 
+                    internacionais, divulgando trabalhos de produção científica e acadêmica;</li>
+                <li>atuar no sentido de assegurar a publicação de revistas e divulgação de artigos, obras e material 
+                    relativos a iniciação científica, produzida no âmbito da Instituição;</li>
+                <li>instituir sistemática de acompanhamento e avaliação permanente da iniciação 
+                    científica desenvolvida no CESVA;</li>
+                <li>priorizar, nas investigações, problemas locais e regionais que serão 
+                    estudados e interpretados em conexão com o quadro regional e nacional;</li>
+                <li>aumentar a capacidade de acesso às redes de comunicação e sistemas de informação, 
+                    o acervo da biblioteca, notadamente os periódicos;</li>
+                <li>estimular as relações interinstitucuionais e a formação de redes de pesquisa.</li>
+            </ul>
+            <br />
+            <p>
+                No Cesva, a produção científica é divulgada através de revistas mantidas pela IES, como a 
+                revista Saber Digital e a Revista Interdisciplinar do Curso de Direito e, também, por das 
+                semanas acadêmicas dos cursos, Semana de Iniciação Científica (SEMIC), mostras científicas, 
+                além do incentivo à participação em congressos, seminários e fóruns.
+            </p>
+            <br />
+            <p>
+                Conheça mais sobre a iniciação científica do CESVA.
+            </p>
+            <br />
+            <p>1) Manual de Normas e Técnicas</p>
+            <br />
+            <p>2) Edital de Iniciação Cientifica</p>
+            <br />
+            <p>3)Projetos em execução</p>
+            <br />
+            <p><a href="#">> P&Aacute;GINA SABER DIGITAL</a></p>
+            <p><a href="#">> P&Aacute;GINA REVISTA DO DIREITO</a></p>
+            <p><a href="{{ path('fa_site_semic') }}">> P&Aacute;GINA SEMIC</a></p>
+            
+        </div>
+    </div>
+</div>
+<br />
+<br />
+<br />
+{% block rodape %}
+{{ parent() }}
+{% endblock rodape %}
+{% block submenus %}
+    {{ parent() }}
+{% endblock %}
+{% endblock conteudo %}

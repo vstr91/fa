@@ -1,0 +1,98 @@
+{% extends "FaSiteBundle:Page:index.html.twig" %}
+{% block conteudo %}
+    {% block menu %}
+        {{ parent() }}
+    {% endblock menu %}
+    <div class="container" id="container-noticia">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="titulo-azul-claro">
+                    <img class="ret-azul-subtitulo" 
+                         src="{{ asset('imagens/retangulo-azul-escuro.png') }}" /> Ouvidoria</h2>
+                <form name="form-ouvidoria" id="form-ouvidoria" method="POST" 
+                      action="{{ path('fa_site_form_ouvidoria') }}">
+                             <div class="row linha-form">
+                                 <div class="col-md-6">
+                                     <input type="text" name="nome" id="nome" 
+                                            class="form-control" placeholder="Nome" />
+                                 </div>
+                                 <div class="col-md-6">
+                                     <select name="curso" id="curso" class="form-control">
+                                         <option value="0">Selecione o Curso</option>
+                                         {% for curso in cursosCadastrados %}
+                                             <option value="{{ curso.id }}">{{ curso.nome }}</option>
+                                         {% endfor %}
+                                     </select>
+                                 </div>
+                             </div>
+                             <div class="row linha-form">
+                                 <div class="col-md-12">
+                                     <input type="text" name="assunto" 
+                                            id="assunto" class="form-control" placeholder="Assunto" />
+                                 </div>
+                             </div>
+                             <div class="row linha-form">
+                                 <div class="col-md-12">
+                                     <textarea name="descricao" id="descricao" class="form-control" rows="15"></textarea>
+                                 </div>
+                             </div>
+                             <div class="row">
+                                 <div class="col-md-2 col-md-offset-10 text-right">
+                                     <input type="submit" value="Enviar" class="btn btn-default" id="btn-submit" 
+                                            data-loading-text="Enviando mensagem..." />
+                                 </div>
+                             </div>
+                         </form>
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+    <br />
+    {% block rodape %}
+        {{ parent() }}
+    {% endblock rodape %}
+    {% block submenus %}
+        {{ parent() }}
+    {% endblock %}
+{% endblock conteudo %}
+{% block js %}
+    {{ parent() }}
+    <script type="text/javascript" src="{{ asset('js/jquery.validate.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/jquery.form.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/jquery.mask.min.js') }}"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            
+            $('#form-ouvidoria').validate({
+                rules: {
+                    'descricao': {
+                        required: true
+                    }
+                },
+                messages: {
+                    'descricao': {
+                        required: "Por favor digite sua mensagem"
+                    }
+                },
+                submitHandler: function(form) {
+                    
+                    $('#btn-submit').button('loading');
+                    
+                    $(form).ajaxSubmit({
+                        success: function(){
+                            alert("Mensagem enviada. Obrigado!");
+                            $(form)[0].reset();
+                            $('#btn-submit').button('reset');
+                        },
+                        error: function(){
+                            alert("Houve erro ao processar sua mensagem. Por favor tente novamente.");
+                            $('#btn-submit').button('reset');
+                        }
+                    });
+                }
+            });
+            
+        });
+    </script>
+{% endblock js %}

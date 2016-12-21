@@ -1,0 +1,355 @@
+{% extends "FaSiteBundle:Page:index.html.twig" %}
+{% block conteudo %}
+    {% block menu %}
+        {{ parent() }}
+    {% endblock menu %}
+    <div class="container-fluid" id="topo-instituicao">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 text-center">
+                <p id="texto-instituicao">
+                    “Integrar as propostas educacionais, da organização, com a missão educacional 
+                    que visa possibilitar a construção do conhecimento, o envolvimento social, a formação 
+                    profissional, a educação continuada e a democratização da educação aliando conhecimento 
+                    e experiência, reflexão e realização, ensino e integração.”
+                </p>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="titulo-azul-claro">
+                    <img class="ret-azul-subtitulo" 
+                         src="{{ asset('imagens/retangulo-azul-escuro.png') }}" id="historia" /> 
+                    <a href="#" id="mantenedor">O CVSJA</a></h2>
+                <p>
+                    Formando a Criança Cidadã, cujo objetivo é oferecer aos alunos do CVSJA a oportunidade 
+                    de exercitarem o seu espírito solidário e cooperativo, bem como oportunizar a vivência 
+                    de experiências sociais variadas.</p>
+                <p>
+                    Orientando Caminhos, cujo objetivo é colaborar no processo da escolha profissional, 
+                    informando e orientando os alunos sobre o mundo das profissões e o mercado de trabalho, 
+                    bem como fazer um estudo sobre os requisitos físicos, afetivos, intelectuais e de 
+                    personalidade, entre outros, exigidos para o exercício da atividade escolhida. 
+                </p>
+                <p>
+                    Entrelaçando ideias, cujo objetivo é desenvolver a capacidade de reflexão, a 
+                    criatividade, a organização do pensamento e das ideias de modo a expressá-los com 
+                    coerência e de forma gramaticalmente correta. 
+                </p>
+                <p>
+                    Educação Ambiental, cujo objetivo é despertar a sensibilidade do educando para as 
+                    questões do meio ambiente e sua influência sobre o meio cultural e social.
+                </p>
+                <br />
+                <h2 class="titulo-azul-claro">
+                    <img class="ret-azul-subtitulo" 
+                         src="{{ asset('imagens/retangulo-azul-escuro.png') }}" /> 
+                    <a href="#" id="dirigentes">Mantenedora</a></h2>
+                <p>
+                    O Colégio Valenciano São José de Aplicação, mantido pela Fundação Educacional D. 
+                    André Arcoverde, foi autorizado a funcionar pelo parecer do CEE/RJ nº 661/68, 
+                    publicado em D. O de 07/06/1968.
+                </p>
+                <br />
+                <h2 class="titulo-azul-claro">
+                    <img class="ret-azul-subtitulo" 
+                         src="{{ asset('imagens/retangulo-azul-escuro.png') }}" /> Cursos</h2>
+                <p>
+                    O colégio Valenciano São José de Aplicação da Fundação Educacional D. 
+                    André Arcoverde mantém os seguintes cursos:
+                </p>
+                <p>
+                    <strong>Ensino Fundamental<br />Processo: E-03/011/2086/2013</strong>
+                </p>
+                <p>
+                    <strong>Ensino Médio - diurno<br />Autorizado pelo Parecer 
+                        CEE/RJ nº 661/1968, publicado no D.O de 07/06/1968.</strong>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="tituloUniforme">
+                            <h4 class="panel-title">
+                                <a role="button" data-toggle="collapse" data-parent="#accordion" 
+                                   href="#uniformes" aria-expanded="true" aria-controls="uniforme">
+                                    Uniformes <img class="icone-mais" 
+                                                   src="{{ asset('imagens/icone-mais.png') }}" />
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="uniformes" class="panel-collapse collapse" role="tabpanel" 
+                             aria-labelledby="tituloUniforme">
+                            <div class="panel-body">
+                                <p>
+                                    O uniforme é composto de: blusa determinada pelo Colégio, calça de 
+                                    brim azul marinho (tradicional, sem rasgos, fiapos ou outros 
+                                    detalhes) ou bermuda altura dos joelhos de brim azul marinho(meninas) 
+                                    e de tactell preta ou azul marinho lisa, sem listras ou 
+                                    desenhos (meninos); tênis branco ou preto; casaco de frio 
+                                    (modelo no Colégio), em ambos os turnos.
+                                </p>
+                                <p>
+                                    O uso do uniforme é de caráter obrigatório em todas as atividades 
+                                    programadas pelo Colégio.
+                                </p>
+                                <p>
+                                    Não será permitida a entrada do aluno, sem uniforme, para assistir às aulas, 
+                                    a não ser com prévia autorização ou, eventualmente, dependendo do caráter 
+                                    das atividades a serem desenvolvidas.
+                                </p>
+                                <p>
+                                    O uniforme de Educação Física é obrigatório para a frequência às aulas, 
+                                    bem como o jaleco branco para as aulas ministradas nos laboratórios.
+                                </p>
+                                <p>
+                                    Não será permitido: o uso de boné, blusa baby look ou miniblusa; 
+                                    chinelos e / ou sandálias havaianas; calça comprida ou 
+                                    bermuda abaixo da cintura (meninos).
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="tituloHorario">
+                            <h4 class="panel-title">
+                                <a role="button" data-toggle="collapse" data-parent="#accordion" 
+                                   href="#horario" 
+                                   aria-expanded="true" aria-controls="horario">
+                                    Hor&aacute;rio de Aulas <img class="icone-mais" 
+                                                                 src="{{ asset('imagens/icone-mais.png') }}" />
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="horario" class="panel-collapse collapse" role="tabpanel" 
+                             aria-labelledby="tituloHorario">
+                            <div class="panel-body">
+                                <h4><strong>Manh&atilde;</strong></h4>
+                                <p>
+                                    As aulas se realizarão no período da manhã 
+                                    a partir das 6h50. Após 7h o aluno deverá 
+                                    aguardar a 2ª aula e após o 2º atraso no 
+                                    mesmo mês a sua entrada só será permitida 
+                                    se acompanhado de seus pais e / ou responsáveis.
+                                </p>
+                                <p>
+                                    A partir da 2ª aula não será permitida a entrada 
+                                    do aluno, a não se que apresente comprovante 
+                                    de exames e / ou consulta médica.
+                                </p>
+                                <br />
+                                <h4><strong>Tarde</strong></h4>
+                                <p>
+                                    Às 14h, sem atraso, para complementação da 
+                                    carga horária disciplinar, conforme horário 
+                                    a ser apresentado aos alunos.
+                                </p>
+                                <p>
+                                    Não será permitida a entrada do aluno após 
+                                    às 14h. Para evitar problemas, é 
+                                    aconselhável que o aluno chegue ao Colégio 
+                                    antes do início das aulas.
+                                </p>
+                                <br />
+                                <h4><strong>Sa&iacute;da</strong></h4>
+                                <p>
+                                    O horário de saída obedecerá a disposição da 
+                                    carga horária de cada série.
+                                </p>
+                                <p>
+                                    Caso precise ausentar-se do Colégio, antes do 
+                                    término das aulas, deverá apresentar, na Secretaria, 
+                                    justificativa por escrito e assinada pelo responsável.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="tituloCaderneta">
+                            <h4 class="panel-title">
+                                <a role="button" data-toggle="collapse" 
+                                   data-parent="#accordion" href="#caderneta" 
+                                   aria-expanded="true" aria-controls="caderneta">
+                                    Caderneta Escolar <img class="icone-mais" 
+                                                           src="{{ asset('imagens/icone-mais.png') }}" />
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="caderneta" class="panel-collapse collapse" role="tabpanel" 
+                             aria-labelledby="tituloCaderneta">
+                            <div class="panel-body">
+                                <p>
+                                    É obrigatória a sua apresentação, no início das aulas. 
+                                    Nela serão registradas as faltas / presenças / avaliações 
+                                    / ocorrências / comunicações, entre outros dados.
+                                </p>
+                                <p>
+                                    Não será permitida a entrada do aluno para assistir às aulas 
+                                    sem a sua apresentação. Em caso de perda ou dano, o aluno 
+                                    deverá solicitar e pagar a 2ª via, na secretaria do Colégio.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="tituloAvaliacao">
+                            <h4 class="panel-title">
+                                <a role="button" data-toggle="collapse" data-parent="#accordion" 
+                                   href="#avaliacao" 
+                                   aria-expanded="true" aria-controls="avaliacao">
+                                    Avalia&ccedil;&atilde;o <img class="icone-mais" 
+                                                                 src="{{ asset('imagens/icone-mais.png') }}" />
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="avaliacao" class="panel-collapse collapse" role="tabpanel" 
+                             aria-labelledby="tituloAvaliacao">
+                            <div class="panel-body">
+                                <p>
+                                    Na avaliação da aprendizagem, o professor utilizará procedimentos 
+                                    diferenciados como testes e provas, arguições, exercícios, 
+                                    trabalho de pesquisa individual ou em grupo, redações, visitas 
+                                    pedagógicas, participação em projetos sociais / comunitários / 
+                                    assistênciais / culturais, pesquisa de campo, excursões pedagógicas, 
+                                    participação em oficinas, entre outros.
+                                </p>
+                                <p>
+                                    A avaliação bimestral deve ser o resultado da utilização de pelo menos 
+                                    três dos procedimentos citados acima, sendo um que avalie o domínio do 
+                                    conteúdo cognitivo desenvolvido, com base na reflexão crítica do aluno.
+                                </p>
+                                <p>
+                                    O aluno, além dessas avaliações fará também um simulado bimestral alusivo 
+                                    aos conteúdos, de cada disciplina, desenvolvidos no bimestre e uma redação.
+                                </p>
+                                <p>
+                                    As provas, testes ou quaisquer outros trabalhos escritos, após avaliados, 
+                                    serão devolvidos ao aluno para que tome conhecimento de seus acertos e de suas 
+                                    dificuldades. A média Anual será o resultado da média aritmética das notas obtidas nos 
+                                    4 (quatro) bimestres.
+                                </p>
+                                <img src="{{ asset('imagens/formula1-sj.png') }}" />
+                                <p>
+                                    O aluno será promovido à série seguinte se obtiver frequência igual ou superior a 75% e 
+                                    notas nas avaliações bimestrais iguais ou superiores a 7.0 (sete), perfazendo o total de 
+                                    28 pontos anuais.
+                                </p>
+                                <h4><strong>Avalia&ccedil;&atilde;o Final</strong></h4>
+                                <p>
+                                    O aluno que não atingir a Média Anual (MA) igual ou superior a 7.0 (sete) terá direito 
+                                    à prova final.
+                                </p>
+                                <p>
+                                    A nota da prova final será somada à Média Anual e o resultado será dividido por dois e 
+                                    expressará a Média Final do aluno que terá que perfazer um total igual ou superior a 
+                                    6.0 (seis) para ser aprovado.
+                                </p>
+                                <img src="{{ asset('imagens/formula2-sj.png') }}" />
+                                <h4><strong>Simulado</strong></h4>
+                                <p>
+                                    Os alunos do Ensino Médio serão submetidos a um teste global sobre os conteúdos de todas as 
+                                    disciplinas ministradas no bimestre e constantes do currículo escolar. A data e horário de sua 
+                                    aplicação estarão afixados em calendário escolar.
+                                </p>
+                                <p>
+                                    O simulado terá o valor de 20% (vinte por cento) da nota bimestral em cada disciplina. 
+                                    Não haverá segunda chamada do simulado.
+                                </p>
+                                <h4><strong>2ª Chamada</strong></h4>
+                                <p>
+                                    O aluno terá direito à segunda chamada e para fazer uso desse direito:
+                                </p>
+                                <p>
+                                    Deverá fazer requerimento ao Diretor do Colégio, no prazo de 2 (dois) dias.
+                                </p>
+                                <p>
+                                    Anexar o atestado médico ao requerimento a justificativa da falta.
+                                </p>
+                                <p>
+                                    A prova de 2ª chamada será aplicada em data e horário a ser combinado entre a 
+                                    Coordenação Pedagógica e o professor da disciplina, posteriormente comunicados ao aluno.
+                                </p>
+                                <p>
+                                    O aluno que faltar à 2ª chamada, perderá o direito de requerê-la novamente e sua 
+                                    nota será igual a 0 (zero).
+                                </p>
+                                <p>
+                                    As avaliações de 2ª chamada serão efetuadas à tarde, em horário pré-determinado pelo 
+                                    Colégio, com anuência do professor.
+                                </p>
+                                <p>
+                                    Não haverá 2ª chamada de avaliação final.
+                                </p>
+                                <h4><strong>Recupera&ccedil;&atilde;o Bimestral</strong></h4>
+                                <p>
+                                    Ao final de cada bimestre letivo haverá recuperação (bimestral) 
+                                    na qual serão adotados os seguintes procedimentos:
+                                </p>
+                                <ol type="I">
+                                    <li>
+                                        A recuperação bimestral ocorrerá em quatro momentos: ao final de cada 
+                                        bimestre, o calendário das avaliações será divulgado no início do ano letivo.
+                                    </li>
+                                    <li>
+                                        O aluno terá direito a fazer as avaliações referentes ao bimestre em que não tenha 
+                                        alcançado a média 7.0 (sete). Se o aluno não alcançou média no 1º bimestre, o conteúdo 
+                                        da recuperação será referente a este, se não alcançou média no 2º bimestre o conteúdo 
+                                        será sobre o 2º bimestre, e assim sucessivamente.
+                                    </li>
+                                    <li>
+                                        A nota obtida na recuperação bimestral substituirá a nota do bimestre.
+                                    </li>
+                                    <li>
+                                        Se a nota da recuperação for inferior a nota do bimestre não haverá alteração.
+                                    </li>
+                                    <li>
+                                        Não haverá segunda chamada das provas de recuperação bimestral, exceto em casos 
+                                        médicos, a serem examinados pela Direção.
+                                    </li>
+                                </ol>
+                                <h4><strong>Avalia&ccedil;&atilde;o Final</strong></h4>
+                                <p>
+                                    O aluno que não obtiver média anual 7.0 (sete) em qualquer componente curricular ou disciplina 
+                                    terá direito a uma avaliação final. A nota da prova final será somada à Média Anual e 
+                                    o resultado será dividido por dois e expressará a Média Final do aluno que terá que perfazer 
+                                    um total igual ou superior a 6.0 (seis), para ser aprovado.
+                                </p>
+                                <h4><strong>Depend&ecirc;ncia</strong></h4>
+                                <p>
+                                    O aluno reprovado em até 2 (duas) disciplinas poderá matricular-se na série 
+                                    seguinte em regime de dependência.
+                                </p>
+                                <p>
+                                    O aluno deverá entregar as atividades propostas, bimestralmente, no plano de estudos (pesquisas, 
+                                    trabalhos, exercícios, provas/testes) para avaliação dos conhecimentos que não foram construídos.
+                                </p>
+                                <p>
+                                    A recuperação bimestral não se aplica às disciplinas de dependência.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <p><a target="_blank" href="#">Matriz Curricular Ensino Fundamental</a></p>
+                <p><a target="_blank" href="#">Matriz Curricular Ensino M&eacute;dio</a></p>
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+    <br />
+    {% block rodape %}
+        {{ parent() }}
+    {% endblock rodape %}
+    {% block submenus %}
+        {{ parent() }}
+    {% endblock %}
+{% endblock conteudo %}

@@ -1,0 +1,28 @@
+{% extends "FaSiteBundle:Page:index.html.twig" %}
+{% block conteudo %}
+{% block menu %}
+{{ parent() }}
+{% endblock menu %}
+<br />
+<div class="container" id="container-noticia">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="titulo-azul-claro">
+                <img class="ret-azul-subtitulo" 
+                     src="{{ asset('imagens/retangulo-azul-escuro.png') }}" /> Cursos - {{ tipo }}</h2>
+            {% for curso in cursosCadastrados %}
+                <p><a href="{{ path('fa_site_curso', {'slug': curso.slug}) }}">{{ curso.nome }}</a></p>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<br />
+<br />
+<br />
+{% block rodape %}
+{{ parent() }}
+{% endblock rodape %}
+{% block submenus %}
+    {{ parent() }}
+{% endblock %}
+{% endblock conteudo %}

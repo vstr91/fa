@@ -1,0 +1,98 @@
+{% extends "FaSiteBundle:Page:index.html.twig" %}
+{% block conteudo %}
+{% block menu %}
+{{ parent() }}
+{% endblock menu %}
+<img src="{{ asset('imagens/topo-atendimento.png') }}" id="imagem-atendimento" />
+<div class="container-fluid" id="topo-atendimento">
+    <div class="row">
+        <div class="col-md-12 text-center" style="margin-left: -13%; margin-top: -30%;">
+            <h2 id="titulo-atendimento">ATENDIMENTO AOS ESTUDANTES</h2>
+            <br />
+            <p id="linha-botoes">
+                <a href="{{ path('fa_site_pronap') }}" class="btn btn-primary">PRONAP</a>
+                <a href="{{ path('fa_site_capp') }}" class="btn btn-primary">CAPP</a>
+                <a href="{{ path('fa_site_nat') }}" class="btn btn-primary">NAT</a>
+            </p>
+        </div>
+    </div>
+</div>
+<br />
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 coluna-texto-justificado">
+            <h2 class="titulo-azul-claro">
+                <img class="ret-azul-subtitulo" 
+                     src="{{ asset('imagens/retangulo-azul-escuro.png') }}" /> Apresentação</h2>
+            <p>
+                O CESVA possui uma variada política de atendimento ao discente que inclui o Programa de 
+                Nivelamento e Apoio à Aprendizagem (PRONAP), o Centro de Apoio Psicológico e Pedagógico (CAPP), 
+                Programa de acompanhamento a egressos, Programa de monitoria, Programa de apoio financeiro ao 
+                discente, a ouvidoria e outros dispositivos.
+            </p>
+            <br />
+            <p>
+                A Política de Apoio ao Estudante visa a promover a implantação de programas diversificados de 
+                atenção e atendimento aos acadêmicos, buscando o pleno desenvolvimento do corpo discente, considerando 
+                a promoção do bem-estar e desenvolvimento integral do estudante, condição essencial aos processos de 
+                aprendizagem e ao sucesso acadêmico, pessoal e profissional. Prevê atividades tais como: apoio ao 
+                desenvolvimento acadêmico, suporte pedagógico e psicológico, acesso às atividades sócio-culturais e 
+                esportivas, além de apoio ao egresso.
+            </p>
+            <p>
+                Para acompanhamento dos alunos, realizam-se reuniões mensais entre os diretores de cursos e os 
+                representantes de turma, visando obter informações sobre o relacionamento aluno-professor, sobre a 
+                visão do discente a respeito do desenvolvimento das disciplinas e do curso, gerando propostas para 
+                melhoria do mesmo. Além disso, foi instituído o “Café com o CESVA” programa este que visa a propiciar 
+                um momento de confraternização entre a Direção Acadêmica do CESVA e representantes do corpo discentes da 
+                IES, são realizados seis encontros por ano, os alunos são escolhidos pela direção de cada curso.
+            </p>
+            <p>
+                Os docentes são os facilitadores e mediadores do processo ensino-aprendizagem, buscando sempre 
+                estarem acessíveis aos alunos, mostrando-se dispostos a sanar suas dúvidas. Eles também 
+                estimulam os discentes a desenvolver iniciação científica, publicações de trabalhos em revistas, 
+                apresentação de trabalhos em congressos e participação nas atividades de monitoria.
+            </p>
+            <p>
+                A política institucional que norteia o apoio aos estudantes tem como base as seguintes diretrizes:
+            </p>
+            <ul id="lista-diretrizes">
+                <li>oferecer apoio psicológico e pedagógico ao estudante;</li>
+                <li>Identificar e atender as necessidades especiais dos acadêmicos portadores de deficiências permanentes 
+                    ou temporárias, adequando os espaços e equipamentos do CESVA, qualificando seu pessoal técnico-administrativo 
+                para melhor atendê-los;</li>
+                <li>manter atualizado o Portal do Estudante;</li>
+                <li>aparelhar o acadêmico para superar as exigências do mercado de trabalho, trabalhando os aspectos que envolvem o 
+                comportamento em entrevistas e dinâmicas de seleção, bem como conceitos de liderança, motivação e pró atividade 
+                no trabalho;</li>
+                <li>articular e coordenar ações que promovam a ampliação do universo sociocultural e artístico dos estudantes, bem 
+                    como sua inserção em práticas esportivas;</li>
+                <li>incentivar a atuação dos diretórios acadêmicos;</li>
+                <li>organizar atividades (palestras, encontros, seminários, etc.) de carater preventivo e informativo sobre temas 
+                    relevantes para a juventude;</li>
+                <li>estimular a participação estudantil nas atividades de ensino, extensão e iniciação científica;</li>
+                <li>criar condições de acesso às novas tecnologias da informação;</li>
+                <li>promover pesquisas de satisfação do corpo discente e docente envolvendo aspectos administrativos, sociais, 
+                    acadêmicos, de infraestrutura, entre outros;</li>
+            </ul>
+            <br />
+            <br />
+            <p><a href="{{ path('fa_site_pronap') }}">> PÁGINA DO PRONAP</a></p> 
+            <p><a href="{{ path('fa_site_capp') }}">> PÁGINA DO CAPP</a></p>
+            <p><a href="http://www.faa.edu.br/egresso">> PÁGINA DO EGRESSO</a></p>
+            <p><a href="{{ path('fa_site_monitoria') }}">> PÁGINA DA MONITORIA</a></p>
+            <p><a href="#">> APOIO FINANCEIRO</a></p>
+            <p><a href="{{ path('fa_site_ouvidoria') }}">> OUVIDORIA</a></p>
+        </div>
+    </div>
+</div>
+<br />
+<br />
+<br />
+{% block rodape %}
+{{ parent() }}
+{% endblock rodape %}
+{% block submenus %}
+    {{ parent() }}
+{% endblock %}
+{% endblock conteudo %}

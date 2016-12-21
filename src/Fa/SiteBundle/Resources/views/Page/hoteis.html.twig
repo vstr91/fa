@@ -1,0 +1,116 @@
+{% extends "FaSiteBundle:Page:index.html.twig" %}
+{% block conteudo %}
+{% block menu %}
+{{ parent() }}
+{% endblock menu %}
+<div id="topo-cpa">
+    <img src="{{ asset('imagens/topo-hoteis.png') }}" />
+</div>
+<br />
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="titulo-azul-claro">
+                <img class="ret-azul-subtitulo" 
+                     src="{{ asset('imagens/retangulo-azul-escuro.png') }}" /> HOT&Eacute;IS</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="info-hotel">
+                <h4 class="titulo-hotel">Hotel Palmeira Imperial</h4>
+                <p>Tabet & Almeida Hotel</p>
+                <p>Tel.: (24) 2453-3797</p>
+            </div>
+            <br />
+            <div class="info-hotel">
+                <h4 class="titulo-hotel">Hotel Vista Alegre</h4>
+                <p>End.: Av. Nilo Pe&ccedil;anha, 308 - Centro - Valen&ccedil;a - RJ</p>
+                <p>Tel.: (24) 2420-2070 ou (24) 9 9957-2108</p>
+                <p>e-mail: hotelvalegre@gmail.com</p>
+            </div>
+            <br />
+            <div class="info-hotel">
+                <h4 class="titulo-hotel">Rio Hotel</h4>
+                <p>End.: Rua Julio Xavier, 130 - Laranjeiras - Valen&ccedil;a - RJ</p>
+                <p>Tel.: (24) 2453-3549</p>
+            </div>
+            <br />
+            <div class="info-hotel">
+                <h4 class="titulo-hotel">Hotel dos Engenheiros</h4>
+                <p>End.: Rua Teodorico Fonseca, 525 - Centro - Valen&ccedil;a - RJ</p>
+                <p>Tel.: (24) 2453-3869</p>
+                <p>e-mail: hotel_dos_engenheiros@yahoo.com.br</p>
+            </div>
+            <br />
+            <div class="info-hotel">
+                <h4 class="titulo-hotel">Center Hotel</h4>
+                <p>End.: Rua dos Mineiros - Centro - Valen&ccedil;a - RJ</p>
+                <p>Tel.: (24) 2453-4823 ou (24) 9 9994-6979</p>
+            </div>
+            <br />
+            <div class="info-hotel">
+                <h4 class="titulo-hotel">Hotel Villareal</h4>
+                <p>End.: Rua Pedro Gomes, 81 - Centro - Valen&ccedil;a - RJ</p>
+                <p>Tel.: (24) 2438-1257</p>
+            </div>
+            <br />
+            <div class="info-hotel">
+                <h4 class="titulo-hotel">Hotel Fazenda Araris</h4>
+                <p>End.: Estrada Nestor Ribeiro Ferreira, 1285 - Conservat&oacute;ria - Valen&ccedil;a - RJ</p>
+                <p>Tel.: (24) 2438-1028 ou (24) 2438-2000</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="info-hotel">
+                <h4 class="titulo-hotel">Hotel Casero</h4>
+                <p>End.: Rua Jos&eacute; Justino de Azevedo, 929 - Conservat&oacute;ria - Valen&ccedil;a - RJ</p>
+                <p>Tel.: (24) 2438-1113 ou 9 9959-1072 ou 9 9772-3553</p>
+            </div>
+            <br />
+            <div class="info-hotel">
+                <h4 class="titulo-hotel">Hotel Conservat&oacute;ria</h4>
+                <p>End.: Pra&ccedil;a Get&uacute;lio Vargas, 21 - Conservat&oacute;ria - Valen&ccedil;a - RJ</p>
+                <p>Tel.: (24) 2438-1220</p>
+            </div>
+            <br />
+            <div class="info-hotel">
+                <h4 class="titulo-hotel">Rochedo Hotel Fazenda</h4>
+                <p>End.: Rod. Can&ccedil;&atilde;o do Amor, 12801 - Conservat&oacute;ria - Valen&ccedil;a - RJ</p>
+                <p>Tel.: (24) 2438-2500 ou (21) 2208-6691 ou (21) 2288-3897 ou (21) 2575-9189</p>
+            </div>
+            <br />
+            <div class="info-hotel">
+                <h4 class="titulo-hotel">Hotel Fazenda Floren&ccedil;a</h4>
+                <p>End.: Estrada da Cachoeira, 1560 - Floren&ccedil;a - Conservat&oacute;ria - Valen&ccedil;a - RJ</p>
+                <p>Tel.: (24) 2438-0124 ou (24) 2438-1195</p>
+            </div>
+            <br />
+            <div class="info-hotel">
+                <h4 class="titulo-hotel">Hotel Fazenda Acalanto</h4>
+                <p>End.: Estrada Nestor Ribeiro Ferreira, 500 - Conservat&oacute;ria - Valen&ccedil;a - RJ</p>
+                <p>Tel.: 0300-313-2438</p>
+                <p>e-mail: reservas@vilarejo.com.br</p>
+                <p>www.vilarejo.com.br</p>
+            </div>
+            <br />
+            <div class="info-hotel">
+                <h4 class="titulo-hotel">Hotel Aconchego</h4>
+                <p>End.: Av. Nilo Pe&ccedil;anha, 175 - Centro - Valen&ccedil;a - RJ</p>
+                <p>Tel.: (24) 2453-4300 ou 2452-4228</p>
+                <p>e-mail: hotelaconchego@hotelaconchego.tur.br / reserva@hotelaconchego.tur.br</p>
+            </div>
+            <br />
+        </div>
+    </div>
+</div>
+<br />
+<br />
+<br />
+{% block rodape %}
+{{ parent() }}
+{% endblock rodape %}
+{% block submenus %}
+    {{ parent() }}
+{% endblock %}
+{% endblock conteudo %}

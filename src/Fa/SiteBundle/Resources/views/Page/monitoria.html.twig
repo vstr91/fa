@@ -1,0 +1,61 @@
+{% extends "FaSiteBundle:Page:index.html.twig" %}
+{% block conteudo %}
+{% block menu %}
+{{ parent() }}
+{% endblock menu %}
+<div id="topo-cpa">
+    <img src="{{ asset('imagens/topo-monitoria.png') }}" />
+</div>
+<br />
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 coluna-texto-justificado">
+            <h2 class="titulo-azul-claro">
+                <img class="ret-azul-subtitulo" 
+                     src="{{ asset('imagens/retangulo-azul-escuro.png') }}" /> Apresenta&ccedil;&atilde;o</h2>
+            <p>
+                Em consonância com o disposto no artigo 84 da Lei de Diretrizes e Bases da Educação Nacional 
+                (Lei nº 9394 de 20 de Dezembro de 1996), que trata da monitoria realizada pelos discentes do 
+                Ensino Superior, o CESVA oferece através de edital, semestralmente, vagas aos discentes que 
+                apresentem excelência acadêmica, para que possam atuar como monitores em tarefas de apoio 
+                ao ensino.  
+            </p>
+            <p>
+                A monitoria visa ao aprofundamento de conhecimentos teóricos e práticos, além de favorecer o 
+                clima de cooperação mútua entre os estudantes, bem como, a interação e cooperação entre 
+                docente e estudante.  
+            </p>
+            <p>
+                Os professores dos cursos realizam a seleção e acompanhamento dos monitores ao longo de 
+                cada semestre letivo. Esse acompanhamento esclarece sobre procedimentos e documentos 
+                que devem ser preenchidos, auxiliando-os, também, nas tarefas cotidianas e esclarecimento 
+                de dúvidas. Essa ação contempla, ainda, a aprovação do plano inicial e do relatório 
+                final de atividades, além do registro e certificação final.   
+            </p>
+            <p>
+                As vagas são oferecidas pelas disciplinas, para tanto, os monitores passam por um processo de 
+                seleção por meio da análise de histórico escolar, prova e entrevista. Diante da importância 
+                apresentada pelo programa para o complemento da formação profissional, a monitoria é objeto 
+                de esforços intensivos de melhoria e ampliação, visando a proporcionar a inclusão de novos 
+                contingentes de estudantes nas atividades. 
+            </p>
+            <p>Conheça mais sobre a monitoria do CESVA.</p>
+            <br />
+            <p>1) Manual</p>
+            <br />
+            <p>2) Edital de Monitoria</p>
+            <br />
+            <p>3)Resultados Monitoria</p>        
+        </div>
+    </div>
+</div>
+<br />
+<br />
+<br />
+{% block rodape %}
+{{ parent() }}
+{% endblock rodape %}
+{% block submenus %}
+    {{ parent() }}
+{% endblock %}
+{% endblock conteudo %}

@@ -1,0 +1,81 @@
+{% extends "FaSiteBundle:Page:central.html.twig" %}   
+{% block conteudo %}
+    <nav class="navbar navbar-default" id="menu">
+        <div class="container" id="menu-container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#menu-collapse" aria-expanded="false">
+                    <span class="sr-only">Abrir / Fechar Menu</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <span class="navbar-brand"><a href="{{ path('fa_site_admin_homepage') }}">&Aacute;rea Administrativa</a></span>
+            </div>
+            <a href="{{ path('fos_user_security_logout') }}" class="navbar-text navbar-right">Sair</a>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <h4 class="text-center">Gerenciamento de Informações - {{ infoCurso.curso.nome }}</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <form id="form-info-curso" 
+                      action="{{ path('fa_site_admin_info_curso_cadastra', {'id_curso': infoCurso.curso.id}) }}" 
+                      method="POST" {{ form_enctype(form) }}>
+                    {{ form_widget(form) }}
+                    <p>
+                        <input type="submit" class="btn btn-primary" id="btn-submit-info" value="Cadastrar" />
+                        <a href="{{ path('fa_site_admin_cursos') }}" class="btn btn-danger">Cancelar Altera&ccedil;&otilde;es</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock conteudo %}
+{% block js %}
+    {{ parent() }}
+    <script type="text/javascript" src="{{ asset('js/jquery.maskMoney.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/trumbowyg.min.js') }}"></script>
+    <link rel="stylesheet" href="{{ asset('css/trumbowyg.min.css') }}" />
+    <script type="text/javascript">
+        {#$('#form-parada').submit(function(){
+            $(this).ajaxSubmit(function(data){
+                console.log(data);
+                $(".caixaForm").dialog('close');
+                return false;
+            });
+            return false;
+        });#}
+
+            $(document).ready(function () {
+                $('#form-info-curso').submit(function(){
+                    $('.dinheiro').each(function(){
+                        $(this).val($(this).val().replace('.', '').replace(',', '.'));
+                    });
+                });
+                
+                $('.dinheiro').maskMoney('mask');
+                
+                $('.editor').trumbowyg();
+                
+                $('.dinheiro').maskMoney({
+                    prefix:'R$ ',
+                    allowNegative: true,
+                    thousands:'.',
+                    decimal:',',
+                    affixesStay: false
+                });
+                
+        {% if infoCurso.imagem == null %}
+                $('#info_curso_file').attr('required', 'required');
+        {% endif %}
+                
+            });
+
+
+    </script>
+{% endblock js %}

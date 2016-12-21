@@ -1,0 +1,537 @@
+fa_site_homepage:
+    path:     /
+    defaults: { _controller: FaSiteBundle:Page:index }
+
+fa_site_instituicao:
+    path:     /instituicao
+    defaults: { _controller: FaSiteBundle:Page:instituicao }
+    
+fa_site_cpa:
+    path:     /cpa
+    defaults: { _controller: FaSiteBundle:Page:cpa }
+    
+fa_site_capp:
+    path:     /capp
+    defaults: { _controller: FaSiteBundle:Page:capp }
+    
+fa_site_infra:
+    path:     /infraestrutura
+    defaults: { _controller: FaSiteBundle:Page:infraestrutura }
+    
+fa_site_nat:
+    path:     /nat
+    defaults: { _controller: FaSiteBundle:Page:nat }
+    
+fa_site_pronap:
+    path:     /pronap
+    defaults: { _controller: FaSiteBundle:Page:pronap }
+    
+fa_site_extensao:
+    path:     /extensao
+    defaults: { _controller: FaSiteBundle:Page:extensao }
+    
+fa_site_atendimento:
+    path:     /atendimento
+    defaults: { _controller: FaSiteBundle:Page:atendimento }
+
+fa_site_iniciacao:
+    path:     /iniciacao-cientifica
+    defaults: { _controller: FaSiteBundle:Page:iniciacao }
+    
+fa_site_semic:
+    path:     /semic
+    defaults: { _controller: FaSiteBundle:Page:semic }
+    
+fa_site_cep:
+    path:     /cep
+    defaults: { _controller: FaSiteBundle:Page:cep }
+
+fa_site_ceua:
+    path:     /ceua
+    defaults: { _controller: FaSiteBundle:Page:ceua }    
+
+fa_site_monitoria:
+    path:     /monitoria
+    defaults: { _controller: FaSiteBundle:Page:monitoria }
+    
+fa_site_fundamental:
+    path:     /ensino-fundamental-e-medio
+    defaults: { _controller: FaSiteBundle:Page:fundamental }
+    
+fa_site_fale_colegio:
+    path:     /fale-com-colegio
+    defaults: { _controller: FaSiteBundle:Page:fale }
+
+fa_site_cursos_graduacao:
+    path:     /cursos/graduacao
+    defaults: { _controller: FaSiteBundle:Page:cursosGraduacao }
+    
+fa_site_cursos_pos_graduacao:
+    path:     /cursos/pos-graduacao
+    defaults: { _controller: FaSiteBundle:Page:cursosPosGraduacao }
+    
+fa_site_curso:
+    path:     /cursos/{slug}
+    defaults: { _controller: FaSiteBundle:Page:curso, slug: '' }
+
+fa_site_revistas:
+    path:     /revistas
+    defaults: { _controller: FaSiteBundle:Page:revistas }
+    
+fa_site_form_contato:
+    path:     /contato/processa
+    defaults: { _controller: FaSiteBundle:Page:processaContato }
+    
+fa_site_hoteis:
+    path:     /hoteis
+    defaults: { _controller: FaSiteBundle:Page:hoteis }
+    
+fa_site_cidade:
+    path:     /cidade
+    defaults: { _controller: FaSiteBundle:Page:cidade }
+    
+fa_site_noticia:
+    path:     /noticias/{slug}
+    defaults: { _controller: FaSiteBundle:Page:noticia, slug: '' }
+    
+fa_site_evento:
+    path:     /eventos/{slug}
+    defaults: { _controller: FaSiteBundle:Page:evento, slug: '' }
+
+fa_site_formularios:
+    path:     /formulario
+    defaults: { _controller: FaSiteBundle:Page:formularios }
+    
+fa_site_regulamento:
+    path:     /regulamento
+    defaults: { _controller: FaSiteBundle:Page:regulamento }
+    
+fa_site_ouvidoria:
+    path:     /ouvidoria
+    defaults: { _controller: FaSiteBundle:Page:ouvidoria }
+    
+fa_site_form_ouvidoria:
+    path:     /ouvidoria/processa
+    defaults: { _controller: FaSiteBundle:Page:processaOuvidoria }
+    
+fa_site_trabalhe:
+    path:     /trabalhe-no-cesva
+    defaults: { _controller: FaSiteBundle:Page:trabalhe }
+    
+fa_site_form_trabalhe:
+    path:     /trabalhe-no-cesva/processa
+    defaults: { _controller: FaSiteBundle:Page:processaTrabalhe }
+
+################ EM CONSTRUCAO ######################
+
+fa_site_responsabilidade:
+    path:     /responsabilidade-social
+    defaults: { _controller: FaSiteBundle:Page:construcao, titulo: 'Responsabilidade Social' }
+    
+fa_site_transportes:
+    path:     /transportes
+    defaults: { _controller: FaSiteBundle:Page:construcao, titulo: 'Transportes' }
+    
+fa_site_cursos_livres:
+    path:     /cursos-livres
+    defaults: { _controller: FaSiteBundle:Page:construcao, titulo: 'Cursos Livres' }
+    
+fa_site_informe_semanal:
+    path:     /informe-semanal
+    defaults: { _controller: FaSiteBundle:Page:construcao, titulo: 'Informe Semanal' }
+    
+fa_site_jornais_eletronicos:
+    path:     /jornais-eletronicos
+    defaults: { _controller: FaSiteBundle:Page:construcao, titulo: 'Jornais Eletrônicos' }
+    
+################ FIM EM CONSTRUCAO ###################
+    
+################## LINKS MENU ######################
+
+fa_site_menu_instituicao:
+    path:     /submenu/instituicao
+    defaults: { _controller: FaSiteBundle:Submenu:instituicao }
+    
+fa_site_menu_cursos:
+    path:     /submenu/cursos
+    defaults: { _controller: FaSiteBundle:Submenu:cursos }
+    
+fa_site_menu_noticias:
+    path:     /submenu/noticias
+    defaults: { _controller: FaSiteBundle:Submenu:noticias }
+    
+fa_site_menu_contato:
+    path:     /submenu/contato
+    defaults: { _controller: FaSiteBundle:Submenu:contato }
+    
+fa_site_menu_videos:
+    path:     /submenu/videos
+    defaults: { _controller: FaSiteBundle:Submenu:videos }
+
+################ FIM LINKS MENU ####################
+
+################## LINKS SUBMENU ######################
+
+fa_site_submenu_instituicao_destaque:
+    path:     /submenu/instituicao-destaque
+    defaults: { _controller: FaSiteBundle:Submenu:instituicaoDestaque }
+    
+fa_site_submenu_noticias_destaque:
+    path:     /submenu/noticias-destaque
+    defaults: { _controller: FaSiteBundle:Submenu:noticiasDestaque }
+    
+fa_site_submenu_contato_destaque:
+    path:     /submenu/contato-destaque
+    defaults: { _controller: FaSiteBundle:Submenu:contatoDestaque }
+
+fa_site_submenu_quem_somos:
+    path:     /submenu/quem-somos
+    defaults: { _controller: FaSiteBundle:Submenu:quemSomos }
+    
+fa_site_submenu_extensao:
+    path:     /submenu/extensao
+    defaults: { _controller: FaSiteBundle:Submenu:extensao }
+    
+fa_site_submenu_pesquisa:
+    path:     /submenu/pesquisa
+    defaults: { _controller: FaSiteBundle:Submenu:pesquisa }
+    
+fa_site_submenu_localizacao:
+    path:     /submenu/localizacao
+    defaults: { _controller: FaSiteBundle:Submenu:localizacao }
+    
+fa_site_submenu_graduacao:
+    path:     /submenu/graduacao
+    defaults: { _controller: FaSiteBundle:Submenu:graduacao }
+
+fa_site_submenu_pos_graduacao:
+    path:     /submenu/pos-graduacao
+    defaults: { _controller: FaSiteBundle:Submenu:posGraduacao }
+    
+fa_site_submenu_noticias:
+    path:     /submenu/noticiasSub
+    defaults: { _controller: FaSiteBundle:Submenu:noticiasSub }
+    
+fa_site_submenu_eventos:
+    path:     /submenu/eventos
+    defaults: { _controller: FaSiteBundle:Submenu:eventos }
+    
+fa_site_mapas:
+    path:     /mapas
+    defaults: { _controller: FaSiteBundle:Page:mapas }
+
+################## FIM LINKS SUBMENU ######################
+
+fa_site_combo_cursos:
+    path:     /select/cursos/{id_tipo_curso}
+    defaults: { _controller: FaSiteBundle:Component:selectCursos, id_tipo_curso: -1 }
+
+################### ADMIN ########################
+
+fa_site_admin:
+    path:     /admin/login
+    defaults: { _controller: FaSiteBundle:Page:central }
+    
+fa_site_admin_homepage:
+    path:     /admin/home
+    defaults: { _controller: FaSiteBundle:Admin:index }
+
+################### TIPOS CURSO ###################
+
+fa_site_admin_tipos_curso:
+    path:     /admin/tipos-curso
+    defaults: { _controller: FaSiteBundle:Admin:indexTipoCurso }
+    
+fa_site_admin_tipos_curso_cadastra:
+    pattern:  /admin/tipos-curso/cadastra/{id_tipo_curso}
+    defaults: { _controller: FaSiteBundle:TipoCurso:cadastrar, id_tipo_curso: -1 }
+    requirements:
+        _method: POST
+
+fa_site_admin_tipos_curso_form:
+    pattern:  /admin/tipos-curso/form/{id_tipo_curso}
+    defaults: { _controller: FaSiteBundle:TipoCurso:form, id_tipo_curso: -1 }
+    
+fa_site_admin_tipos_curso_exclui:
+    pattern:  /admin/tipos-curso/exclui/{id_tipo_curso}
+    defaults: { _controller: FaSiteBundle:TipoCurso:excluir, id_tipo_curso: -1 }
+    requirements:
+        _method: POST
+    
+################### FIM TIPOS CURSO ###################
+
+################### CURSOS ###################
+
+fa_site_admin_cursos:
+    path:     /admin/cursos
+    defaults: { _controller: FaSiteBundle:Admin:indexCurso }
+    
+fa_site_admin_cursos_cadastra:
+    pattern:  /admin/cursos/cadastra/{id_curso}
+    defaults: { _controller: FaSiteBundle:Curso:cadastrar, id_curso: -1 }
+    requirements:
+        _method: POST
+
+fa_site_admin_cursos_form:
+    pattern:  /admin/cursos/form/{id_curso}
+    defaults: { _controller: FaSiteBundle:Curso:form, id_curso: -1 }
+    
+fa_site_admin_cursos_exclui:
+    pattern:  /admin/cursos/exclui/{id_curso}
+    defaults: { _controller: FaSiteBundle:Curso:excluir, id_curso: -1 }
+    requirements:
+        _method: POST
+    
+################### FIM CURSOS ###################
+
+################### NOTICIAS ###################
+
+fa_site_admin_noticias:
+    path:     /admin/noticias
+    defaults: { _controller: FaSiteBundle:Admin:indexNoticia }
+    
+fa_site_admin_noticias_cadastra:
+    pattern:  /admin/noticias/cadastra/{id_noticia}
+    defaults: { _controller: FaSiteBundle:Noticia:cadastrar, id_noticia: -1 }
+    requirements:
+        _method: POST
+
+fa_site_admin_noticias_form:
+    pattern:  /admin/noticias/form/{id_noticia}
+    defaults: { _controller: FaSiteBundle:Noticia:form, id_noticia: -1 }
+    
+fa_site_admin_noticias_exclui:
+    pattern:  /admin/noticias/exclui/{id_noticia}
+    defaults: { _controller: FaSiteBundle:Noticia:excluir, id_noticia: -1 }
+    requirements:
+        _method: POST
+    
+################### FIM NOTICIAS ###################
+
+################### EVENTOS ###################
+
+fa_site_admin_eventos:
+    path:     /admin/eventos
+    defaults: { _controller: FaSiteBundle:Admin:indexEvento }
+    
+fa_site_admin_eventos_cadastra:
+    pattern:  /admin/eventos/cadastra/{id_evento}
+    defaults: { _controller: FaSiteBundle:Evento:cadastrar, id_evento: -1 }
+    requirements:
+        _method: POST
+
+fa_site_admin_eventos_form:
+    pattern:  /admin/eventos/form/{id_evento}
+    defaults: { _controller: FaSiteBundle:Evento:form, id_evento: -1 }
+    
+fa_site_admin_eventos_exclui:
+    pattern:  /admin/eventos/exclui/{id_evento}
+    defaults: { _controller: FaSiteBundle:Evento:excluir, id_evento: -1 }
+    requirements:
+        _method: POST
+    
+################### FIM EVENTOS ###################
+
+################### BANNERS ###################
+
+fa_site_admin_banners:
+    path:     /admin/banners
+    defaults: { _controller: FaSiteBundle:Admin:indexBanner }
+    
+fa_site_admin_banners_cadastra:
+    pattern:  /admin/banners/cadastra/{id_banner}
+    defaults: { _controller: FaSiteBundle:Banner:cadastrar, id_banner: -1 }
+    requirements:
+        _method: POST
+
+fa_site_admin_banners_form:
+    pattern:  /admin/banners/form/{id_banner}
+    defaults: { _controller: FaSiteBundle:Banner:form, id_banner: -1 }
+    
+fa_site_admin_banners_exclui:
+    pattern:  /admin/banners/exclui/{id_banner}
+    defaults: { _controller: FaSiteBundle:Banner:excluir, id_banner: -1 }
+    requirements:
+        _method: POST
+    
+################### FIM BANNERS ###################
+
+################### INFO CURSOS ###################
+
+fa_site_admin_info_curso:
+    path:     /admin/curso/{id_curso}/informacoes
+    defaults: { _controller: FaSiteBundle:Admin:infoCurso }
+    
+fa_site_admin_info_curso_cadastra:
+    pattern:  /admin/curso/informacoes/{id_curso}
+    defaults: { _controller: FaSiteBundle:InfoCurso:cadastrar, id_curso: -1 }
+    requirements:
+        _method: POST
+
+fa_site_admin_info_curso_form:
+    pattern:  /admin/curso/informacoes/form/{id_curso}
+    defaults: { _controller: FaSiteBundle:InfoCurso:form, id_curso: -1 }
+    
+################### FIM INFO CURSOS ###################
+
+################### PARAMETROS EMAIL ###################
+    
+fa_site_admin_parametros_email:
+    path:     /admin/parametros-email
+    defaults: { _controller: FaSiteBundle:Admin:indexParametroEmail }
+    
+fa_site_admin_parametros_email_cadastra:
+    pattern:  /admin/parametros-email/cadastra/{id_parametros_email}
+    defaults: { _controller: FaSiteBundle:ParametrosEmail:cadastrar, id_parametros_email: -1 }
+    requirements:
+        _method: POST
+
+fa_site_admin_parametros_email_form:
+    pattern:  /admin/parametros-email/form/{id_parametros_email}
+    defaults: { _controller: FaSiteBundle:ParametrosEmail:form, id_parametros_email: -1 }
+    
+################### FIM PARAMETROS EMAIL ###################
+
+################### DESTAQUE MENU ###################
+
+fa_site_admin_destaques_menu:
+    path:     /admin/destaques-menu
+    defaults: { _controller: FaSiteBundle:Admin:indexDestaqueMenu }
+    
+fa_site_admin_destaques_menu_cadastra:
+    pattern:  /admin/destaques-menu/cadastra/{destaque_menu}
+    defaults: { _controller: FaSiteBundle:DestaqueMenu:cadastrar, destaque_menu: '-1' }
+    requirements:
+        _method: POST
+
+fa_site_admin_destaques_menu_form:
+    pattern:  /admin/destaques-menu/form/{destaque_menu}
+    defaults: { _controller: FaSiteBundle:DestaqueMenu:form, destaque_menu: '-1' }
+    
+fa_site_admin_destaques_menu_exclui:
+    pattern:  /admin/destaques-menu/exclui/{destaque_menu}
+    defaults: { _controller: FaSiteBundle:DestaqueMenu:excluir, destaque_menu: '-1' }
+    requirements:
+        _method: POST
+    
+################### FIM DESTAQUE MENU ###################
+
+################### REVISTAS ###################
+
+fa_site_admin_revistas:
+    path:     /admin/revistas
+    defaults: { _controller: FaSiteBundle:Admin:indexRevista }
+    
+fa_site_admin_revistas_cadastra:
+    pattern:  /admin/revistas/cadastra/{id_revista}
+    defaults: { _controller: FaSiteBundle:Revista:cadastrar, id_revista: -1 }
+    requirements:
+        _method: POST
+
+fa_site_admin_revistas_form:
+    pattern:  /admin/revistas/form/{id_revista}
+    defaults: { _controller: FaSiteBundle:Revista:form, id_revista: -1 }
+    
+fa_site_admin_revistas_exclui:
+    pattern:  /admin/revistas/exclui/{id_revista}
+    defaults: { _controller: FaSiteBundle:Revista:excluir, id_revista: -1 }
+    requirements:
+        _method: POST
+    
+################### FIM REVISTAS ###################
+
+################### VIDEOS ###################
+
+fa_site_admin_videos:
+    path:     /admin/videos
+    defaults: { _controller: FaSiteBundle:Admin:indexVideo }
+    
+fa_site_admin_videos_cadastra:
+    pattern:  /admin/videos/cadastra/{id_video}
+    defaults: { _controller: FaSiteBundle:Video:cadastrar, id_video: -1 }
+    requirements:
+        _method: POST
+
+fa_site_admin_videos_form:
+    pattern:  /admin/videos/form/{id_video}
+    defaults: { _controller: FaSiteBundle:Video:form, id_video: -1 }
+    
+fa_site_admin_videos_exclui:
+    pattern:  /admin/videos/exclui/{id_video}
+    defaults: { _controller: FaSiteBundle:Video:excluir, id_video: -1 }
+    requirements:
+        _method: POST
+    
+################### FIM VIDEOS ###################
+
+################### TEMPLATES ###################
+
+fa_site_admin_templates:
+    path:     /admin/templates
+    defaults: { _controller: FaSiteBundle:Admin:indexTemplate }
+    
+fa_site_admin_templates_cadastra:
+    pattern:  /admin/templates/cadastra/{id_template}
+    defaults: { _controller: FaSiteBundle:Template:cadastrar, id_template: -1 }
+    requirements:
+        _method: POST
+
+fa_site_admin_templates_form:
+    pattern:  /admin/templates/form/{id_template}
+    defaults: { _controller: FaSiteBundle:Template:form, id_template: -1 }
+    
+fa_site_admin_templates_exclui:
+    pattern:  /admin/templates/exclui/{id_template}
+    defaults: { _controller: FaSiteBundle:Template:excluir, id_template: -1 }
+    requirements:
+        _method: POST
+    
+################### FIM TEMPLATES ###################
+
+################### PAGINAS ###################
+
+fa_site_admin_paginas:
+    path:     /admin/paginas
+    defaults: { _controller: FaSiteBundle:Admin:indexPagina }
+    
+fa_site_admin_paginas_cadastra:
+    pattern:  /admin/paginas/cadastra/{id_pagina}
+    defaults: { _controller: FaSiteBundle:Pagina:cadastrar, id_pagina: -1 }
+    requirements:
+        _method: POST
+
+fa_site_admin_paginas_form:
+    pattern:  /admin/paginas/form/{id_pagina}
+    defaults: { _controller: FaSiteBundle:Pagina:form, id_pagina: -1 }
+    
+fa_site_admin_paginas_exclui:
+    pattern:  /admin/paginas/exclui/{id_pagina}
+    defaults: { _controller: FaSiteBundle:Pagina:excluir, id_pagina: -1 }
+    requirements:
+        _method: POST
+    
+################### FIM PAGINAS ###################
+
+################### VIDEOS GALERIA ###################
+
+fa_site_admin_videos_galeria:
+    path:     /admin/videos-galeria
+    defaults: { _controller: FaSiteBundle:Admin:indexVideoGaleria }
+    
+fa_site_admin_videos_galeria_cadastra:
+    pattern:  /admin/videos-galeria/cadastra/{id_video_galeria}
+    defaults: { _controller: FaSiteBundle:VideoGaleria:cadastrar, id_video_galeria: -1 }
+    requirements:
+        _method: POST
+
+fa_site_admin_videos_galeria_form:
+    pattern:  /admin/videos-galeria/form/{id_video_galeria}
+    defaults: { _controller: FaSiteBundle:VideoGaleria:form, id_video_galeria: -1 }
+    
+fa_site_admin_videos_galeria_exclui:
+    pattern:  /admin/videos-galeria/exclui/{id_video_galeria}
+    defaults: { _controller: FaSiteBundle:VideoGaleria:excluir, id_video_galeria: -1 }
+    requirements:
+        _method: POST
+    
+################### FIM VIDEOS ###################

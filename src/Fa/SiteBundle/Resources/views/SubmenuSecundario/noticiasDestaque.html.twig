@@ -1,0 +1,6 @@
+<div id="caixa-destaque-menu">
+    <h4>&Uacute;ltimas Not&iacute;cias</h4>
+    {% for noticia in noticias %}
+        <p><a href="{{ path('fa_site_noticia', {'slug': noticia.slug}) }}">{{ noticia.titulo }}</a></p>
+    {% endfor %}
+</div>

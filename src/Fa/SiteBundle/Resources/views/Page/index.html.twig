@@ -1,0 +1,659 @@
+{% extends "FaSiteBundle::layout.html.twig" %}
+{% block topo %}
+{% endblock topo %}
+{% block conteudo %}
+
+    {% block menu %}
+        <div style="position: fixed; width: 100%; z-index: 1500; top: 0" id="caixa-destaque">
+            <div class="container-fluid" id="destaque-topo">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <p id="destaque-topo-texto">PROCESSO SELETIVO <strong id="ano">2017</strong> - 
+                            INSCRI&Ccedil;&Otilde;ES ABERTAS 
+                            <a href="https://faa.jacad.com.br:8443/academico/vestibular" id="botao-inscreva">INSCREVA-SE</a> 
+                            <a id="btn-fechar-banner">X</a>&thinsp;
+                            <img class="icones-redes-pequeno" src="{{ asset('imagens/whatsapp.png') }}" /> (24) 9 9882-0921
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NAV HEADER -->
+
+            <nav class="navbar" id="nav-principal">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu-topo" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="{{ path('fa_site_homepage') }}" id="logo"><img src="{{ asset('imagens/logo-faa.png') }}" /></a>
+                        <div id="caixa-botoes-topo" class="visible-xs">
+                            <a href="https://faa.jacad.com.br:8443/aluno/aluno.login.logic"><img src="{{ asset('imagens/botao-aluno.png') }}" /></a>
+                            <a href="https://faa.jacad.com.br:8443/prof/professor.login.logic"><img src="{{ asset('imagens/botao-professor.png') }}" /></a>
+                            <a href="http://ead.faa.edu.br"><img src="{{ asset('imagens/botao-toque.png') }}" /></a>
+                            <a href="http://www.faa.edu.br/egresso"><img src="{{ asset('imagens/botao-acordo.png') }}" /></a>
+                        </div>
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="menu-topo">
+                        <ul class="nav navbar-nav" id="menu-principal">
+                            <li><a href="#" class="links-menu-topo" id="link-instituicao" data-src="{{ path('fa_site_menu_instituicao') }}">
+                                    <img class="ret-azul" src="{{ asset('imagens/retangulo-azul-claro.png') }}" /> NOSSA INSTITUI&Ccedil;&Atilde;O</a></li>
+                            <li><a href="#" class="links-menu-topo" id="link-cursos" data-src="{{ path('fa_site_menu_cursos') }}">
+                                    <img class="ret-azul" src="{{ asset('imagens/retangulo-azul-claro.png') }}" /> NOSSOS CURSOS</a></li>
+                            <li><a href="#" class="links-menu-topo" id="link-noticias" data-src="{{ path('fa_site_menu_noticias') }}">
+                                    <img class="ret-azul" src="{{ asset('imagens/retangulo-azul-claro.png') }}" /> NOT&Iacute;CIAS E EVENTOS</a></li>
+                                    <li><a href="#" class="links-menu-topo" id="link-videos" data-src="{{ path('fa_site_menu_videos') }}">
+                                    <img class="ret-azul" src="{{ asset('imagens/retangulo-azul-claro.png') }}" /> V&Iacute;DEOS</a></li>
+                            <li><a href="#" class="links-menu-topo" id="link-contato" data-src="{{ path('fa_site_menu_contato') }}">
+                                    <img class="ret-azul" src="{{ asset('imagens/retangulo-azul-claro.png') }}" /> CONTATO</a></li>
+                        </ul>
+                        <div id="caixa-botoes-topo">
+                            <a href="https://faa.jacad.com.br:8443/aluno/aluno.login.logic"><img src="{{ asset('imagens/botao-aluno.png') }}" /></a>
+                            <a href="https://faa.jacad.com.br:8443/prof/professor.login.logic"><img src="{{ asset('imagens/botao-professor.png') }}" /></a>
+                            <a href="http://ead.faa.edu.br"><img src="{{ asset('imagens/botao-toque.png') }}" /></a>
+                            <a href="http://www.faa.edu.br/egresso"><img src="{{ asset('imagens/botao-acordo.png') }}" /></a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <hr id="linha-inferior-menu" />
+            <div class="container" id="submenu">
+                <div id="caixa-submenu-principal">
+
+                </div>
+                <div id="caixa-submenu-secundario"></div>
+            </div>
+        </div>
+    {% endblock menu %}
+
+    <div id="conteudo-scroll">
+
+        <div class="section" data-section-name="banner" id="banner">
+
+            <div id="carrossel" class="carousel slide" data-ride="carousel" data-interval="5000">
+
+                {% if banners|length > 1 %}
+                    <ol class="carousel-indicators">
+                        {% for banner in banners %}
+
+                            {% if loop.index0 == 0 %}
+                                <li data-target="#carrossel" data-slide-to="{{ loop.index0 }}" class="active"></li>
+                                {% else %}
+                                <li data-target="#carrossel" data-slide-to="{{ loop.index0 }}"></li>
+                                {% endif %}        
+
+                        {% endfor %}
+                    </ol>
+                {% endif %}
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
+                    {#<div class="item active hidden-xs hidden-sm" style="background-size: cover; 
+                         background-image: url({{ asset('imagens/banner.png') }}); 
+                         background-repeat: no-repeat; 
+                         background-position: center;">
+                    </div>
+                         
+                         
+                    <div class="item active visible-xs visible-sm" style="background-size: contain; 
+                         background-image: url({{ asset('imagens/banner.png') }}); 
+                         background-repeat: no-repeat; 
+                         background-position: center;">
+                    </div>#}
+
+                    {% for banner in banners %}
+                        {#                        <a target="_blank" href="http://{{ banner.link }}">#}
+                        {% if loop.index0 == 0 %}
+                            <div class="item active" 
+                                 data-bg="{{ asset('uploads/banner/'~banner.imagem) }}"
+                                 data-bg-mob="{{ asset('uploads/banner/'~banner.imagemMob) }}"
+                                 style="background-size: cover; 
+                                 background-image: url({{ asset('uploads/banner/'~banner.imagem) }}); 
+                                 background-repeat: no-repeat; 
+                                 background-position: center;">
+                                <a target="_blank" href="http://{{ banner.link }}" style="display: block; height: 100%; width: 100%"></a>
+                            </div>
+                        {% else %}
+                            <div class="item" 
+                                 data-bg="{{ asset('uploads/banner/'~banner.imagem) }}"
+                                 data-bg-mob="{{ asset('uploads/banner/'~banner.imagemMob) }}" 
+                                 style="background-size: cover; 
+                                 background-image: url({{ asset('uploads/banner/'~banner.imagem) }}); 
+                                 background-repeat: no-repeat; 
+                                 background-position: center;">
+                                <a target="_blank" href="http://{{ banner.link }}" style="display: block; height: 100%; width: 100%"></a>
+                            </div>
+                        {% endif %}
+                        {#                        </a>#}
+                    {% endfor %}
+                </div>
+
+                <!-- Controls -->
+                {% if banners|length > 1 %}
+                    <a class="left carousel-control" href="#carrossel" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Anterior</span>
+                    </a>
+                    <a class="right carousel-control" href="#carrossel" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Pro&oacute;ximo</span>
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+        <div class="section" data-section-name="destaques" id="destaques">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-md-3">
+                        {#                    <a href="#">#}
+                        <img src="{{ asset('imagens/botao-cesva-faa.png') }}" />
+                        <h4 class="titulo-destaque">CESVA / FAA</h4>
+                        <p>TRADI&Ccedil;&Atilde;O EM ENSINO SUPERIOR<br />
+                            50 ANOS TRANSFORMANDO VIDAS ATRAV&Eacute;S DA EDUCA&Ccedil;&Atilde;O</p>
+                            {#                    </a>#}
+                    </div>
+                    <div class="col-md-3">
+                        {#                    <a href="#">#}
+                        <img src="{{ asset('imagens/botao-corpo-docente.png') }}" />
+                        <h4 class="titulo-destaque">CORPO DOCENTE</h4>
+                        <p>A EXCEL&Ecirc;NCIA DE NOSSO ENSINO PASSA POR NOSSOS MESTRES E DOUTORES</p>
+                        {#                    </a>#}
+                    </div>
+                    <div class="col-md-3">
+                        {#                    <a href="#">#}
+                        <img src="{{ asset('imagens/botao-nota-4.png') }}" />
+                        <h4 class="titulo-destaque">NOTA 4</h4>
+                        <p>EXCEL&Ecirc;NCIA EM NOSSOS CURSOS ALCAN&Ccedil;AM NOTA 4 NA AVALIA&Ccedil;&Atilde;O DO MEC</p>
+                        {#                    </a>#}
+                    </div>
+                    <div class="col-md-3">
+                        {#                    <a href="#">#}
+                        <img src="{{ asset('imagens/botao-faa-acao.png') }}" />
+                        <h4 class="titulo-destaque">FAA EM A&Ccedil;&Atilde;O</h4>
+                        <p>CONHE&Ccedil;A O QUE NOSSOS ALUNOS PODEM FAZER PELA SOCIEDADE</p>
+                        {#                    </a>#}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section" data-section-name="cursos" id="cursos">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h1 id="titulo-cursos"><img class="ret-azul-titulo" src="{{ asset('imagens/retangulo-azul.png') }}" /> NOSSOS CURSOS</h1>
+                        <div class="caixa-link-combo">
+                            <a href="#" class="link-combo" data-tipo="1">
+                                <span class="span-circulo"><img src="{{ asset('imagens/circulo-branco-marcado.png') }}" 
+                                                                class="circulo-lista" /></span> GRADUA&Ccedil;&Atilde;O</a> 
+                        </div>
+                        <div class="caixa-link-combo">
+                            <a href="#" class="link-combo" data-tipo="2">
+                                <span class="span-circulo"><img src="{{ asset('imagens/circulo-branco.png') }}" 
+                                                                class="circulo-lista" /></span> P&Oacute;S-GRADUA&Ccedil;&Atilde;O</a>
+                        </div>
+                        <br />
+                        <br />
+                        <div id="caixa-select">
+                            <select name="select" id="select" class="form-control">
+                                <option value="-1">Selecione uma Op&ccedil;&atilde;o</option>
+                                {% for curso in cursos %}
+                                <option value="{{ curso.slug }}">{{ curso.nome }}</option>
+                                {% endfor %}
+                            </select>
+                            {#<select name="select" id="select" class="form-control">
+                                {#<option value="-1">Selecione uma Opcao</option>
+                            </select>#}
+                        </div>
+                        <br />
+                    </div>
+                    <div class="col-md-6 text-right">
+                        {% for video in videos %}
+                            <video id="my-video" class="video-js vjs-big-play-centered" 
+                                   poster="{{ asset('uploads/video/frame/frame.png') }}" 
+                                   controls preload="auto" style="position: relative; max-width: 100%"
+                                   {#width="500"#} height="282"
+                                   data-setup="{}">
+                                <source src="{{ asset('uploads/video/'~video.arquivo) }}"
+                                        type='video/mp4'>
+                                <p class="vjs-no-js">
+                                    Para ver este v&iacute; por favor ative JavaScript, e considere atualizar seu navegador para um que 
+                                    <a href="http://videojs.com/html5-video-support/" target="_blank">suporte v&iacute;deo HTML5</a>
+                                </p>
+                            </video>
+                        {% endfor %}
+
+                        {#                    <div id="player-container"></div>#}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section" data-section-name="noticias" id="noticias">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h1 class="titulo-noticias">
+                            <img class="ret-azul-titulo-noticia" src="{{ asset('imagens/retangulo-azul.png') }}" /> NOT&Iacute;CIAS</h1>
+                        <div class="row">
+                            {% if noticias|length > 1 %}
+                                {% for noticia in noticias %}
+                                    <div class="col-md-6">
+                                        <div class="thumbnail painel-noticia">
+                                            <a href="{{ path('fa_site_noticia', {'slug': noticia.slug}) }}">
+                                                <img src="{{ asset('uploads/noticia/'~noticia.imagem) }}" />
+                                                <div class="caption">
+                                                    <h4 class="texto-azul texto-noticia">
+                                                        {{ noticia.titulo }}</h4>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            {% else %}
+                                {% for noticia in noticias %}
+                                    <div class="col-md-12">
+                                        <div class="thumbnail painel-noticia">
+                                            <a href="{{ path('fa_site_noticia', {'slug': noticia.slug}) }}">
+                                                <img src="{{ asset('uploads/noticia/'~noticia.imagem) }}" />
+                                                <div class="caption">
+                                                    <h4 class="texto-azul texto-noticia">
+                                                        {{ noticia.titulo }}</h4>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <h1 class="titulo-noticias">
+                            <img class="ret-azul-titulo-noticia" src="{{ asset('imagens/retangulo-azul.png') }}" /> EVENTOS</h1>
+                            {% for evento in eventos %}
+                            <div class="thumbnail painel-noticia">
+                                <a href="{{ path('fa_site_evento', {'slug': evento.slug}) }}">
+                                    <img src="{{ asset('uploads/evento/'~evento.imagem) }}" />
+                                    {#<div class="caption">
+                                        <h4 class="texto-azul texto-noticia">{{ evento.titulo }}</h4>
+                                    </div>#}
+                                </a>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section" data-section-name="mapa" id="mapa">
+            MAPA
+        </div>
+        <div class="section" data-section-name="rodape" id="rodape">
+            <div class="container">
+                <div class="row" id="linha-resumo">
+                    <div class="col-md-3">
+                        <h4 class="titulo-rodape">NOSSA INSTITUI&Ccedil;&Atilde;O</h4>
+                        <p>
+                            <a href="{{ path('fa_site_instituicao') }}">QUEM SOMOS</a><br />
+                            <a href="{{ path('fa_site_infra') }}">INFRAESTRUTURA</a><br />
+                            <a href="{{ path('fa_site_extensao') }}">EXTENS&Atilde;O ACAD&Ecirc;MICA</a><br />
+                            <a href="{{ path('fa_site_regulamento') }}">PESQUISA</a><br />
+                            <a href="{{ path('fa_site_cpa') }}">CPA</a><br />
+                            <a href="{{ path('fa_site_cidade') }}">LOCALIZA&Ccedil;&Atilde;O</a>
+
+                        </p>
+                    </div>
+                    <div class="col-md-3">
+                        <h4 class="titulo-rodape">NOSSOS CURSOS</h4>
+                        <p>
+                            <a href="{{ path('fa_site_fundamental') }}">ENSINO FUNDAMENTAL E M&Eacute;DIO</a><br />
+                            <a href="{{ path('fa_site_cursos_graduacao') }}">GRADUA&Ccedil;&Atilde;O</a><br />
+                            <a href="{{ path('fa_site_cursos_pos_graduacao') }}">P&Oacute;S-GRADUA&Ccedil;&Atilde;O</a><br />
+                            <a href="{{ path('fa_site_cursos_livres') }}">CURSOS LIVRES</a><br />
+                        </p>
+                    </div>
+                    <div class="col-md-3">
+                        <h4 class="titulo-rodape">NOT&Iacute;CIAS E EVENTOS</h4>
+                        <p>
+                            <a href="#">NOT&Iacute;CIAS</a><br />
+                            <a href="#">EVENTOS</a><br />
+                            <a href="#">REDES SOCIAIS</a>
+                        </p>
+                    </div>
+                    <div class="col-md-3">
+                        <h4 class="titulo-rodape">CONTATOS</h4>
+                        <p>
+                            <a href="#">ME LIGUE - CRA</a><br />
+                            <a href="{{ path('fa_site_ouvidoria') }}">OUVIDORIA</a><br />
+                            <a href="#">#EUSOUCESVA/FAA</a><br />
+                            <a href="#">TRABALHE NO CESVA</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <br />
+            {% block rodape %}
+                <div class="container-fluid" id="container-rodape">
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2 text-center">
+                            <img id="imagem-rodape" src="{{ asset('imagens/logos-rodape.png') }}" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-10 col-md-offset-1 text-center" id="rodape-endereco">
+                            FAA - FUNDAÇÃO EDUCACIONAL D. ANDRÉ ARCOVERDE | CENTRO DE ENSINO SUPERIOR DE VALENÇA<br />
+                            R. SARGENTO VITOR HUGO, Nº 161 | FÁTIMA - VALENÇA/RJ | CEP 27600-000 | TELEFONES: (24) 2453-0700 
+                            - (24) 2453-1888
+                        </div>
+                        <br />
+                    </div>
+                    <div class="row text-center">
+                        <div class="col-md-4 col-md-offset-4 col-xs-4 col-xs-offset-4">
+                            <div class="row">
+                                <div class="col-md-4 col-xs-4">
+                                    <a href="https://www.facebook.com/cesva.faa/?fref=ts" target="_blank">
+                                <img class="icones-redes" src="{{ asset('imagens/facebook.png') }}" /></a>
+                                </div>
+                                <div class="col-md-4 col-xs-4">
+                                    <a href="https://www.instagram.com/CESVA.FAA/" target="_blank">
+                                        <img class="icones-redes" src="{{ asset('imagens/instagram.png') }}" /></a>
+                                </div>
+                                <div class="col-md-4 col-xs-4">
+                                    <a href="https://www.youtube.com/channel/UClR7U1GYO2L2jHDOFamMw1g" target="_blank">
+                                        <img class="icones-redes" src="{{ asset('imagens/youtube.png') }}" /></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row text-center" id="linha-copy">
+                        <div class="col-md-3 col-md-offset-1">
+                            <p>COPYRIGHT 2016 - CESVA FAA</p>
+                        </div>
+                        <div class="col-md-3 col-md-offset-4">
+                            <p>WEBSITE DESENVOLVIDO POR <a target="_blank" href="https://facebook.com/startmulticom"><img src="{{ asset('imagens/logo-start.png') }}" 
+                                                                                                                          id="logo-rodape" /></a></p>
+                        </div>
+                    </div>
+                </div>
+            {% endblock rodape %}
+        </div>
+    </div>
+    {% block submenus %}
+        <div id="conteudo-menu-cursos" class="hidden">
+            {% include 'FaSiteBundle:SubmenuSecundario:graduacao.html.twig' with {'cursos': cursos} %}
+        </div>
+        <div id="conteudo-menu-instituicao" class="hidden">
+            {% include 'FaSiteBundle:SubmenuSecundario:instituicaoDestaque.html.twig' with {'destaque': destaque} %}
+        </div>
+        <div id="conteudo-menu-noticias" class="hidden">
+            {% include 'FaSiteBundle:SubmenuSecundario:noticiasDestaque.html.twig' with {'noticias': noticiasMenu} %}
+        </div>
+        <div id="conteudo-menu-videos" class="hidden">
+            {% include 'FaSiteBundle:SubmenuSecundario:videos.html.twig' with {'videos': videos} %}
+        </div>
+        <div id="conteudo-menu-contato" class="hidden">
+            {% include 'FaSiteBundle:SubmenuSecundario:instituicaoDestaque.html.twig' with {'destaque': destaqueContato} %}
+        </div>
+    {% endblock submenus %}
+{% endblock conteudo %}
+{% block js %}
+    {{ parent() }}
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="{{ asset('js/jquery.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.fullpage.min.js') }}"></script>
+    <script src="{{ asset('js/smooth-scroll.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.selectric.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.tube.min.js') }}"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&key=AIzaSyBCwTHtZ8FISJVAcdzOR3mikpXymzAcU2c"></script>
+    <script type="text/javascript" src="{{ asset('js/maps.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/jQuery.scrollSpeed.js') }}"></script>
+    <!-- If you'd like to support IE8 -->
+    <script src="http://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+    <script src="http://vjs.zencdn.net/5.11.7/video.js"></script>
+    <script type="text/javascript">
+
+        $tamanhoDestaque = 0;
+        $destaqueOculto = false;
+
+        function carregaSubmenu($url) {
+            $.ajax({
+                url: $url,
+                method: 'GET',
+                success: function (content) {
+                    //$('#submenu').fadeOut(500);
+                    $('#caixa-submenu-principal').html(content);
+                    $('#caixa-submenu-secundario').html('');
+                    ///*
+                    $scroll = $(window).scrollTop();
+
+                    if ($scroll == 0) {
+                        $('#banner').stop().animate({
+                            'margin-top': 300
+                        }, 500);
+                    }
+                    //*/
+                    $('#submenu').fadeIn(500);
+
+                    switch ($url) {
+                        case '{{ path('fa_site_menu_cursos') }}':
+                                    
+                            $('#caixa-submenu-principal').css('display', 'initial');
+                            $('#caixa-submenu-secundario').css('width', '50%');
+                                    
+                            $('#caixa-submenu-secundario').html($('#conteudo-menu-cursos').html());
+                            $('#caixa-submenu-secundario').fadeIn(500);
+                            {#carregaSubmenuSecundario('{{ path('fa_site_submenu_graduacao') }}');#}
+                            break;
+                        case '{{ path('fa_site_menu_instituicao') }}':
+                                    
+                            $('#caixa-submenu-principal').css('display', 'initial');
+                            $('#caixa-submenu-secundario').css('width', '50%');
+                                    
+                            $('#caixa-submenu-secundario').html($('#conteudo-menu-instituicao').html());
+                            $('#caixa-submenu-secundario').fadeIn(500);
+{#                            carregaSubmenuSecundario('{{ path('fa_site_submenu_instituicao_destaque') }}');#}
+                            break;
+                        case '{{ path('fa_site_menu_noticias') }}':
+                                    
+                            $('#caixa-submenu-principal').css('display', 'initial');
+                            $('#caixa-submenu-secundario').css('width', '50%');
+                                    
+                            $('#caixa-submenu-secundario').html($('#conteudo-menu-noticias').html());
+                            $('#caixa-submenu-secundario').fadeIn(500);
+{#                            carregaSubmenuSecundario('{{ path('fa_site_submenu_noticias_destaque') }}');#}
+                            break;
+                        case '{{ path('fa_site_menu_videos') }}':
+                                    
+                            $('#caixa-submenu-principal').css('display', 'none');
+                            $('#caixa-submenu-secundario').css('width', '100%');
+                                    
+                            $('#caixa-submenu-secundario').html($('#conteudo-menu-videos').html());
+                            $('#caixa-submenu-secundario').fadeIn(500);
+{#                            carregaSubmenuSecundario('{{ path('fa_site_submenu_noticias_destaque') }}');#}
+                            break;
+                        case '{{ path('fa_site_menu_contato') }}':
+                                    
+                            $('#caixa-submenu-principal').css('display', 'initial');
+                            $('#caixa-submenu-secundario').css('width', '50%');
+                                    
+                            $('#caixa-submenu-secundario').html($('#conteudo-menu-contato').html());
+                            $('#caixa-submenu-secundario').fadeIn(500);
+{#                            carregaSubmenuSecundario('{{ path('fa_site_submenu_contato_destaque') }}');#}
+                            break;
+                    }
+
+                }
+            });
+        }
+
+        function carregaSubmenuSecundario($url) {
+            $.ajax({
+                url: $url,
+                method: 'GET',
+                success: function (content) {
+                    //$('#caixa-submenu-secundario').fadeOut(500);
+                    $('#caixa-submenu-secundario').html(content);
+                    $('#caixa-submenu-secundario').fadeIn(500);
+                }
+            });
+        }
+
+        function carregaComboCursos($tipo) {
+
+            $url = '{{ path('fa_site_combo_cursos') }}';
+
+            $.ajax({
+                url: $url + '/' + $tipo,
+                method: 'GET',
+                success: function (content) {
+                    $('#caixa-select').html(content);
+                    $('#select').selectric();
+                }
+            });
+        }
+
+        function escondeSubmenu() {
+            $('#submenu').hide();
+            $('#banner').stop().animate({
+                'margin-top': 0
+            }, 500);
+        }
+
+        function ajustaBanner() {
+            $altura = $(window).height() - $('#caixa-destaque').height();
+
+            $('#carrossel').css('height', $altura);
+
+            if ($destaqueOculto) {
+                $('#carrossel').css('margin-top', -$tamanhoDestaque);
+            }
+
+        }
+
+        $(document).ready(function () {
+
+            $tamanhoDestaque = $('#destaque-topo').height();
+
+            $(window).scroll(function () {
+                escondeSubmenu();
+            });
+
+            //carregaComboCursos(1);
+
+            //https://www.youtube.com/watch?v=vTMr-M15zkg
+
+            $('#player-container').player({
+                video: 'vTMr-M15zkg',
+                width: 500,
+                key: 'AIzaSyAjOh9wbNf01abgkzX59Ww7civvm6OL2Mk'
+            });
+
+        {#$('#conteudo-scroll').fullpage({
+            scrollBar: true,
+            fitToSection: false,
+            paddingTop: '148px'
+        });#}
+
+                    $('#select').selectric();
+
+                    $(document).on('change', '#select', function () {
+
+                        $url = '{{ path('fa_site_curso') }}' + "/" + $(this).val();
+
+                        window.location.href = $url;
+                    });
+
+        {#        carregaSubmenu('{{ path('fa_site_menu_instituicao') }}');#}
+
+                    $('.links-menu-topo').click(function () {
+
+                        $src = $(this).data('src');
+                        carregaSubmenu($src);
+
+                        return false;
+
+                    });
+
+                    $('body').on('click', '.links-submenu-principal', function () {
+
+                        $src = $(this).data('src');
+
+                        if ($src) {
+                            carregaSubmenuSecundario($src);
+                            return false;
+                        }
+
+                    });
+
+                    $('body').click(function () {
+                        escondeSubmenu();
+                    });
+
+                    $('.link-combo').click(function () {
+
+                        $('.span-circulo').each(function () {
+                            $(this).html("<img src='{{ asset('imagens/circulo-branco.png') }}' class='circulo-lista' />");
+                        });
+
+                        $tipo = $(this).data('tipo');
+
+                        $(this).children('.span-circulo').html("<img src='{{ asset('imagens/circulo-branco-marcado.png') }}' class='circulo-lista' />");
+
+                        carregaComboCursos($tipo);
+                        return false;
+                    });
+
+                    $(window).resize(function () {
+
+                        var largura = $(window).width();
+
+                        if (largura <= 768 && $(this).data('bg-mob') != null) {
+                            $('.carousel-inner .item').each(function () {
+                                $bgMob = $(this).data('bg-mob');
+                                $(this).css('background-image', 'url(' + $bgMob + ')');
+                            });
+        {#            $('.carousel-inner .item').css('background-size', 'contain');#}
+                    } else {
+                        $('.carousel-inner .item').each(function () {
+                            $bg = $(this).data('bg');
+                            $(this).css('background-image', 'url(' + $bg + ')');
+                        });
+                    }
+
+
+                });
+
+                var largura = $(window).width();
+
+                if (largura <= 768 && $(this).data('bg-mob') != null) {
+                    $('.carousel-inner .item').each(function () {
+                        $bgMob = $(this).data('bg-mob');
+                        $(this).css('background-image', 'url(' + $bgMob + ')');
+                    });
+        {#            $('.carousel-inner .item').css('background-size', 'contain');#}
+                } else {
+                    $('.carousel-inner .item').each(function () {
+                        $bg = $(this).data('bg');
+                        $(this).css('background-image', 'url(' + $bg + ')');
+                    });
+        {#            $('.carousel-inner .item').css('background-size', 'cover');#}
+                }
+
+                ajustaBanner();
+
+                $('#btn-fechar-banner').click(function () {
+                    $('#destaque-topo').fadeOut(1000, function () {
+                        $destaqueOculto = true;
+                        ajustaBanner();
+                    });
+                });
+
+                $.scrollSpeed(100, 800);
+
+            });
+    </script>
+{% endblock js %}

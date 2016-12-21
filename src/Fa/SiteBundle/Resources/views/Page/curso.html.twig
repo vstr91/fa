@@ -1,0 +1,227 @@
+{% extends "FaSiteBundle:Page:index.html.twig" %}
+{% block conteudo %}
+    {% block menu %}
+        {{ parent() }}
+    {% endblock menu %}
+    <div id="caixa-banner-curso">
+        <img src="{{ asset('uploads/cursos/banner/'~infoCurso.imagem) }}" id="imagem-curso" />
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                {% if infoCurso.descricao|default('') != '' %}
+                    <h2 class="titulo-azul-claro">
+                        <img class="ret-azul-subtitulo" 
+                             src="{{ asset('imagens/retangulo-azul-escuro.png') }}" /> O Curso</h2>
+                    <p>
+                        {{ infoCurso.descricao|raw }}
+                    </p>
+                    <br />
+                {% endif %}
+
+                {% if infoCurso.perfil|default('') != '' %}
+                    <h2 class="titulo-azul-claro">
+                        <img class="ret-azul-subtitulo" 
+                             src="{{ asset('imagens/retangulo-azul-escuro.png') }}" /> Perfil Profissional</h2>
+                    <p>
+                        {{ infoCurso.perfil|raw }}
+                    </p>
+                    <br />
+                {% endif %}
+
+                {% if infoCurso.mercado|default('') != '' %}
+                    <h2 class="titulo-azul-claro">
+                        <img class="ret-azul-subtitulo" 
+                             src="{{ asset('imagens/retangulo-azul-escuro.png') }}" /> Mercado de Trabalho</h2>
+                    <p>
+                        {{ infoCurso.mercado|raw }}
+                    </p>
+                    <br />
+                {% endif %}
+
+            </div>
+            <div class="col-md-4">
+                <div class="panel affix text-center" id="painel-inscreva">
+                    <div class="panel-body">
+                        <p class="text-left">
+                            <span class="texto-negrito">Dura&ccedil;&atilde;o:</span> {{ infoCurso.duracao }} semestres
+                            <br />
+                            {% if infoCurso.mensalidadeMatutino|default('') != '' %}
+                                <span class="texto-negrito">Mensalidade (Matutino):</span> R$ {{ infoCurso.mensalidadeMatutino|replace('.', ',') }}
+                                <br />
+                            {% endif %}
+                            {% if infoCurso.mensalidadeNoturno|default('') != '' %}
+                                <span class="texto-negrito">Mensalidade (Noturno):</span> R$ {{ infoCurso.mensalidadeNoturno|replace('.', ',') }}
+                                <br />
+                            {% endif %}
+                            
+                            {% if infoCurso.mensalidadeIntegral|default('') != '' %}
+                                <span class="texto-negrito">Mensalidade (Integral):</span> R$ {{ infoCurso.mensalidadeIntegral|replace('.', ',') }}
+                                <br />
+                            {% endif %}
+                            
+                        </p>
+                        <a href="https://faa.jacad.com.br:8443/academico/vestibular" class="btn btn-primary" id="btn-inscreva">INSCREVA-SE J&Aacute;!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="tituloIngresso">
+                            <h4 class="panel-title">
+                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#ingresso" aria-expanded="true" aria-controls="ingresso">
+                                    Formas de Ingresso <img class="icone-mais" 
+                             src="{{ asset('imagens/icone-mais.png') }}" />
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="ingresso" class="panel-collapse collapse" role="tabpanel" aria-labelledby="tituloIngresso">
+                            <div class="panel-body">
+                                {{ infoCurso.ingresso|raw }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="tituloAto">
+                            <h4 class="panel-title">
+                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#ato" 
+                                   aria-expanded="true" aria-controls="ato">
+                                    Ato Autorizativo <img class="icone-mais" 
+                             src="{{ asset('imagens/icone-mais.png') }}" />
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="ato" class="panel-collapse collapse" role="tabpanel" aria-labelledby="tituloIngresso">
+                            <div class="panel-body">
+                                {{ infoCurso.ato|raw }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="tituloFale">
+                            <h4 class="panel-title">
+                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#fale" 
+                                   aria-expanded="true" aria-controls="fale">
+                                    Fale com o Diretor do Curso <img class="icone-mais" 
+                             src="{{ asset('imagens/icone-mais.png') }}" />
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="fale" class="panel-collapse collapse" role="tabpanel" aria-labelledby="tituloIngresso">
+                            <div class="panel-body">
+                                {{ infoCurso.contato|raw }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="tituloDocentes">
+                            <h4 class="panel-title">
+                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#docentes" 
+                                   aria-expanded="true" aria-controls="docentes">
+                                    Corpo Docente <img class="icone-mais" 
+                             src="{{ asset('imagens/icone-mais.png') }}" />
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="docentes" class="panel-collapse collapse" role="tabpanel" aria-labelledby="tituloDocentes">
+                            <div class="panel-body">
+                                {% if infoCurso.arquivoDocentes != null %}
+                                <a href="{{ asset('uploads/docentes/'~infoCurso.arquivoDocentes) }}" 
+                                   target="_blank">Corpo Docente</a>
+                                {% else %}
+                                    N&atilde;o Dispon&iacute;vel
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="tituloMatriz">
+                            <h4 class="panel-title">
+                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#matriz" 
+                                   aria-expanded="true" aria-controls="matriz">
+                                    Matriz Curricular <img class="icone-mais" 
+                             src="{{ asset('imagens/icone-mais.png') }}" />
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="matriz" class="panel-collapse collapse" role="tabpanel" aria-labelledby="tituloMatriz">
+                            <div class="panel-body">
+                                {% if infoCurso.arquivoMatriz != null %}
+                                <a href="{{ asset('uploads/matriz/'~infoCurso.arquivoMatriz) }}" 
+                                   target="_blank">Matriz Curricular</a>
+                                {% else %}
+                                    N&atilde;o Dispon&iacute;vel
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="tituloMec">
+                            <h4 class="panel-title">
+                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#mec" 
+                                   aria-expanded="true" aria-controls="mec">
+                                    Resultado das Avalia&ccedil;&otilde;es do MEC <img class="icone-mais" 
+                             src="{{ asset('imagens/icone-mais.png') }}" />
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="mec" class="panel-collapse collapse" role="tabpanel" aria-labelledby="tituloMec">
+                            <div class="panel-body">
+                                {{ infoCurso.resultadoMec|raw }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="tituloMensalidades">
+                            <h4 class="panel-title">
+                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#mensalidades" 
+                                   aria-expanded="true" aria-controls="convenios">
+                                    Mensalidades <img class="icone-mais" 
+                             src="{{ asset('imagens/icone-mais.png') }}" />
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="mensalidades" class="panel-collapse collapse" role="tabpanel" aria-labelledby="tituloMensalidades">
+                            <div class="panel-body">
+                                {{ infoCurso.mensalidades|raw }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="tituloConvenios">
+                            <h4 class="panel-title">
+                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#convenios" 
+                                   aria-expanded="true" aria-controls="convenios">
+                                    Conv&ecirc;nios <img class="icone-mais" 
+                             src="{{ asset('imagens/icone-mais.png') }}" />
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="convenios" class="panel-collapse collapse" role="tabpanel" aria-labelledby="tituloConvenios">
+                            <div class="panel-body">
+                                {% if infoCurso.arquivoConvenios != null %}
+                                <a href="{{ asset('uploads/convenios/'~infoCurso.arquivoConvenios) }}" 
+                                   target="_blank">Conv&ecirc;nios</a>
+                                   {% else %}
+                                    N&atilde;o Dispon&iacute;vel
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+    <br />
+    {% block rodape %}
+        {{ parent() }}
+    {% endblock rodape %}
+    {% block submenus %}
+        {{ parent() }}
+    {% endblock %}
+{% endblock conteudo %}

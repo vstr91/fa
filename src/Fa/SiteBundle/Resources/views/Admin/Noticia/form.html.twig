@@ -1,0 +1,24 @@
+<form id="form-noticia" 
+      action="{{ path('fa_site_admin_noticias_cadastra', {'id_noticia': noticia.id}) }}" 
+      method="POST" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+    <p>
+        <input type="submit" class="hidden" id="btn-submit" value="Cadastrar" />
+    </p>
+</form>
+<script type="text/javascript">
+    {#$('#form-parada').submit(function(){
+        $(this).ajaxSubmit(function(data){
+            console.log(data);
+            $(".caixaForm").dialog('close');
+            return false;
+        });
+        return false;
+    });#}
+    
+    $('.editor').trumbowyg();
+    
+    $('#btn-editar').click(function(){
+        $('#btn-submit').click();
+    });
+</script>

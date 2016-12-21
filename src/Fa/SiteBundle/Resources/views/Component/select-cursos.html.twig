@@ -1,0 +1,6 @@
+<select name="select" id="select" class="form-control">
+    <option value="-1">Selecione uma Opção</option>
+    {% for curso in cursos %}
+    <option value="{{ curso.slug }}">{{ curso.nome }}</option>
+    {% endfor %}
+</select>

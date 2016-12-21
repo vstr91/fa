@@ -1,0 +1,22 @@
+<form id="form-curso" 
+      action="{{ path('fa_site_admin_cursos_cadastra', {'id_curso': curso.id}) }}" 
+      method="POST" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+    <p>
+        <input type="submit" class="hidden" id="btn-submit" value="Cadastrar" />
+    </p>
+</form>
+<script type="text/javascript">
+    {#$('#form-parada').submit(function(){
+        $(this).ajaxSubmit(function(data){
+            console.log(data);
+            $(".caixaForm").dialog('close');
+            return false;
+        });
+        return false;
+    });#}
+    
+    $('#btn-editar').click(function(){
+        $('#btn-submit').click();
+    });
+</script>

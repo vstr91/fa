@@ -1,0 +1,44 @@
+{% extends "FaSiteBundle:Page:index.html.twig" %}
+{% block conteudo %}
+{% block menu %}
+{{ parent() }}
+{% endblock menu %}
+<div id="topo-cpa">
+    <img src="{{ asset('imagens/topo-semic.png') }}" />
+</div>
+<br />
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 coluna-texto-justificado">
+            <h2 class="titulo-azul-claro">
+                <img class="ret-azul-subtitulo" 
+                     src="{{ asset('imagens/retangulo-azul-escuro.png') }}" /> SEMIC</h2>
+            <p>
+                O CESVA, ainda, por meio da Coordenação de Pesquisa, contribui anualmente com a Semana de 
+                Iniciação Científica com objetivo de selecionar os melhores trabalhos realizados pelos 
+                acadêmicos, ensejando sua publicação. Na Semana de Iniciação, os alunos têm oportunidade 
+                de expor e defender seus trabalhos. 
+            </p>
+            <p>
+                A próxima edição ocorrerá nos dias 27 e 28 de outubro. 
+            </p>
+            {#<br />
+            <p>
+                Para maiores informações acesse aqui:   
+            </p>
+            <br />
+            <p><a href="{{ path('fa_site_semic') }}">> P&Aacute;GINA SEMIC</a></p>#}
+            
+        </div>
+    </div>
+</div>
+<br />
+<br />
+<br />
+{% block rodape %}
+{{ parent() }}
+{% endblock rodape %}
+{% block submenus %}
+    {{ parent() }}
+{% endblock %}
+{% endblock conteudo %}

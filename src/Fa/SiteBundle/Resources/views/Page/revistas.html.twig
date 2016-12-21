@@ -1,0 +1,51 @@
+{% extends "FaSiteBundle:Page:index.html.twig" %}
+{% block conteudo %}
+{% block menu %}
+{{ parent() }}
+{% endblock menu %}
+<div id="topo-cpa">
+    <img src="{{ asset('imagens/topo-revistas.png') }}" />
+</div>
+<br />
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 coluna-texto-justificado">
+            <h2 class="titulo-azul-claro">
+                <img class="ret-azul-subtitulo" 
+                     src="{{ asset('imagens/retangulo-azul-escuro.png') }}" /> APRESENTA&Ccedil;&Atilde;O</h2>
+            <p>
+                A Instituição estimula e apóia a produção científica por meio de publicações dos trabalhos em 
+                revistas científicas, bem como auxilia e incentiva a participação de docente com trabalho aprovado 
+                em congresso da área. Os professores são estimulados á produção científica, e para isso contam 
+                com o apoio da IES.
+            </p>
+            <p>
+                O Centro de Ensino Superior de Valença possui duas revistas, a saber: Revista Saber Digital e 
+                Revista Interdisciplinar da Faculdade de Direito de Valença. Para saber mais sobre essas revistas 
+                clique nos referidos links abaixo:
+            </p>
+        </div>
+    </div>
+            <div class="row">
+                {% for revista in revistas %}
+                    <div class="col-md-4">
+                        <a target="_blank" href="{{ asset('uploads/revista/'~revista.arquivo) }}">
+                            <img src="{{ asset('uploads/revista/capa/'~revista.capa) }}" class="capa-revista" />
+                            <div class="caixa-titulo">
+                                <p>{{ revista.titulo }}</p>
+                            </div>
+                        </a>
+                </div>
+                {% endfor %}
+            </div>
+</div>
+<br />
+<br />
+<br />
+{% block rodape %}
+{{ parent() }}
+{% endblock rodape %}
+{% block submenus %}
+    {{ parent() }}
+{% endblock %}
+{% endblock conteudo %}

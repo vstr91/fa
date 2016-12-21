@@ -1,0 +1,48 @@
+{% extends "FaSiteBundle:Page:index.html.twig" %}
+{% block conteudo %}
+{% block menu %}
+{{ parent() }}
+{% endblock menu %}
+<div id="topo-cpa">
+    <img src="{{ asset('imagens/topo-capp.png') }}" />
+</div>
+<br />
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="titulo-azul-claro">
+                <img class="ret-azul-subtitulo" 
+                     src="{{ asset('imagens/retangulo-azul-escuro.png') }}" /> CAPP</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 coluna-texto-justificado">
+            <p>
+                O CAPP é o Centro de Apoio Pedagógico e Psicológico do CESVA. A unidade está subordinada ao 
+                Núcleo de Apoio Pedagógico e Inclusão, NAPI, e foi criada para dar suporte e orientação 
+                pedagógica e psicológica aos alunos da Instituição de forma a minimizar as variáveis que 
+                interferem no processo de aquisição de conhecimento, nas condições de permanência dos discentes 
+                e nas questões de acessibilidade pedagógica e inclusão a alunos com deficiência ou com 
+                necessidades educativas especiais.
+            </p>
+            <p>
+                O CAPP tem como objetivo geral orientar e auxiliar os alunos na resolução de problemas - acadêmicos, 
+                de relacionamento interpessoal, psicológicos e relativos a acessibilidade e inclusão - que 
+                interferem no desenvolvimento pessoal, profissional e no processo de aprendizagem. 
+            </p>
+        </div>
+        <div class="col-md-6 text-center">
+            <img src="{{ asset('imagens/capp.png') }}" id="imagem-capp" />
+        </div>
+    </div>
+</div>
+<br />
+<br />
+<br />
+{% block rodape %}
+{{ parent() }}
+{% endblock rodape %}
+{% block submenus %}
+    {{ parent() }}
+{% endblock %}
+{% endblock conteudo %}

@@ -1,0 +1,146 @@
+{# empty Twig template #}
+{% extends "FaSiteBundle:Page:central.html.twig" %}   
+{% block body %}
+    {% block conteudo %}
+        <nav class="navbar navbar-default" id="menu">
+            <div class="container" id="menu-container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#menu-collapse" aria-expanded="false">
+                        <span class="sr-only">Abrir / Fechar Menu</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <span class="navbar-brand"><a href="{{ path('fa_site_admin_homepage') }}">&Aacute;rea Administrativa</a></span>
+                </div>
+                <a href="{{ path('fos_user_security_logout') }}" class="navbar-text navbar-right">Sair</a>
+            </div>
+        </nav>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <h4 class="text-center">Gerenciamento de Menus</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <form name="form-menu" id="form-menu" method="POST" 
+                          action="{{ path('fa_site_admin_menus_cadastra', {'id_menu': -1}) }}">
+                        {{ form_widget(formMenu) }}
+                        <input type="submit" value="Cadastrar" class="btn btn-primary" />
+                    </form>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <table class="table table-hover table-striped table-responsive text-center">
+                        <thead>
+                            <tr>
+                                <td>T&iacute;tulo</td>
+                                <td>Tipo</td>
+                                <td>P&aacute;gina</td>
+                                <td>Link Externo</td>
+                                <td>A&ccedil;&otilde;es</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for menu in menus %}
+                                <tr>
+                                    <td>{{ menu.titulo }}</td>
+                                    <td>{{ menu.tipoMenu.nome|default('-') }}</td>
+                                    
+                                    {% if menu.pagina.titulo|default('') != '' %}
+                                        <td><a target="_blank" href="{{ path('fa_site_pagina', {'slug': menu.pagina.slug}) }}">
+                                                {{ menu.pagina.titulo }}</a></td>
+                                    {% else %}
+                                        <td>-</td>
+                                    {% endif %}
+                                    
+                                    {% if menu.link starts with 'http' or menu.link starts with 'https' %}
+                                        <td><a target="_blank" href="{{ menu.link }}">{{ menu.link }}</a></td>
+                                    {% else %}
+                                        <td><a target="_blank" href="http://{{ menu.link }}">{{ menu.link }}</a></td>
+                                    {% endif %}
+                                    
+                                    <td>
+                                        <a class="link-editar" href="#{{ menu.id }}">Editar</a> {#|
+                                        <a class="link-excluir" href="#{{ menu.id }}">Excluir</a>#}
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- MODAL EDICAO -->
+
+        <div class="modal fade" id="modal-edicao">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Editar Menu</h4>
+                    </div>
+                    <div class="modal-body" id="body-edicao">
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                        <button type="button" class="btn btn-primary" id="btn-editar">Salvar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    {% endblock %}
+    {% block rodape %} {{ parent() }} {% endblock %}
+    {% block js %}
+        {{ parent() }}
+        <script type="text/javascript" src="{{ asset('js/trumbowyg.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/jquery.validate.min.js') }}"></script>
+        <script>
+            $(document).ready(function () {
+
+                $('.link-editar').click(function () {
+
+                    $id = $(this).attr('href').replace('#', '');
+                    $url = '{{ path('fa_site_admin_menus_form') }}' + "/" + $id;
+                    $.ajax({
+                        type: 'GET',
+                        url: $url,
+                        success: function (response) {
+                            $('#body-edicao').html(response);
+                            $('#modal-edicao').modal('show');
+                        }
+                    });
+                    return false;
+                });
+
+                $('.link-excluir').click(function () {
+
+                    var confirm = window.confirm("Deseja realmente excluir o registro?");
+
+                    if (confirm) {
+                        $id = $(this).attr('href').replace('#', '');
+                        $url = '{{ path('fa_site_admin_menus_exclui') }}' + "/" + $id;
+                        $.ajax({
+                            type: 'POST',
+                            url: $url,
+                            success: function (response) {
+                                alert("Registro excluído com sucesso.");
+                                location.reload();
+                            }
+                        });
+                    }
+
+                    return false;
+                });
+
+            });
+        </script>
+    {% endblock %}    
+{% endblock %}

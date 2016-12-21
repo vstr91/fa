@@ -1,0 +1,80 @@
+{% extends "FaSiteBundle:Page:index.html.twig" %}
+{% block conteudo %}
+{% block menu %}
+{{ parent() }}
+{% endblock menu %}
+<div id="topo-cpa">
+    <img src="{{ asset('imagens/topo-cpa.png') }}" />
+</div>
+<br />
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 coluna-texto-justificado">
+            <h2 class="titulo-azul-claro">
+                <img class="ret-azul-subtitulo" 
+                     src="{{ asset('imagens/retangulo-azul-escuro.png') }}" /> O que é a CPA (Comissão Própria de Avaliação)</h2>
+            <p>
+                A CPA - Comissão Própria de Avaliação foi criada em obediência à Lei 10.861, de 14 de abril 
+                de 2004, que estabelece o Sistema Nacional de Avaliação da Educação Superior (SINAES).
+            </p>
+            <p>
+                A Avaliação Interna objetiva proporcionar um auto-conhecimento institucional, por meio de coleta 
+                de informações, que visa identificar e refletir sobre o significado das ações desenvolvidas no 
+                CESVA/FAA. 
+            </p>
+            <p>
+                Este auto-conhecimento é primordial para se propor e reivindicar mudanças necessárias que alcancem 
+                uma educação superior com qualidade. Neste sentido, é necessário que toda a comunidade acadêmica – 
+                docente, discente e técnico-administrativo – apresente seu posicionamento quanto à gestão, à docência, 
+                à comunicação, aos serviços, à infra-estrutura, dentre outras questões pertinentes  ao CESVA/FAA. 
+            </p>
+            <p>
+                Composta por representantes de todos os segmentos da comunidade universitária e da sociedade civil 
+                organizada, ao final do Processo de auto-avaliação, a C.P.A prestará contas de suas atividades aos 
+                órgãos colegiados superiores, apresentando relatórios, pareceres e, eventualmente, recomendações.
+            </p>
+            <p>
+                Busca-se com isso resultados que visem à melhoria da qualidade acadêmica e ao desenvolvimento 
+                institucional pela análise consciente das qualidades, problemas e desafios para o presente e futuro.
+            </p>
+            <p>
+                A auto-avaliação deve ser um processo cíclico, de reflexão e auto-consciência institucional. Criativo 
+                e renovador de análise e síntese das dimensões que definem a instituição. Um processo em que quem 
+                participa conquista direitos.
+            </p>
+            <p>
+                A auto-avaliação deve ser um processo cíclico, de reflexão e auto-consciência institucional. Criativo 
+                e renovador de análise e síntese das dimensões que definem a instituição. Um processo em que quem 
+                participa conquista direitos.
+            </p>
+            <p>
+                A seguir conheça um pouco mais da CPA:
+            </p>
+            <br />
+            <p><span class="texto-azul"><b>1)</b></span> Componentes da CPA</p>
+            <p>Presidente: Alexandre Motta Tinoco</p>
+            <p>Representante do corpo docente: Carlos Antonio da Silva Carvalho</p>
+            <p>Representante dos técnico-administrativos: Gilcélia Rabelo de Souza Garcia Alves</p>
+            <p>Representante dos discentes:  Cibila Farani de Oliveira Batista</p>
+            <p>Representante da comunidade externa: Guilherme Fraga Machado</p>
+            <br />
+            <p><span class="texto-azul"><b>2)</b></span> Regulamento</p>
+            <br />
+            <p><span class="texto-azul"><b>3)</b></span> Resultados da última avaliação</p>
+            <br />
+            <p><span class="texto-azul"><b>4)</b></span> Relatório Anual</p>
+            <br />
+            <p><span class="texto-azul"><b>5)</b></span> Fale com a CPA: contato: <strong>cpa@faa.edu.br</strong></p>
+        </div>
+    </div>
+</div>
+<br />
+<br />
+<br />
+{% block rodape %}
+{{ parent() }}
+{% endblock rodape %}
+{% block submenus %}
+    {{ parent() }}
+{% endblock %}
+{% endblock conteudo %}

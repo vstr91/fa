@@ -1,0 +1,53 @@
+{% extends "FaSiteBundle:Page:index.html.twig" %}
+{% block conteudo %}
+    {% block menu %}
+        {{ parent() }}
+    {% endblock menu %}
+    <div id="topo-cpa">
+        <img src="{{ asset('imagens/topo-localizacao.png') }}" />
+    </div>
+    <br />
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="titulo-azul-claro">
+                    <img class="ret-azul-subtitulo" 
+                         src="{{ asset('imagens/retangulo-azul-escuro.png') }}" /> A CIDADE</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 coluna-texto-justificado">
+                <p>
+                    Valen&ccedil;a possui uma &aacute;rea de 1308,1 km² (a segunda maior do estado do Rio de Janeiro), 
+                    estando situada no Vale do Para&iacute;ba Fluminense.
+                </p>
+                <p>
+                    A cidade possui 6 distritos: Valen&ccedil;a (sede), Bar&atilde;o de Juparan&atilde;, 
+                    a "Cidade dos Bar&otilde;es (2º distrito), Santa Isabel do Rio Preto (3º distrito), Pentagna (4º distrito), 
+                    Parape&uacute;na (5º distrito) e Conservat&oacute;ria, a "Cidade das Serestas" (6º distrito).
+                    <br />
+                    Atualmente a sua economia est&aacute; voltada especialmente para a agropecu&aacute;ria e para o p&oacute;lo 
+                    universit&aacute;rio existente na sede municipal.
+                    <br />
+                    A regi&atilde;o do Vale do Para&iacute;ba do sul do Rio de Janeiro era totalmente coberta por florestas 
+                    virgens no final do s&eacute;culo XVIII.
+                </p>
+            </div>
+            <div class="col-md-6 text-center">
+                <img src="{{ asset('imagens/imagem-valenca.png') }}" id="imagem-capp" />
+                <hr id="linha-imagem" />
+            </div>
+        </div>
+        <br />
+        <br />
+    </div>
+    <br />
+    <br />
+    <br />
+    {% block rodape %}
+        {{ parent() }}
+    {% endblock rodape %}
+    {% block submenus %}
+        {{ parent() }}
+    {% endblock %}
+{% endblock conteudo %}
