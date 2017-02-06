@@ -83,6 +83,19 @@ class SubmenuController extends Controller {
         ));
     }
     
+    public function cursosLivresAction()
+    {
+        
+        $em = $this->getDoctrine()->getManager();
+
+        $cursos = $em->getRepository('FaSiteBundle:Curso')->listarTodosVinculados(null, 3);
+                //->findBy(array('tipoCurso' => 2), array('nome' => 'ASC'));
+        
+        return $this->render('FaSiteBundle:SubmenuSecundario:cursos-livres.html.twig', array(
+            'cursos' => $cursos
+        ));
+    }
+    
     public function noticiasSubAction()
     {
         return $this->render('FaSiteBundle:SubmenuSecundario:noticias.html.twig');
@@ -138,7 +151,7 @@ class SubmenuController extends Controller {
         $em = $this->getDoctrine()->getManager();
 
         $videosGaleria = $em->getRepository('FaSiteBundle:VideoGaleria')
-                ->listarTodos(4);
+                ->listarTodos(2);
         
         return $this->render('FaSiteBundle:SubmenuSecundario:videos.html.twig', array(
             'videosGaleria' => $videosGaleria

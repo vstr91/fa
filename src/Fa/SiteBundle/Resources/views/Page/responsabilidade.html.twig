@@ -1,0 +1,38 @@
+{% extends "FaSiteBundle:Page:index.html.twig" %}
+{% block conteudo %}
+{% block menu %}
+{{ parent() }}
+{% endblock menu %}
+<div class="container" id="container-noticia">
+    <div class="row">
+        <div class="col-md-12 text-justify">
+            <h2 class="titulo-azul-claro">
+                <img class="ret-azul-subtitulo" 
+                     src="{{ asset('imagens/retangulo-azul-escuro.png') }}" /> RESPONSABILIDADE SOCIAL</h2>
+            <p>
+                Periodicamente são realizadas pela comunidade acadêmica do CESVA/FAA, distintos programas, 
+                projetos e atividades de preservação e educação ambiental, promoção da cidadania e melhoria 
+                da qualidade de vida, de capacitação e atualização profissional, buscando aliar a excelência 
+                no ensino e gestão aos projetos socialmente responsáveis. Estes alicerces que contemplam os 
+                direitos humanos e o meio ambiente, estão estabelecidos em políticas institucionais que 
+                fazem do CESVA/FAA uma instituição comprometida com ações de responsabilidade social. 
+            </p>
+            <p>
+                Fruto deste trabalho, a Instituição é mantenedora do "Selo de Instituição Socialmente 
+                Responsável" certificando a sua participação nas edições de 2014 e 2015 da Campanha 
+                da Responsabilidade Social do Ensino Superior Particular e está verdadeiramente 
+                engajada com o ensino responsável. 
+            </p>
+        </div>
+    </div>
+</div>
+<br />
+<br />
+<br />
+{% block rodape %}
+{{ parent() }}
+{% endblock rodape %}
+{% block submenus %}
+    {{ parent() }}
+{% endblock %}
+{% endblock conteudo %}

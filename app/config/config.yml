@@ -92,7 +92,9 @@ stof_doctrine_extensions:
             sluggable: true
             
 dubture_f_fmpeg:
-  ffmpeg_binary: "%kernel.root_dir%/Resources/bin/ffmpeg.exe"
-  ffprobe_binary: "%kernel.root_dir%/Resources/bin/ffprobe.exe"
+  ffmpeg_binary: "%kernel.root_dir%/config/ffmpeg.exe"
+  ffprobe_binary: "%kernel.root_dir%/config/ffprobe.exe"
+#  ffmpeg_binary: "%kernel.root_dir%/Resources/bin/ffmpeg.exe"
+#  ffprobe_binary: "%kernel.root_dir%/Resources/bin/ffprobe.exe"
   binary_timeout: 300
   threads_count: 4

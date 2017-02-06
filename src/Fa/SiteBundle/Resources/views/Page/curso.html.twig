@@ -44,22 +44,22 @@
                 <div class="panel affix text-center" id="painel-inscreva">
                     <div class="panel-body">
                         <p class="text-left">
-                            <span class="texto-negrito">Dura&ccedil;&atilde;o:</span> {{ infoCurso.duracao }} semestres
+                            <span class="texto-negrito">DURA&Ccedil;&Atilde;O:</span> {{ infoCurso.duracao }} semestres
                             <br />
                             {% if infoCurso.mensalidadeMatutino|default('') != '' %}
-                                <span class="texto-negrito">Mensalidade (Matutino):</span> R$ {{ infoCurso.mensalidadeMatutino|replace('.', ',') }}
+                                <span class="texto-negrito">MENSALIDADE (MATUTINO):</span> R$ {{ infoCurso.mensalidadeMatutino|replace('.', ',') }}
                                 <br />
                             {% endif %}
                             {% if infoCurso.mensalidadeNoturno|default('') != '' %}
-                                <span class="texto-negrito">Mensalidade (Noturno):</span> R$ {{ infoCurso.mensalidadeNoturno|replace('.', ',') }}
+                                <span class="texto-negrito">MENSALIDADE (NOTURNO):</span> R$ {{ infoCurso.mensalidadeNoturno|replace('.', ',') }}
                                 <br />
                             {% endif %}
                             
                             {% if infoCurso.mensalidadeIntegral|default('') != '' %}
-                                <span class="texto-negrito">Mensalidade (Integral):</span> R$ {{ infoCurso.mensalidadeIntegral|replace('.', ',') }}
+                                <span class="texto-negrito">MENSALIDADE (INTEGRAL):</span> R$ {{ infoCurso.mensalidadeIntegral|replace('.', ',') }}
                                 <br />
                             {% endif %}
-                            
+                            <span class="texto-negrito">AVALIA&Ccedil;&Atilde;O DO CURSO:</span> {{ infoCurso.resultadoMec|raw|replace({'<p>': '', '</p>': '', '<br>': ''}) }}
                         </p>
                         <a href="https://faa.jacad.com.br:8443/academico/vestibular" class="btn btn-primary" id="btn-inscreva">INSCREVA-SE J&Aacute;!</a>
                     </div>
@@ -225,3 +225,10 @@
         {{ parent() }}
     {% endblock %}
 {% endblock conteudo %}
+{% block js %}
+    {{ parent() }}
+    <script type="text/javascript">
+        $margin = $('#caixa-destaque').height();
+        $('#caixa-banner-curso').css('margin-top', $margin);
+    </script>
+{% endblock js %}

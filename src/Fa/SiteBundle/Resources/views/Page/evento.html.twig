@@ -10,15 +10,24 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-8">
-            <div class="well well-sm" id="painel-data">
-                Data: {{ evento.data|date('d/m/Y H:i') }}
+        {% if evento.imagem|default('') != '' %}
+            <div class="col-md-8">
+                <div class="well well-sm" id="painel-data">
+                    Data: {{ evento.data|date('d/m/Y H:i') }}
+                </div>
+                    {{ evento.descricao|raw }}
             </div>
-            {{ evento.descricao }}
-        </div>
-        <div class="col-md-4">
-            <img src="{{ asset('uploads/evento/'~evento.imagem) }}" />
-        </div>
+            <div class="col-md-4">
+                <img src="{{ asset('uploads/evento/'~evento.imagem) }}" style="max-width: 100%" />
+            </div>
+        {% else %}
+            <div class="col-md-12">
+                <div class="well well-sm" id="painel-data">
+                    Data: {{ evento.data|date('d/m/Y H:i') }}
+                </div>
+                    {{ evento.descricao|raw }}
+            </div>
+        {% endif %}
     </div>
 </div>
 <br />

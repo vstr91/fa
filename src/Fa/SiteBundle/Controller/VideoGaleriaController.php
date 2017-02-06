@@ -43,7 +43,7 @@ class VideoGaleriaController extends Controller {
             
             $em->persist($videoGaleria);
             $em->flush();
-            
+            /*
             $ffmpeg = $this->get('dubture_ffmpeg.ffmpeg');
 
             // Open video
@@ -53,7 +53,7 @@ class VideoGaleriaController extends Controller {
             $umVideo
               ->frame(TimeCode::fromSeconds(15))
               ->save($this->get('kernel')->getRootDir().'/../web'.'/uploads/video/galeria/frame/'.$videoGaleria->getId().'.png');
-            
+            */
             return $this->redirect($this->generateUrl('fa_site_admin_videos_galeria'));
         }
         

@@ -1,0 +1,58 @@
+{% extends "FaSiteBundle:Page:index.html.twig" %}
+{% block conteudo %}
+{% block menu %}
+{{ parent() }}
+{% endblock menu %}
+<div class="container" id="container-noticia">
+    <div class="row">
+        <div class="col-md-12 coluna-texto-justificado">
+            <h2 class="titulo-azul-claro">
+                <img class="ret-azul-subtitulo" 
+                     src="{{ asset('imagens/retangulo-azul-escuro.png') }}" /> V&iacute;deos</h2>
+            
+        </div>
+    </div>
+    <div class="row">
+        {% for video in videos %}
+            <div class="col-md-4 col-xs-12" style="margin-top: 5%;">
+                <video id="my-video-{{ loop.index0+3 }}" class="video-js video-js-edit-pagina vjs-big-play-centered" 
+{#                       poster="{{ asset('uploads/video/galeria/frame/'~video.id~'.png') }}" #}
+                       controls preload="auto">
+                    <source src="{{ asset('uploads/video/galeria/'~video.arquivo) }}"
+                            type='video/mp4'>
+                    <p class="vjs-no-js">
+                        Para ver este v&iacute; por favor ative JavaScript, e considere atualizar seu navegador para um que 
+                        <a href="http://videojs.com/html5-video-support/" target="_blank">suporte v&iacute;deo HTML5</a>
+                    </p>
+                    <br />
+                </video>
+                <p class="text-center">{{ video.titulo }}</p>
+            </div>
+        {% else %}
+            <p>Nenhum v&iacute;deo cadastrado no momento.</p>
+        {% endfor %}
+    </div>
+</div>
+<br />
+<br />
+<br />
+{% block rodape %}
+{{ parent() }}
+{% endblock rodape %}
+{% block submenus %}
+    {{ parent() }}
+{% endblock %}
+{% endblock conteudo %}
+{% block js %}
+    {{ parent() }}
+    <script type="text/javascript">
+        $(document).ready(function(){
+            {% for video in videos %}
+                var video{{ loop.index0+3 }} = Popcorn("#my-video-{{ loop.index0+3 }}");
+                video{{ loop.index0+3 }}.listen( "canplayall", function() {
+                    this.capture({at: 20});
+                });
+            {% endfor %}
+        });
+    </script>
+{% endblock js %}

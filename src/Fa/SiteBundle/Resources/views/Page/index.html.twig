@@ -8,8 +8,7 @@
             <div class="container-fluid" id="destaque-topo">
                 <div class="row">
                     <div class="col-md-12 text-center">
-                        <p id="destaque-topo-texto">PROCESSO SELETIVO <strong id="ano">2017</strong> - 
-                            INSCRI&Ccedil;&Otilde;ES ABERTAS 
+                        <p id="destaque-topo-texto">VESTIBULAR AGENDADO 
                             <a href="https://faa.jacad.com.br:8443/academico/vestibular" id="botao-inscreva">INSCREVA-SE</a> 
                             <a id="btn-fechar-banner">X</a>&thinsp;
                             <img class="icones-redes-pequeno" src="{{ asset('imagens/whatsapp.png') }}" /> (24) 9 9882-0921
@@ -47,8 +46,8 @@
                                     <img class="ret-azul" src="{{ asset('imagens/retangulo-azul-claro.png') }}" /> NOSSOS CURSOS</a></li>
                             <li><a href="#" class="links-menu-topo" id="link-noticias" data-src="{{ path('fa_site_menu_noticias') }}">
                                     <img class="ret-azul" src="{{ asset('imagens/retangulo-azul-claro.png') }}" /> NOT&Iacute;CIAS E EVENTOS</a></li>
-                                    <li><a href="#" class="links-menu-topo" id="link-videos" data-src="{{ path('fa_site_menu_videos') }}">
-                                    <img class="ret-azul" src="{{ asset('imagens/retangulo-azul-claro.png') }}" /> V&Iacute;DEOS</a></li>
+                                    {#<li><a href="#" class="links-menu-topo" id="link-videos" data-src="{{ path('fa_site_menu_videos') }}">
+                                    <img class="ret-azul" src="{{ asset('imagens/retangulo-azul-claro.png') }}" /> V&Iacute;DEOS</a></li>#}
                             <li><a href="#" class="links-menu-topo" id="link-contato" data-src="{{ path('fa_site_menu_contato') }}">
                                     <img class="ret-azul" src="{{ asset('imagens/retangulo-azul-claro.png') }}" /> CONTATO</a></li>
                         </ul>
@@ -345,8 +344,7 @@
                     <div class="row">
                         <div class="col-md-10 col-md-offset-1 text-center" id="rodape-endereco">
                             FAA - FUNDAÇÃO EDUCACIONAL D. ANDRÉ ARCOVERDE | CENTRO DE ENSINO SUPERIOR DE VALENÇA<br />
-                            R. SARGENTO VITOR HUGO, Nº 161 | FÁTIMA - VALENÇA/RJ | CEP 27600-000 | TELEFONES: (24) 2453-0700 
-                            - (24) 2453-1888
+                            R. SARGENTO VITOR HUGO, Nº 161 | FÁTIMA - VALENÇA/RJ | CEP 27600-000 | TELEFONE: (24) 2453-0700
                         </div>
                         <br />
                     </div>
@@ -391,9 +389,9 @@
         <div id="conteudo-menu-noticias" class="hidden">
             {% include 'FaSiteBundle:SubmenuSecundario:noticiasDestaque.html.twig' with {'noticias': noticiasMenu} %}
         </div>
-        <div id="conteudo-menu-videos" class="hidden">
-            {% include 'FaSiteBundle:SubmenuSecundario:videos.html.twig' with {'videos': videos} %}
-        </div>
+        {#<div id="conteudo-menu-videos" class="hidden">
+            {% include 'FaSiteBundle:SubmenuSecundario:videos.html.twig' with {'videosGaleria': videosGaleria} %}
+        </div>#}
         <div id="conteudo-menu-contato" class="hidden">
             {% include 'FaSiteBundle:SubmenuSecundario:instituicaoDestaque.html.twig' with {'destaque': destaqueContato} %}
         </div>
@@ -412,82 +410,81 @@
     <script type="text/javascript" src="{{ asset('js/maps.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/jQuery.scrollSpeed.js') }}"></script>
     <!-- If you'd like to support IE8 -->
-    <script src="http://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
-    <script src="http://vjs.zencdn.net/5.11.7/video.js"></script>
+    <script type="text/javascript" src="{{ asset('js/video.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/videojs-ie8.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/popcorn-ie8.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/popcorn.capture.js') }}"></script>
+{#    <script src="http://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>#}
+{#    <script src="http://vjs.zencdn.net/5.11.7/video.js"></script>#}
     <script type="text/javascript">
 
         $tamanhoDestaque = 0;
         $destaqueOculto = false;
+        $videos = false;
 
         function carregaSubmenu($url) {
-            $.ajax({
-                url: $url,
-                method: 'GET',
-                success: function (content) {
-                    //$('#submenu').fadeOut(500);
-                    $('#caixa-submenu-principal').html(content);
-                    $('#caixa-submenu-secundario').html('');
-                    ///*
-                    $scroll = $(window).scrollTop();
 
-                    if ($scroll == 0) {
-                        $('#banner').stop().animate({
-                            'margin-top': 300
-                        }, 500);
+                $.ajax({
+                    url: $url,
+                    method: 'GET',
+                    success: function (content) {
+                        //$('#submenu').fadeOut(500);
+
+                        $('#caixa-submenu-principal').html(content);
+                        $('#caixa-submenu-secundario').html('');
+                        ///*
+                        $scroll = $(window).scrollTop();
+
+                        if ($scroll == 0) {
+                            $('#banner').stop().animate({
+                                'margin-top': 300
+                            }, 500);
+                        }
+                        //*/
+                        $('#submenu').fadeIn(500);
+
+                        switch ($url) {
+                            case '{{ path('fa_site_menu_cursos') }}':
+
+                                $('#caixa-submenu-principal').css('display', 'initial');
+                                $('#caixa-submenu-secundario').css('width', '50%');
+
+                                $('#caixa-submenu-secundario').html($('#conteudo-menu-cursos').html());
+                                $('#caixa-submenu-secundario').fadeIn(500);
+                                {#carregaSubmenuSecundario('{{ path('fa_site_submenu_graduacao') }}');#}
+                                break;
+                            case '{{ path('fa_site_menu_instituicao') }}':
+
+                                $('#caixa-submenu-principal').css('display', 'initial');
+                                $('#caixa-submenu-secundario').css('width', '50%');
+
+                                $('#caixa-submenu-secundario').html($('#conteudo-menu-instituicao').html());
+                                $('#caixa-submenu-secundario').fadeIn(500);
+    {#                            carregaSubmenuSecundario('{{ path('fa_site_submenu_instituicao_destaque') }}');#}
+                                break;
+                            case '{{ path('fa_site_menu_noticias') }}':
+
+                                $('#caixa-submenu-principal').css('display', 'initial');
+                                $('#caixa-submenu-secundario').css('width', '50%');
+
+                                $('#caixa-submenu-secundario').html($('#conteudo-menu-noticias').html());
+                                $('#caixa-submenu-secundario').fadeIn(500);
+    {#                            carregaSubmenuSecundario('{{ path('fa_site_submenu_noticias_destaque') }}');#}
+                                break;
+                            case '{{ path('fa_site_menu_contato') }}':
+
+                                $('#caixa-submenu-principal').css('display', 'initial');
+                                $('#caixa-submenu-secundario').css('width', '50%');
+
+                                $('#caixa-submenu-secundario').html($('#conteudo-menu-contato').html());
+                                $('#caixa-submenu-secundario').fadeIn(500);
+    {#                            carregaSubmenuSecundario('{{ path('fa_site_submenu_contato_destaque') }}');#}
+                                break;
+                        }
+
                     }
-                    //*/
-                    $('#submenu').fadeIn(500);
-
-                    switch ($url) {
-                        case '{{ path('fa_site_menu_cursos') }}':
-                                    
-                            $('#caixa-submenu-principal').css('display', 'initial');
-                            $('#caixa-submenu-secundario').css('width', '50%');
-                                    
-                            $('#caixa-submenu-secundario').html($('#conteudo-menu-cursos').html());
-                            $('#caixa-submenu-secundario').fadeIn(500);
-                            {#carregaSubmenuSecundario('{{ path('fa_site_submenu_graduacao') }}');#}
-                            break;
-                        case '{{ path('fa_site_menu_instituicao') }}':
-                                    
-                            $('#caixa-submenu-principal').css('display', 'initial');
-                            $('#caixa-submenu-secundario').css('width', '50%');
-                                    
-                            $('#caixa-submenu-secundario').html($('#conteudo-menu-instituicao').html());
-                            $('#caixa-submenu-secundario').fadeIn(500);
-{#                            carregaSubmenuSecundario('{{ path('fa_site_submenu_instituicao_destaque') }}');#}
-                            break;
-                        case '{{ path('fa_site_menu_noticias') }}':
-                                    
-                            $('#caixa-submenu-principal').css('display', 'initial');
-                            $('#caixa-submenu-secundario').css('width', '50%');
-                                    
-                            $('#caixa-submenu-secundario').html($('#conteudo-menu-noticias').html());
-                            $('#caixa-submenu-secundario').fadeIn(500);
-{#                            carregaSubmenuSecundario('{{ path('fa_site_submenu_noticias_destaque') }}');#}
-                            break;
-                        case '{{ path('fa_site_menu_videos') }}':
-                                    
-                            $('#caixa-submenu-principal').css('display', 'none');
-                            $('#caixa-submenu-secundario').css('width', '100%');
-                                    
-                            $('#caixa-submenu-secundario').html($('#conteudo-menu-videos').html());
-                            $('#caixa-submenu-secundario').fadeIn(500);
-{#                            carregaSubmenuSecundario('{{ path('fa_site_submenu_noticias_destaque') }}');#}
-                            break;
-                        case '{{ path('fa_site_menu_contato') }}':
-                                    
-                            $('#caixa-submenu-principal').css('display', 'initial');
-                            $('#caixa-submenu-secundario').css('width', '50%');
-                                    
-                            $('#caixa-submenu-secundario').html($('#conteudo-menu-contato').html());
-                            $('#caixa-submenu-secundario').fadeIn(500);
-{#                            carregaSubmenuSecundario('{{ path('fa_site_submenu_contato_destaque') }}');#}
-                            break;
-                    }
-
-                }
-            });
+                });
+            
         }
 
         function carregaSubmenuSecundario($url) {
@@ -526,6 +523,14 @@
         function ajustaBanner() {
             $altura = $(window).height() - $('#caixa-destaque').height();
 
+            $margin = $('#destaque-topo').height() + $('#nav-principal').height();
+            
+            {#if(largura <= 768){
+                $('#carrossel').css('margin-top', $margin-10);
+            } else{
+                $('#carrossel').css('margin-top', 0);
+            }#}
+
             $('#carrossel').css('height', $altura);
 
             if ($destaqueOculto) {
@@ -541,6 +546,12 @@
             $(window).scroll(function () {
                 escondeSubmenu();
             });
+            
+            {#video.listen( "canplayall", function() {
+
+              this.currentTime( 10 ).capture();
+
+            });#}
 
             //carregaComboCursos(1);
 
@@ -589,7 +600,7 @@
 
                     });
 
-                    $('body').click(function () {
+                    $('#nav-principal').click(function () {
                         escondeSubmenu();
                     });
 
@@ -611,35 +622,59 @@
 
                         var largura = $(window).width();
 
-                        if (largura <= 768 && $(this).data('bg-mob') != null) {
+                        if (largura <= 768) {
+                            
                             $('.carousel-inner .item').each(function () {
-                                $bgMob = $(this).data('bg-mob');
-                                $(this).css('background-image', 'url(' + $bgMob + ')');
+                                
+                                if($(this).data('bg-mob') != '{{ asset('uploads/banner/') }}'){
+                                    $bgMob = $(this).data('bg-mob');
+                                    $(this).css('background-image', 'url(' + $bgMob + ')');
+                                } else{
+                                    $bg = $(this).data('bg');
+                                    $(this).css('background-image', 'url(' + $bg + ')');
+                                }
+                                
                             });
+                            
+                            $('#my-video-1, #my-video-2').hide();
+                            
         {#            $('.carousel-inner .item').css('background-size', 'contain');#}
                     } else {
-                        $('.carousel-inner .item').each(function () {
-                            $bg = $(this).data('bg');
-                            $(this).css('background-image', 'url(' + $bg + ')');
-                        });
+                        $('#my-video-1, #my-video-2').show();
                     }
-
+                    
+                    ajustaBanner();
 
                 });
 
                 var largura = $(window).width();
 
-                if (largura <= 768 && $(this).data('bg-mob') != null) {
+                if (largura <= 768) {
+                
                     $('.carousel-inner .item').each(function () {
-                        $bgMob = $(this).data('bg-mob');
-                        $(this).css('background-image', 'url(' + $bgMob + ')');
+                        
+                        if($(this).data('bg-mob') != '{{ asset('uploads/banner/') }}'){
+                            $bgMob = $(this).data('bg-mob');
+                            $(this).css('background-image', 'url(' + $bgMob + ')');
+                        } else{
+                            $bg = $(this).data('bg');
+                            $(this).css('background-image', 'url(' + $bg + ')');
+                        }
+                        
                     });
+                    
+                    $('#my-video-1, #my-video-2').hide();
+                    
         {#            $('.carousel-inner .item').css('background-size', 'contain');#}
                 } else {
                     $('.carousel-inner .item').each(function () {
                         $bg = $(this).data('bg');
                         $(this).css('background-image', 'url(' + $bg + ')');
+                        
                     });
+                    
+                    $('#my-video-1, #my-video-2').show();
+                    
         {#            $('.carousel-inner .item').css('background-size', 'cover');#}
                 }
 

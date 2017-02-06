@@ -30,7 +30,7 @@ class PageController extends Controller
                 ->findOneBy(array('menu' => 'contato'));
         
         $this->videosGaleria = $em->getRepository('FaSiteBundle:VideoGaleria')
-                ->listarTodos(4);
+                ->listarTodos(2);
         
     }
 
@@ -81,7 +81,8 @@ class PageController extends Controller
             'cursos' => $this->cursos,
             'noticiasMenu' => $this->noticiasMenu,
             'destaque' => $this->destaque,
-            'destaqueContato' => $this->destaqueContato
+            'destaqueContato' => $this->destaqueContato,
+            'videosGaleria' => $this->videosGaleria
         ));
     }
     
@@ -95,7 +96,8 @@ class PageController extends Controller
             'cursos' => $this->cursos,
             'noticiasMenu' => $this->noticiasMenu,
             'destaque' => $this->destaque,
-            'destaqueContato' => $this->destaqueContato
+            'destaqueContato' => $this->destaqueContato,
+            'videosGaleria' => $this->videosGaleria
         ));
     }
     
@@ -109,7 +111,8 @@ class PageController extends Controller
             'cursos' => $this->cursos,
             'noticiasMenu' => $this->noticiasMenu,
             'destaque' => $this->destaque,
-            'destaqueContato' => $this->destaqueContato
+            'destaqueContato' => $this->destaqueContato,
+            'videosGaleria' => $this->videosGaleria
         ));
     }
     
@@ -123,7 +126,8 @@ class PageController extends Controller
             'cursos' => $this->cursos,
             'noticiasMenu' => $this->noticiasMenu,
             'destaque' => $this->destaque,
-            'destaqueContato' => $this->destaqueContato
+            'destaqueContato' => $this->destaqueContato,
+            'videosGaleria' => $this->videosGaleria
         ));
     }
     
@@ -137,7 +141,8 @@ class PageController extends Controller
             'cursos' => $this->cursos,
             'noticiasMenu' => $this->noticiasMenu,
             'destaque' => $this->destaque,
-            'destaqueContato' => $this->destaqueContato
+            'destaqueContato' => $this->destaqueContato,
+            'videosGaleria' => $this->videosGaleria
         ));
     }
     
@@ -151,7 +156,8 @@ class PageController extends Controller
             'cursos' => $this->cursos,
             'noticiasMenu' => $this->noticiasMenu,
             'destaque' => $this->destaque,
-            'destaqueContato' => $this->destaqueContato
+            'destaqueContato' => $this->destaqueContato,
+            'videosGaleria' => $this->videosGaleria
         ));
     }
     
@@ -165,7 +171,8 @@ class PageController extends Controller
             'cursos' => $this->cursos,
             'noticiasMenu' => $this->noticiasMenu,
             'destaque' => $this->destaque,
-            'destaqueContato' => $this->destaqueContato
+            'destaqueContato' => $this->destaqueContato,
+            'videosGaleria' => $this->videosGaleria
         ));
     }
     
@@ -179,7 +186,8 @@ class PageController extends Controller
             'cursos' => $this->cursos,
             'noticiasMenu' => $this->noticiasMenu,
             'destaque' => $this->destaque,
-            'destaqueContato' => $this->destaqueContato
+            'destaqueContato' => $this->destaqueContato,
+            'videosGaleria' => $this->videosGaleria
         ));
     }
     
@@ -193,7 +201,8 @@ class PageController extends Controller
             'cursos' => $this->cursos,
             'noticiasMenu' => $this->noticiasMenu,
             'destaque' => $this->destaque,
-            'destaqueContato' => $this->destaqueContato
+            'destaqueContato' => $this->destaqueContato,
+            'videosGaleria' => $this->videosGaleria
         ));
     }
     
@@ -207,7 +216,8 @@ class PageController extends Controller
             'cursos' => $this->cursos,
             'noticiasMenu' => $this->noticiasMenu,
             'destaque' => $this->destaque,
-            'destaqueContato' => $this->destaqueContato
+            'destaqueContato' => $this->destaqueContato,
+            'videosGaleria' => $this->videosGaleria
         ));
     }
     
@@ -221,7 +231,8 @@ class PageController extends Controller
             'cursos' => $this->cursos,
             'noticiasMenu' => $this->noticiasMenu,
             'destaque' => $this->destaque,
-            'destaqueContato' => $this->destaqueContato
+            'destaqueContato' => $this->destaqueContato,
+            'videosGaleria' => $this->videosGaleria
         ));
     }
     
@@ -235,7 +246,8 @@ class PageController extends Controller
             'cursos' => $this->cursos,
             'noticiasMenu' => $this->noticiasMenu,
             'destaque' => $this->destaque,
-            'destaqueContato' => $this->destaqueContato
+            'destaqueContato' => $this->destaqueContato,
+            'videosGaleria' => $this->videosGaleria
         ));
     }
     
@@ -249,7 +261,8 @@ class PageController extends Controller
             'cursos' => $this->cursos,
             'noticiasMenu' => $this->noticiasMenu,
             'destaque' => $this->destaque,
-            'destaqueContato' => $this->destaqueContato
+            'destaqueContato' => $this->destaqueContato,
+            'videosGaleria' => $this->videosGaleria
         ));
     }
     
@@ -263,7 +276,8 @@ class PageController extends Controller
             'cursos' => $this->cursos,
             'noticiasMenu' => $this->noticiasMenu,
             'destaque' => $this->destaque,
-            'destaqueContato' => $this->destaqueContato
+            'destaqueContato' => $this->destaqueContato,
+            'videosGaleria' => $this->videosGaleria
         ));
     }
     
@@ -277,7 +291,8 @@ class PageController extends Controller
             'cursos' => $this->cursos,
             'noticiasMenu' => $this->noticiasMenu,
             'destaque' => $this->destaque,
-            'destaqueContato' => $this->destaqueContato
+            'destaqueContato' => $this->destaqueContato,
+            'videosGaleria' => $this->videosGaleria
         ));
     }
     
@@ -299,7 +314,8 @@ class PageController extends Controller
             'cursos' => $this->cursos,
             'noticiasMenu' => $this->noticiasMenu,
             'destaque' => $this->destaque,
-            'destaqueContato' => $this->destaqueContato
+            'destaqueContato' => $this->destaqueContato,
+            'videosGaleria' => $this->videosGaleria
         ));
     }
     
@@ -317,7 +333,8 @@ class PageController extends Controller
             'cursos' => $this->cursos,
             'noticiasMenu' => $this->noticiasMenu,
             'destaque' => $this->destaque,
-            'destaqueContato' => $this->destaqueContato
+            'destaqueContato' => $this->destaqueContato,
+            'videosGaleria' => $this->videosGaleria
         ));
     }
     
@@ -374,7 +391,8 @@ class PageController extends Controller
             'cursos' => $this->cursos,
             'noticiasMenu' => $this->noticiasMenu,
             'destaque' => $this->destaque,
-            'destaqueContato' => $this->destaqueContato
+            'destaqueContato' => $this->destaqueContato,
+            'videosGaleria' => $this->videosGaleria
         ));
     }
     
@@ -388,7 +406,8 @@ class PageController extends Controller
             'cursos' => $this->cursos,
             'noticiasMenu' => $this->noticiasMenu,
             'destaque' => $this->destaque,
-            'destaqueContato' => $this->destaqueContato
+            'destaqueContato' => $this->destaqueContato,
+            'videosGaleria' => $this->videosGaleria
         ));
     }
 
@@ -406,7 +425,8 @@ class PageController extends Controller
             'cursos' => $this->cursos,
             'noticiasMenu' => $this->noticiasMenu,
             'destaque' => $this->destaque,
-            'destaqueContato' => $this->destaqueContato
+            'destaqueContato' => $this->destaqueContato,
+            'videosGaleria' => $this->videosGaleria
         ));
     }
     
@@ -424,7 +444,8 @@ class PageController extends Controller
             'cursos' => $this->cursos,
             'noticiasMenu' => $this->noticiasMenu,
             'destaque' => $this->destaque,
-            'destaqueContato' => $this->destaqueContato
+            'destaqueContato' => $this->destaqueContato,
+            'videosGaleria' => $this->videosGaleria
         ));
     }
     
@@ -439,7 +460,8 @@ class PageController extends Controller
             'cursos' => $this->cursos,
             'noticiasMenu' => $this->noticiasMenu,
             'destaque' => $this->destaque,
-            'destaqueContato' => $this->destaqueContato
+            'destaqueContato' => $this->destaqueContato,
+            'videosGaleria' => $this->videosGaleria
         ));
     }
     
@@ -458,7 +480,8 @@ class PageController extends Controller
             'cursos' => $this->cursos,
             'noticiasMenu' => $this->noticiasMenu,
             'destaque' => $this->destaque,
-            'destaqueContato' => $this->destaqueContato
+            'destaqueContato' => $this->destaqueContato,
+            'videosGaleria' => $this->videosGaleria
         ));
     }
     
@@ -477,7 +500,28 @@ class PageController extends Controller
             'cursos' => $this->cursos,
             'noticiasMenu' => $this->noticiasMenu,
             'destaque' => $this->destaque,
-            'destaqueContato' => $this->destaqueContato
+            'destaqueContato' => $this->destaqueContato,
+            'videosGaleria' => $this->videosGaleria
+        ));
+    }
+    
+    public function cursosLivresAction()
+    {
+        
+        $em = $this->getDoctrine()->getManager();
+        $this->carregaDadosComuns($em);
+
+        $cursosCadastrados = $em->getRepository('FaSiteBundle:Curso')->listarTodosVinculados(null, 3);
+                //->findBy(array('tipoCurso' => 1), array('nome' => 'ASC'));
+        
+        return $this->render('FaSiteBundle:Page:cursos.html.twig', array(
+            'cursosCadastrados' => $cursosCadastrados,
+            'tipo' => 'Livres',
+            'cursos' => $this->cursos,
+            'noticiasMenu' => $this->noticiasMenu,
+            'destaque' => $this->destaque,
+            'destaqueContato' => $this->destaqueContato,
+            'videosGaleria' => $this->videosGaleria
         ));
     }
     
@@ -491,7 +535,8 @@ class PageController extends Controller
             'cursos' => $this->cursos,
             'noticiasMenu' => $this->noticiasMenu,
             'destaque' => $this->destaque,
-            'destaqueContato' => $this->destaqueContato
+            'destaqueContato' => $this->destaqueContato,
+            'videosGaleria' => $this->videosGaleria
         ));
     }
     
@@ -505,7 +550,8 @@ class PageController extends Controller
             'cursos' => $this->cursos,
             'noticiasMenu' => $this->noticiasMenu,
             'destaque' => $this->destaque,
-            'destaqueContato' => $this->destaqueContato
+            'destaqueContato' => $this->destaqueContato,
+            'videosGaleria' => $this->videosGaleria
         ));
     }
     
@@ -523,7 +569,8 @@ class PageController extends Controller
             'cursos' => $this->cursos,
             'noticiasMenu' => $this->noticiasMenu,
             'destaque' => $this->destaque,
-            'destaqueContato' => $this->destaqueContato
+            'destaqueContato' => $this->destaqueContato,
+            'videosGaleria' => $this->videosGaleria
         ));
     }
     
@@ -584,7 +631,8 @@ class PageController extends Controller
             'cursos' => $this->cursos,
             'noticiasMenu' => $this->noticiasMenu,
             'destaque' => $this->destaque,
-            'destaqueContato' => $this->destaqueContato
+            'destaqueContato' => $this->destaqueContato,
+            'videosGaleria' => $this->videosGaleria
         ));
     }
     
@@ -690,7 +738,80 @@ class PageController extends Controller
             'cursos' => $this->cursos,
             'noticiasMenu' => $this->noticiasMenu,
             'destaque' => $this->destaque,
-            'destaqueContato' => $this->destaqueContato
+            'destaqueContato' => $this->destaqueContato,
+            'videosGaleria' => $this->videosGaleria
+        ));
+    }
+    
+    public function videosAction()
+    {
+        
+        $em = $this->getDoctrine()->getManager();
+        $this->carregaDadosComuns($em);
+        
+        $videos = $em->getRepository('FaSiteBundle:VideoGaleria')
+                ->listarTodos();
+        
+        return $this->render('FaSiteBundle:Page:videos.html.twig', array(
+            'cursos' => $this->cursos,
+            'noticiasMenu' => $this->noticiasMenu,
+            'destaque' => $this->destaque,
+            'destaqueContato' => $this->destaqueContato,
+            'videosGaleria' => $this->videosGaleria,
+            'videos' => $videos
+        ));
+    }
+    
+    public function responsabilidadeAction()
+    {
+        
+        $em = $this->getDoctrine()->getManager();
+        $this->carregaDadosComuns($em);
+        
+        return $this->render('FaSiteBundle:Page:responsabilidade.html.twig', array(
+            'cursos' => $this->cursos,
+            'noticiasMenu' => $this->noticiasMenu,
+            'destaque' => $this->destaque,
+            'destaqueContato' => $this->destaqueContato,
+            'videosGaleria' => $this->videosGaleria
+        ));
+    }
+    
+    public function noticiasAction()
+    {
+        
+        $em = $this->getDoctrine()->getManager();
+        $this->carregaDadosComuns($em);
+
+        $noticias = $em->getRepository('FaSiteBundle:Noticia')->listarTodos();
+                //->findBy(array('tipoCurso' => 1), array('nome' => 'ASC'));
+        
+        return $this->render('FaSiteBundle:Page:noticias.html.twig', array(
+            'noticias' => $noticias,
+            'cursos' => $this->cursos,
+            'noticiasMenu' => $this->noticiasMenu,
+            'destaque' => $this->destaque,
+            'destaqueContato' => $this->destaqueContato,
+            'videosGaleria' => $this->videosGaleria
+        ));
+    }
+    
+    public function eventosAction()
+    {
+        
+        $em = $this->getDoctrine()->getManager();
+        $this->carregaDadosComuns($em);
+
+        $eventos = $em->getRepository('FaSiteBundle:Evento')->listarTodos();
+                //->findBy(array('tipoCurso' => 1), array('nome' => 'ASC'));
+        
+        return $this->render('FaSiteBundle:Page:eventos.html.twig', array(
+            'eventos' => $eventos,
+            'cursos' => $this->cursos,
+            'noticiasMenu' => $this->noticiasMenu,
+            'destaque' => $this->destaque,
+            'destaqueContato' => $this->destaqueContato,
+            'videosGaleria' => $this->videosGaleria
         ));
     }
     

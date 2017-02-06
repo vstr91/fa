@@ -6,9 +6,9 @@
 <div class="container" id="container-noticia">
     <div class="row">
         <div class="col-md-12">
-            <h3 class="titulo-azul-claro text-center">{{ noticia.titulo }}
+            <h3 class="titulo-azul-claro text-center">{{ noticia.titulo|raw }}
                 <br />
-                <small class="subtitulo-noticia">{{ noticia.resumo|raw|default('') }}</small>
+                <small class="subtitulo-noticia">{{ noticia.resumo|raw }}</small>
             </h3>
             <div class="row">
                 <div class="col-md-6 col-xs-6">
@@ -21,12 +21,19 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-8">
-            {{ noticia.descricao|raw }}
-        </div>
-        <div class="col-md-4">
-            <img src="{{ asset('uploads/noticia/'~noticia.imagem) }}" class="img-noticia" />
-        </div>
+        {% if noticia.imagem|default('') != '' %}
+            <div class="col-md-8">
+                {{ noticia.descricao|raw }}
+            </div>
+            <div class="col-md-4">
+                <img src="{{ asset('uploads/noticia/'~noticia.imagem) }}" class="img-noticia" />
+            </div>
+        {% else %}
+            <div class="col-md-12">
+                {{ noticia.descricao|raw }}
+            </div>
+        {% endif %}
+        
     </div>
 </div>
 <br />

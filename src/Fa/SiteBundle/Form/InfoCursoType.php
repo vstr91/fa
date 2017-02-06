@@ -68,8 +68,7 @@ class InfoCursoType extends AbstractType
             ->add('resultadoMec', null, array(
                 'label' => 'Resultado das Avaliações do MEC',
                 'attr' => array(
-                    'rows' => 10,
-                    'class' => 'editor'
+                    'rows' => 1
                 )
             ))
             ->add('mensalidades', null, array(

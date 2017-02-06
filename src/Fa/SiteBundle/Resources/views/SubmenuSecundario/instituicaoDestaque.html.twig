@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="row">
             {% if destaque.texto|default('') != '' and destaque.imagem|default('') != '' %}
-                <div class="col-md-6">
+                <div class="col-md-6" id="caixa-destaque-texto">
                     {{ destaque.texto|raw }}
                 </div>
                 <div class="col-md-6">

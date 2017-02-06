@@ -3,4 +3,7 @@
     {% for noticia in noticias %}
         <p><a href="{{ path('fa_site_noticia', {'slug': noticia.slug}) }}">{{ noticia.titulo }}</a></p>
     {% endfor %}
+    <br />
+    <br />
+    <p><a href="{{ path('fa_site_noticias') }}" id="link-todas-noticias">Ver Todas</a></p>
 </div>

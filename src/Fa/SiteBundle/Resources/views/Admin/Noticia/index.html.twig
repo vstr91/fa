@@ -47,7 +47,12 @@
                             {% for noticia in noticias %}
                                 <tr>
                                     <td>{{ noticia.titulo }}</td>
-                                    <td><img class="thumbnail" src="{{ asset('uploads/noticia/'~noticia.imagem) }}" /></td>
+                                    {% if noticia.imagem is defined and noticia.imagem is not null %}
+                                        <td><img class="thumbnail" src="{{ asset('uploads/noticia/'~noticia.imagem) }}" /></td>
+                                    {% else %}
+                                        <td>N/D</td>
+                                    {% endif %}
+                                    
                                     <td>
                                         <a class="link-editar" href="#{{ noticia.id }}">Editar</a> |
                                         <a class="link-excluir" href="#{{ noticia.id }}">Excluir</a>
@@ -86,16 +91,16 @@
         {{ parent() }}
         <script type="text/javascript" src="{{ asset('js/trumbowyg.min.js') }}"></script>
         <link rel="stylesheet" href="{{ asset('css/trumbowyg.min.css') }}" />
-        <script>
-            $(document).ready(function () {
-                $('.link-editar').click(function () {
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('.link-editar').click(function(){
 
                     $id = $(this).attr('href').replace('#', '');
                     $url = '{{ path('fa_site_admin_noticias_form') }}' + "/" + $id;
                     $.ajax({
                         type: 'GET',
                         url: $url,
-                        success: function (response) {
+                        success: function(response){
                             $('#body-edicao').html(response);
                             $('#modal-edicao').modal('show');
                         }
@@ -103,17 +108,17 @@
                     return false;
                 });
 
-                $('.link-excluir').click(function () {
+                $('.link-excluir').click(function(){
 
                     var confirm = window.confirm("Deseja realmente excluir o registro?");
 
-                    if (confirm) {
+                    if(confirm){
                         $id = $(this).attr('href').replace('#', '');
                         $url = '{{ path('fa_site_admin_noticias_exclui') }}' + "/" + $id;
                         $.ajax({
                             type: 'POST',
                             url: $url,
-                            success: function (response) {
+                            success: function(response){
                                 alert("Registro excluído com sucesso.");
                                 location.reload();
                             }
@@ -123,7 +128,9 @@
                     return false;
                 });
                 
-                $('.editor').trumbowyg();
+                $('.editor').trumbowyg({
+                    removeformatPasted: true
+                });
 
             });
         </script>

@@ -1,0 +1,18 @@
+{% if cursos|length > 0 %}
+    <ul class="submenu-secundario">
+        {% for curso in cursos %}
+            <li class="links-cursos"><a href="{{ path('fa_site_curso', {'slug': curso.slug}) }}" class="links-submenu-secundario">{{ curso.nome }}</a></li>
+        {% endfor %}
+        {#<li class="links-cursos"><a href="#" class="links-submenu-secundario">Gestão de Empresas</a></li>
+        <li class="links-cursos"><a href="#" class="links-submenu-secundario">Gestão Escolar</a></li>
+        <li class="links-cursos"><a href="#" class="links-submenu-secundario">Produção de Bovinos</a></li>
+        <li class="links-cursos"><a href="#" class="links-submenu-secundario">Terapia Intensiva em Enfermagem</a></li>
+        <li class="links-cursos"><a href="#" class="links-submenu-secundario">Ortodontia</a></li>
+        <li class="links-cursos"><a href="#" class="links-submenu-secundario">Implantodontia</a></li>
+        <li class="links-cursos"><a href="#" class="links-submenu-secundario">Endodontia</a></li>
+        <li class="links-cursos"><a href="#" class="links-submenu-secundario">Periodontia</a></li>
+        <li class="links-cursos"><a href="#" class="links-submenu-secundario">Pecuária Leiteira com Ênfase em Manejo de Pastagens</a></li>#}
+    </ul>
+{% else %}
+    <p style="padding-left: 40px;">Ainda não existem cursos cadastrados nesta categoria</p>
+{% endif %}

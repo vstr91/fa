@@ -70,6 +70,18 @@ fa_site_cursos_pos_graduacao:
     path:     /cursos/pos-graduacao
     defaults: { _controller: FaSiteBundle:Page:cursosPosGraduacao }
     
+fa_site_cursos_livres:
+    path:     /cursos/cursos-livres
+    defaults: { _controller: FaSiteBundle:Page:cursosLivres }
+    
+fa_site_noticias:
+    path:     /noticias
+    defaults: { _controller: FaSiteBundle:Page:noticias }
+    
+fa_site_eventos:
+    path:     /eventos
+    defaults: { _controller: FaSiteBundle:Page:eventos }
+    
 fa_site_curso:
     path:     /cursos/{slug}
     defaults: { _controller: FaSiteBundle:Page:curso, slug: '' }
@@ -121,20 +133,20 @@ fa_site_trabalhe:
 fa_site_form_trabalhe:
     path:     /trabalhe-no-cesva/processa
     defaults: { _controller: FaSiteBundle:Page:processaTrabalhe }
-
-################ EM CONSTRUCAO ######################
+    
+fa_site_galeria_videos:
+    path:     /videos
+    defaults: { _controller: FaSiteBundle:Page:videos }
 
 fa_site_responsabilidade:
     path:     /responsabilidade-social
-    defaults: { _controller: FaSiteBundle:Page:construcao, titulo: 'Responsabilidade Social' }
+    defaults: { _controller: FaSiteBundle:Page:responsabilidade }
+
+################ EM CONSTRUCAO ######################
     
 fa_site_transportes:
     path:     /transportes
     defaults: { _controller: FaSiteBundle:Page:construcao, titulo: 'Transportes' }
-    
-fa_site_cursos_livres:
-    path:     /cursos-livres
-    defaults: { _controller: FaSiteBundle:Page:construcao, titulo: 'Cursos Livres' }
     
 fa_site_informe_semanal:
     path:     /informe-semanal
@@ -164,7 +176,7 @@ fa_site_menu_contato:
     path:     /submenu/contato
     defaults: { _controller: FaSiteBundle:Submenu:contato }
     
-fa_site_menu_videos:
+fa_site_submenu_videos:
     path:     /submenu/videos
     defaults: { _controller: FaSiteBundle:Submenu:videos }
 
@@ -207,6 +219,10 @@ fa_site_submenu_graduacao:
 fa_site_submenu_pos_graduacao:
     path:     /submenu/pos-graduacao
     defaults: { _controller: FaSiteBundle:Submenu:posGraduacao }
+    
+fa_site_submenu_cursos_livres:
+    path:     /submenu/cursos-livres
+    defaults: { _controller: FaSiteBundle:Submenu:cursosLivres }
     
 fa_site_submenu_noticias:
     path:     /submenu/noticiasSub
@@ -521,8 +537,8 @@ fa_site_admin_videos_galeria:
 fa_site_admin_videos_galeria_cadastra:
     pattern:  /admin/videos-galeria/cadastra/{id_video_galeria}
     defaults: { _controller: FaSiteBundle:VideoGaleria:cadastrar, id_video_galeria: -1 }
-    requirements:
-        _method: POST
+#    requirements:
+#        _method: POST
 
 fa_site_admin_videos_galeria_form:
     pattern:  /admin/videos-galeria/form/{id_video_galeria}

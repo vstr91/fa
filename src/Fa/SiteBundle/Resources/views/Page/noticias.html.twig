@@ -1,0 +1,28 @@
+{% extends "FaSiteBundle:Page:index.html.twig" %}
+{% block conteudo %}
+{% block menu %}
+{{ parent() }}
+{% endblock menu %}
+<br />
+<div class="container" id="container-noticia">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="titulo-azul-claro">
+                <img class="ret-azul-subtitulo" 
+                     src="{{ asset('imagens/retangulo-azul-escuro.png') }}" /> Not&iacute;cias</h2>
+            {% for noticia in noticias %}
+                <p><a href="{{ path('fa_site_noticia', {'slug': noticia.slug}) }}">{{ noticia.titulo|raw }}</a></p>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<br />
+<br />
+<br />
+{% block rodape %}
+{{ parent() }}
+{% endblock rodape %}
+{% block submenus %}
+    {{ parent() }}
+{% endblock %}
+{% endblock conteudo %}
