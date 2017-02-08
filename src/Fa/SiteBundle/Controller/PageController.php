@@ -586,6 +586,8 @@ class PageController extends Controller
         $assunto = $dados->get('assunto');
         $curso = $dados->get('curso');
         $descricao = $dados->get('descricao');
+        $telefone = $dados->get('telefone');
+        $checkWhat = $dados->get('check-what');
 
         if ($descricao) {
             
@@ -599,9 +601,13 @@ class PageController extends Controller
             
             $nome = $nome == null || trim($nome) == '' ? 'Nome Não Informado' : $nome;
             $assunto = $assunto == null || trim($assunto) == '' ? 'Assunto Não Informado' : $assunto;
+            $telefone = $telefone == null || trim($telefone) == '' ? 'Telefone Não Informado' : $telefone;
             
             $parametros = $em->getRepository('FaSiteBundle:ParametroEmail')
                 ->findOneBy(array('id' => 1));
+            
+        var_dump($checkWhat);
+        die();
             
             $email = \Swift_Message::newInstance()
                         ->setSubject("Contato Ouvidoria: ".$nome)
@@ -610,7 +616,9 @@ class PageController extends Controller
                         ->setBody($this->renderView('FaSiteBundle:Component:email-ouvidoria.html.twig', 
                                 array('nome' => $nome, 'curso' => $curso, 
                                     'assunto' => $assunto,
-                                    'descricao' => $descricao)))
+                                    'descricao' => $descricao, 
+                                    'telefone' => $telefone,
+                                    'check' => $checkWhat)))
                         ->setContentType("text/html");
                         //->setBody($form->get('mensagem')->getData());
                 $this->get('mailer')->send($email);

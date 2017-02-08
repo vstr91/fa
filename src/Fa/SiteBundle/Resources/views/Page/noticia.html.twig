@@ -6,7 +6,7 @@
 <div class="container" id="container-noticia">
     <div class="row">
         <div class="col-md-12">
-            <h3 class="titulo-azul-claro text-center">{{ noticia.titulo|raw }}
+            <h3 class="titulo-azul-claro text-left">{{ noticia.titulo|raw }}
                 <br />
                 <small class="subtitulo-noticia">{{ noticia.resumo|raw }}</small>
             </h3>
@@ -35,6 +35,11 @@
         {% endif %}
         
     </div>
+    <div class="row" id="linha-social">
+        <div class="col-md-12">
+            <div id="social"></div>
+        </div>
+    </div>
 </div>
 <br />
 <br />
@@ -46,3 +51,19 @@
     {{ parent() }}
 {% endblock %}
 {% endblock conteudo %}
+{% block js %}
+    {{ parent() }}
+    <link type="text/css" rel="stylesheet" 
+          href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials.css" />
+    <link type="text/css" rel="stylesheet" 
+          href="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials-theme-flat.css" />
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#social').jsSocials({
+                shares: ["twitter", "facebook", "googleplus"]
+            });
+        });
+    </script>
+{% endblock js %}

@@ -59,7 +59,7 @@
                                 <span class="texto-negrito">MENSALIDADE (INTEGRAL):</span> R$ {{ infoCurso.mensalidadeIntegral|replace('.', ',') }}
                                 <br />
                             {% endif %}
-                            <span class="texto-negrito">AVALIA&Ccedil;&Atilde;O DO CURSO:</span> {{ infoCurso.resultadoMec|raw|replace({'<p>': '', '</p>': '', '<br>': ''}) }}
+                            <span class="texto-negrito">MEC:</span> {{ infoCurso.resultadoMec|raw|replace({'<p>': '', '</p>': '', '<br>': ''}) }}
                         </p>
                         <a href="https://faa.jacad.com.br:8443/academico/vestibular" class="btn btn-primary" id="btn-inscreva">INSCREVA-SE J&Aacute;!</a>
                     </div>

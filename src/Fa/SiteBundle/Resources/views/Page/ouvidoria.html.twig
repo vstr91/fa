@@ -26,6 +26,16 @@
                                  </div>
                              </div>
                              <div class="row linha-form">
+                                 <div class="col-md-6">
+                                     <input type="text" name="telefone" 
+                                            id="telefone" class="form-control input-telefone" placeholder="Telefone" />
+                                 </div>
+                                 <div class="col-md-6">
+                                     <input type="checkbox" id="check-what" name="check-what">
+                                     <label for="check-what">&Eacute; Whatsapp</label> 
+                                 </div>
+                             </div>
+                             <div class="row linha-form">
                                  <div class="col-md-12">
                                      <input type="text" name="assunto" 
                                             id="assunto" class="form-control" placeholder="Assunto" />
@@ -64,6 +74,17 @@
     <script type="text/javascript">
         $(document).ready(function(){
             
+            var SPMaskBehavior = function (val) {
+                return val.replace(/\D/g, '').length === 11 ? '(00) 00000-0000' : '(00) 0000-00009';
+            },
+            spOptions = {
+                onKeyPress: function (val, e, field, options) {
+                    field.mask(SPMaskBehavior.apply({}, arguments), options);
+                }
+            };
+            
+            $('.input-telefone').mask(SPMaskBehavior, spOptions);
+            
             $('#form-ouvidoria').validate({
                 rules: {
                     'descricao': {
@@ -80,7 +101,8 @@
                     $('#btn-submit').button('loading');
                     
                     $(form).ajaxSubmit({
-                        success: function(){
+                        success: function(response){
+                            console.log(response);
                             alert("Mensagem enviada. Obrigado!");
                             $(form)[0].reset();
                             $('#btn-submit').button('reset');

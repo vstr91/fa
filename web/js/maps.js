@@ -9,20 +9,26 @@ function init() {
         disableDefaultUI: false,
         mapTypeId: google.maps.MapTypeId.ROADMAP
     };
-    var map = new google.maps.Map(document.getElementById("mapa"), opcoes);
-    var marcador = "imagens/marker.png";
-    var marker = new google.maps.Marker({
-        map: map,
-        animation: google.maps.Animation.DROP,
-        icon: marcador,
-        position: map.getCenter()
-    });
-    var conteudo = 'Fundação D. André Arcoverde';
-    var infowindow = new google.maps.InfoWindow({
-        content: conteudo
-    });
-    google.maps.event.addListener(marker, 'click', function () {
-        infowindow.open(map, marker);
-    });
+    
+    var el = document.getElementById("mapa");
+    
+    if(el != null){
+        var map = new google.maps.Map(el, opcoes);
+        var marcador = "imagens/marker.png";
+        var marker = new google.maps.Marker({
+            map: map,
+            animation: google.maps.Animation.DROP,
+            icon: marcador,
+            position: map.getCenter()
+        });
+        var conteudo = 'Fundação D. André Arcoverde';
+        var infowindow = new google.maps.InfoWindow({
+            content: conteudo
+        });
+        google.maps.event.addListener(marker, 'click', function () {
+            infowindow.open(map, marker);
+        });
+    }
+    
 }
 init();
